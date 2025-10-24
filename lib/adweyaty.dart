@@ -1,6 +1,7 @@
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding.dart';
+import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_first_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Adweyaty extends StatelessWidget {
@@ -13,12 +14,21 @@ class Adweyaty extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('ar','AR'), // arabic
+        ],
+
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: "Cairo",
             scaffoldBackgroundColor: Colors.lightBlueAccent
         ),
-        home: Onboarding(),
+        home: OnboardingScreen(),
       ),
     );
   }
