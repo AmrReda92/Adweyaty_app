@@ -2,10 +2,13 @@ import 'package:adweyaty_application/features/onboarding/data/model/info_onboard
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import '../../../../core/theme/app_text_style.dart';
 import '../../../../core/widgets/custom_button.dart';
 
-class OnboardingThirdScreen extends StatelessWidget {
-  const OnboardingThirdScreen({super.key});
+class OnboardingThirdPage extends StatelessWidget {
+  final void Function()? onTapNextPage ;
+
+  const OnboardingThirdPage({super.key, this.onTapNextPage});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +20,11 @@ class OnboardingThirdScreen extends StatelessWidget {
           Lottie.asset(InfoOnboarding.imageOnboardingThree),
           SizedBox(height: 16.h,),
           Text(InfoOnboarding.textOnboardingThree,
-            textAlign: TextAlign.center, style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 20
-            ),),
+            textAlign: TextAlign.center, style: AppTextStyle.font20),
           SizedBox(height: 90.h,),
-          CustomButton(title: "التالي")
+          InkWell(
+              onTap: onTapNextPage,
+              child: CustomButton(title: "ابدأ"))
 
         ],
       ),

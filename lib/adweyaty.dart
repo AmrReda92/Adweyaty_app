@@ -1,5 +1,5 @@
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_first_screen.dart';
+import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +28,7 @@ class Adweyaty extends StatelessWidget {
           fontFamily: "Cairo",
             scaffoldBackgroundColor: Colors.lightBlueAccent
         ),
-        home: OnboardingScreen(),
+        home: SplashScreen(),
       ),
     );
   }

@@ -7,5 +7,6 @@ static  String textOnboardingThree = "دعم العملاء: تواصل مع ف�
 static String imageOnboardingOne = "assets/images/Pharmacist.json";
 static String imageOnboardingTwo = "assets/images/Angoamericana.json";
 static String imageOnboardingThree = "assets/images/Pharmacist.json";
+static String splashImage = "assets/images/Capsule.json";
 
 }

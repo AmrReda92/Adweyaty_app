@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
-class OnboardingSecondScreen extends StatelessWidget {
-  const OnboardingSecondScreen({super.key});
+import '../../../../core/theme/app_text_style.dart';
+
+class OnboardingSecondPage extends StatelessWidget {
+  final void Function() onTapNextPage ;
+
+  const OnboardingSecondPage({super.key, required this.onTapNextPage});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +21,11 @@ class OnboardingSecondScreen extends StatelessWidget {
           Lottie.asset(InfoOnboarding.imageOnboardingTwo),
           SizedBox(height: 16.h,),
             Text(InfoOnboarding.textOnboardingTwo,
-            textAlign: TextAlign.center, style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 20
-            ),),
-          SizedBox(height: 90.h,),
-          CustomButton(title: "التالي")
-
+            textAlign: TextAlign.center, style: AppTextStyle.font20),
+          SizedBox(height: 190.h,),
+          InkWell(
+              onTap: onTapNextPage,
+              child: CustomButton(title: "التالي"))
         ],
       ),
     );

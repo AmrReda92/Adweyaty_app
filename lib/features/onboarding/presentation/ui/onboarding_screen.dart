@@ -1,9 +1,10 @@
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_first_screen.dart';
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_second_screen.dart';
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_third_screen.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login_screen/sign_up_login_screen.dart';
+import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_second_page.dart';
+import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_third_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../widget/onboarding_first_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -13,12 +14,12 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController controller =PageController();
+  final PageController nextPage = PageController();
   int currentIndex=0;
   @override
 
   void dispose() {
-    controller.dispose();
+    nextPage.dispose();
     super.dispose();
   }
 
@@ -30,15 +31,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               Expanded(
                 child: PageView(
+                  controller: nextPage,
                   onPageChanged: (index){
                     setState(() {
                       currentIndex=index;
                     });
                   },
-                    children: const [
-                      OnboardingFirstScreen(),
-                      OnboardingSecondScreen(),
-                      OnboardingThirdScreen(),
+                    children:  [
+                      OnboardingFirstPage(
+                        onTapNextPage: (){
+                          nextPage.animateToPage(1, duration: Duration(milliseconds: 700), curve: Curves.easeIn);
+                        },
+                      ),
+                      OnboardingSecondPage(
+                        onTapNextPage: (){
+                          nextPage.animateToPage(2, duration: Duration(milliseconds: 700), curve: Curves.easeIn);
+                        },
+                      ),
+                      OnboardingThirdPage(onTapNextPage: (){
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SignUpLoginScreen()), (e)=>false);
+                      },
+                      ),
                     ],
                 ),
               ),
