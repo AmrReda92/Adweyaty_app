@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +27,9 @@ class Adweyaty extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: "Cairo",
-            scaffoldBackgroundColor: Colors.lightBlueAccent
+            scaffoldBackgroundColor: Color(0xffF0FFFF)
         ),
-        home: SplashScreen(),
+        home: SignUpLoginScreen(),
       ),
     );
   }

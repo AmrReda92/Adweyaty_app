@@ -1,4 +1,4 @@
-import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login_screen/sign_up_login_screen.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_second_page.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_third_page.dart';
 import 'package:flutter/material.dart';
