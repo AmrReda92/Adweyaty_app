@@ -13,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Directionality(
-          textDirection: TextDirection.rtl,
+          textDirection: TextDirection.ltr,
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -35,15 +35,15 @@ class SignUpScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 107.h,),
-                  CustomTextFormField(hintText: "الإسم"),
+                  CustomTextFormField(hintText: "Name"),
                   SizedBox(height: 20.h,),
-                  CustomTextFormField(hintText: "الهاتف"),
+                  CustomTextFormField(hintText: "Mobile"),
                   SizedBox(height: 20.h,),
-                  CustomTextFormField(hintText: "الايميل"),
+                  CustomTextFormField(hintText: "Email"),
                   SizedBox(height: 20.h,),
-                  CustomTextFormField(hintText: "الرقم السري"),
+                  CustomTextFormField(hintText: "Password"),
                   SizedBox(height: 50.h,),
-                  CustomButton(title: "تسجيل")
+                  CustomButton(title: "Register")
                 ],
               ),
             ),
