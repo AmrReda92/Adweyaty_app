@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/app_images/app_images.dart';
 import '../sign_up_login/sign_up_login_screen.dart';
 
-class ValidationSuccessScreen extends StatelessWidget {
+class ValidationSuccessScreen extends StatefulWidget {
   const ValidationSuccessScreen({super.key});
 
+  @override
+  State<ValidationSuccessScreen> createState() => _ValidationSuccessScreenState();
+}
+
+class _ValidationSuccessScreenState extends State<ValidationSuccessScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,10 +54,14 @@ class ValidationSuccessScreen extends StatelessWidget {
                       SizedBox(height: 8.h,),
                       Text("Welcome to Adweyaty!",style: AppTextStyle.font20.copyWith(fontSize: 18,color: Colors.grey),),
                       SizedBox(height: 260.h,),
-                      CustomButton(title: "Start Now")
-
-                      
-
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+                            Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen, (e)=>false);
+                          });
+                        },
+                          child: CustomButton(title: "Start Now")
+                      )
                     ]
                 ),
               ),

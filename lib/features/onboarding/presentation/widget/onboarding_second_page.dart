@@ -25,7 +25,7 @@ class OnboardingSecondPage extends StatelessWidget {
           SizedBox(height: 190.h,),
           InkWell(
               onTap: onTapNextPage,
-              child: CustomButton(title: "التالي"))
+              child: CustomButton(title: "Next"))
         ],
       ),
     );

@@ -24,7 +24,7 @@ class OnboardingThirdPage extends StatelessWidget {
           SizedBox(height: 90.h,),
           InkWell(
               onTap: onTapNextPage,
-              child: CustomButton(title: "ابدأ"))
+              child: CustomButton(title: "Start Now"))
 
         ],
       ),

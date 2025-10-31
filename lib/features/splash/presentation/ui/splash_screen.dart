@@ -1,3 +1,5 @@
+import 'package:adweyaty_application/core/app_images/app_images.dart';
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/features/onboarding/data/model/info_onboarding.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
@@ -23,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> navigateToOnboarding() async {
     await Future.delayed(const Duration(seconds: 3));
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()), (e)=>false);
+     Navigator.pushNamedAndRemoveUntil(context, Routes.onboardingScreen, (e)=>false);
   }
 
 
@@ -31,15 +33,23 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Lottie.asset(InfoOnboarding.splashImage,height: 160),
-              SizedBox(height: 30.h,),
-              Text("صيدلية",style: AppTextStyle.font20.copyWith(color: Colors.black))
-            ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: Image.asset(AppImages.splashBackground).image,
+            fit: BoxFit.cover
+          )
+        ),
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Lottie.asset(InfoOnboarding.splashImage,height: 160),
+                SizedBox(height: 30.h,),
+                Text("صيدلية",style: AppTextStyle.font20.copyWith(color: Colors.black))
+              ],
+            ),
           ),
         ),
       ),

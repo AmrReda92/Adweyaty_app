@@ -1,3 +1,5 @@
+import 'package:adweyaty_application/core/routes/app_route.dart';
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
@@ -15,6 +17,8 @@ class Adweyaty extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        onGenerateRoute: AppRoute.Function ,
+
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
@@ -29,7 +33,7 @@ class Adweyaty extends StatelessWidget {
           fontFamily: "Cairo",
             scaffoldBackgroundColor: Color(0xffF0FFFF)
         ),
-        home: SignUpLoginScreen(),
+           initialRoute: Routes.splashScreen,
       ),
     );
   }
