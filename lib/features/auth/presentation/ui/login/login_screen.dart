@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>ValidationSuccessScreen()));
                       });
                     },
-                      child: CustomButton(title: "Login"))
+                      child: CustomButton(title: "Login")),
                 ],
               ),
             ),

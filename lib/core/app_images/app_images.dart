@@ -8,4 +8,11 @@ class AppImages {
  static const String profileIcon ="assets/icons/Profile.svg";
  static const String searchIcon ="assets/icons/search-normal.svg";
 
+ static const String bloodPressure ="assets/images/bloodPressure.jpg";
+ static const String coughPerson ="assets/images/coughingPerson.jpg";
+ static const String headache ="assets/images/headace.jpg";
+ static const String temperature ="assets/images/temprature.jpg";
+ static const String vitamin ="assets/images/vitamin.jpg";
+ static const String womanProduct ="assets/images/womanProduct.jpg";
+
 }
