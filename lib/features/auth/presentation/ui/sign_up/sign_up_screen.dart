@@ -31,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
                         opacity: 0,
                         child: Icon(Icons.arrow_back, size: 28.sp),
                       ),
-
+            
                     ],
                   ),
                   SizedBox(height: 107.h,),
@@ -41,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
                   SizedBox(height: 20.h,),
                   CustomTextFormField(hintText: "Email"),
                   SizedBox(height: 20.h,),
-                  CustomTextFormField(hintText: "Password"),
+                  CustomTextFormField(hintText: "Password",isPassword: true,),
                   SizedBox(height: 50.h,),
                   CustomButton(title: "Register")
                 ],

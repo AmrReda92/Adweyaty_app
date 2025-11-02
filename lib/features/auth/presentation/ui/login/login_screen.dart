@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 107.h,),
                   CustomTextFormField(hintText: "Email"),
                   SizedBox(height: 20.h,),
-                  CustomTextFormField(hintText: "Password"),
+                  CustomTextFormField(hintText: "Password",isPassword: true,),
                   SizedBox(height: 50.h,),
                   InkWell(
                     onTap: (){

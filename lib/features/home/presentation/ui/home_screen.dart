@@ -26,9 +26,9 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlueAccent,
-          leading: SvgPicture.asset(AppImages.cartIcon,),
+          leading: IconButton(onPressed: (){}, icon: SvgPicture.asset(AppImages.cartIcon,)),
           actions: [
-            Icon(Icons.list,size: 40,)
+            IconButton(onPressed: (){}, icon: Icon(Icons.list,size: 40,))
           ],
         ),
         body: SafeArea(
@@ -39,13 +39,13 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Categories",style: AppTextStyle.font20,),
-                    Text("Show All",style: AppTextStyle.font20,),
+                    Text("Categories",style: AppTextStyle.font20.copyWith(fontSize: 18)),
+                    Text("Show All",style: AppTextStyle.font20.copyWith(fontSize: 18)),
                   ],
                 ),
-                SizedBox(height: 20.h,),
+                SizedBox(height: 10.h,),
                 SizedBox(
-                  height: .4.sh,
+                  height: .3.sh,
                   child: GridView.builder(
                        scrollDirection: Axis.horizontal,
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -56,18 +56,21 @@ class HomeScreen extends StatelessWidget {
                       ),
                       itemCount: categories.length,
                       itemBuilder: (context,index) {
-                         return Container(
-                            height: 100.h,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(16.r),
-                                image: DecorationImage(image: AssetImage(categories[index].image),fit: BoxFit.cover)
-                            ),
-                            child:
-                            Container(
-                                width: double.infinity,
-                                child: Text(categories[index].title,style: AppTextStyle.font20,textAlign: TextAlign.center,))
-                                                      );
+                         return Stack(
+                           alignment: Alignment.bottomCenter,
+                           children: [
+                             Container(
+                             height: 180.h,
+                             decoration: BoxDecoration(
+                                 color: Colors.grey,
+                                 borderRadius: BorderRadius.circular(16.r),
+                                 image: DecorationImage(image: AssetImage(categories[index].image),fit: BoxFit.cover)
+                             ),
+                             ),
+                             Text(categories[index].title,style: AppTextStyle.font20.copyWith(fontSize: 18),textAlign: TextAlign.center,)
+                           ],
+
+                         );
                       }
                   ),
                 )
