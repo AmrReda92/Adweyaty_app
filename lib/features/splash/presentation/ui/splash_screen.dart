@@ -19,8 +19,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState()  {
-    super.initState();
     navigateToOnboarding();
+    super.initState();
   }
 
   Future<void> navigateToOnboarding() async {

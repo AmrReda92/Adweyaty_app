@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/core/app_images/app_images.dart';
+import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:adweyaty_application/core/widgets/custom_text_form_field.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
@@ -19,21 +20,7 @@ class SignUpScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpLoginScreen()));
-                      },
-                        icon: Icon(Icons.arrow_back,size: 28.sp,)),
-                      Image.asset(AppImages.logo),
-                      Opacity(
-                        opacity: 0,
-                        child: Icon(Icons.arrow_back, size: 28.sp),
-                      ),
-            
-                    ],
-                  ),
+                  CustomAppbar(),
                   SizedBox(height: 107.h,),
                   CustomTextFormField(hintText: "Name"),
                   SizedBox(height: 20.h,),

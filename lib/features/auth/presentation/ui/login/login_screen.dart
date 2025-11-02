@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,21 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpLoginScreen()));
-                      },
-                          icon: Icon(Icons.arrow_back,size: 28.sp,)),
-                      Image.asset(AppImages.logo),
-                      Opacity(
-                        opacity: 0,
-                        child: Icon(Icons.arrow_back, size: 28.sp),
-                      ),
-
-                    ],
-                  ),
+                  CustomAppbar(),
                   SizedBox(height: 107.h,),
                   CustomTextFormField(hintText: "Email"),
                   SizedBox(height: 20.h,),
