@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final String title ;
-  const CustomButton({super.key, required this.title,   });
+  final IconData? icon ;
+
+  const CustomButton({super.key, required this.title, this.icon, });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +17,11 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
-        child: Text(title,style: AppTextStyle.font20),
+        child:
+            Text(title,style: AppTextStyle.font20),
+
+
+
       ),
     );
   }
