@@ -16,11 +16,12 @@ class CategoryItems extends StatelessWidget {
     HomeCategoryModel(image: AppImages.womanProduct, title: "woman medicines"),
     HomeCategoryModel(image: AppImages.vitamin, title: "vitamin medicines"),
   ];
+
   @override
 
   Widget build(BuildContext context) {
     return SizedBox(
-      height: .3.sh,
+      height: .34.sh,
       child: GridView.builder(
           scrollDirection: Axis.horizontal,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -34,12 +35,14 @@ class CategoryItems extends StatelessWidget {
             return Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Container(
-                  height: 180.h,
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(16.r),
-                      image: DecorationImage(image: AssetImage(categories[index].image),fit: BoxFit.cover)
+                InkWell(
+                  child: Container(
+                    height: 180.h,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(16.r),
+                        image: DecorationImage(image: AssetImage(categories[index].image),fit: BoxFit.cover)
+                    ),
                   ),
                 ),
                 Container(
