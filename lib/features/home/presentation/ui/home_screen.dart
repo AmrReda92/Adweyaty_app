@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlueAccent,
-          leading: IconButton(onPressed: (){}, icon: SvgPicture.asset(AppImages.cartIcon,)),
+          leading: IconButton(onPressed: (){}, icon: SvgPicture.asset(AppImages.cartIcon,width: 30.w,height: 30.h)),
           actions: [
             IconButton(onPressed: (){}, icon: Icon(Icons.list,size: 40,))
           ],
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 40.h,),
                 CustomElevatedButton(
                   title: "Send your Prescription",
-                  icon: Icon(Icons.camera_alt_rounded,size: 34.r,color: Colors.grey,)
+                  icon: Icon(Icons.camera_alt_rounded,size: 34.r,color: Colors.white,)
                 ),
 
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import '../app_images/app_images.dart';
 

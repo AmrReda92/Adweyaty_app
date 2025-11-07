@@ -33,7 +33,7 @@ class Adweyaty extends StatelessWidget {
           fontFamily: "Cairo",
             scaffoldBackgroundColor: Color(0xffF0FFFF)
         ),
-           initialRoute: Routes.homeScreen,
+           initialRoute: Routes.bottomNavBarScreen,
       ),
     );
   }

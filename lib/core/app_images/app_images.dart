@@ -7,6 +7,7 @@ class AppImages {
  static const String cartIcon ="assets/icons/Frame 15.svg";
  static const String profileIcon ="assets/icons/Profile.svg";
  static const String searchIcon ="assets/icons/search-normal.svg";
+ static const String panadol ="assets/images/panadol.png";
 
  static const String bloodPressure ="assets/images/bloodPressure.jpg";
  static const String coughMedicines ="assets/images/coughingPerson.jpg";

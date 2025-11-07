@@ -5,12 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomButton extends StatelessWidget {
   final String title ;
   final IconData? icon ;
+  final double? width ;
 
-  const CustomButton({super.key, required this.title, this.icon, });
+  const CustomButton({super.key, required this.title, this.icon, this.width, });
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: width,
       height: 50.h,
       decoration: BoxDecoration(
         color: Colors.blueAccent,

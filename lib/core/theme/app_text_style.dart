@@ -9,6 +9,16 @@ class AppTextStyle {
       color: Colors.black,
       fontWeight: FontWeight.bold
   );
+  static TextStyle medicineName = TextStyle(
+      fontSize: 14.sp,
+      color: Colors.black,
+      fontWeight: FontWeight.bold
+  );
+  static TextStyle price = TextStyle(
+      fontSize: 16.sp,
+      color: Color(0xffF24E1E),
+      fontWeight: FontWeight.w600
+  );
   static TextStyle hintStyle = TextStyle(
       fontSize: 18.sp,
       color: Colors.grey,
