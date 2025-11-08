@@ -20,9 +20,12 @@ class OnboardingSecondPage extends StatelessWidget {
           SizedBox(height: 150.h,),
           Lottie.asset(InfoOnboarding.imageOnboardingTwo),
           SizedBox(height: 16.h,),
-            Text(InfoOnboarding.textOnboardingTwo,
-            textAlign: TextAlign.center, style: AppTextStyle.font20),
-          SizedBox(height: 190.h,),
+            SizedBox(
+              height: 150.h,
+              child: Text(InfoOnboarding.textOnboardingTwo,
+              textAlign: TextAlign.center, style: AppTextStyle.font20),
+            ),
+          SizedBox(height: 116.h,),
           InkWell(
               onTap: onTapNextPage,
               child: CustomButton(title: "Next"))

@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/core/app_images/app_images.dart';
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/category_items.dart';
 import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
@@ -39,7 +40,17 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 40.h,),
                 CustomElevatedButton(
                   title: "Send your Prescription",
+                  onPressed: (){
+                  },
                   icon: Icon(Icons.camera_alt_rounded,size: 34.r,color: Colors.white,)
+                ),
+                SizedBox(height: 26.h,),
+                CustomElevatedButton(
+                  title: "Logout",
+                  onPressed: (){
+                    Navigator.pushReplacementNamed(context,Routes.signUpLoginScreen);
+                  },
+
                 ),
 
 

@@ -9,6 +9,11 @@ class AppTextStyle {
       color: Colors.black,
       fontWeight: FontWeight.bold
   );
+  static TextStyle font18 = TextStyle(
+      fontSize: 18.sp,
+      color: Colors.black,
+      fontWeight: FontWeight.bold
+  );
   static TextStyle medicineName = TextStyle(
       fontSize: 14.sp,
       color: Colors.black,
@@ -21,6 +26,16 @@ class AppTextStyle {
   );
   static TextStyle hintStyle = TextStyle(
       fontSize: 18.sp,
+      color: Colors.grey,
+      fontWeight: FontWeight.normal
+  );
+  static TextStyle appBarTitle = TextStyle(
+      fontSize: 28.sp,
+      color: Colors.white,
+      fontWeight: FontWeight.normal
+  );
+  static TextStyle sizeMedicine = TextStyle(
+      fontSize: 16.sp,
       color: Colors.grey,
       fontWeight: FontWeight.normal
   );

@@ -1,6 +1,7 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
+import 'package:adweyaty_application/features/cart/presentation/ui/cart_screen.dart';
 import 'package:adweyaty_application/features/home/presentation/ui/home_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
@@ -24,6 +25,9 @@ class AppRoute {
 
       case Routes.bottomNavBarScreen :
         return MaterialPageRoute(builder: (_)=>BottomNavBarScreen());
+
+      case Routes.cartScreen :
+        return MaterialPageRoute(builder: (_)=>CartScreen());
 
   }
   }

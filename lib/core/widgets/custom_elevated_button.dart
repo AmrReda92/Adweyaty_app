@@ -6,7 +6,8 @@ import '../theme/app_text_style.dart';
 class CustomElevatedButton extends StatelessWidget {
   final String title ;
   final   Widget? icon;
-  const CustomElevatedButton({super.key, required this.title, this.icon});
+  final  void Function()? onPressed;
+  const CustomElevatedButton({super.key, required this.title, this.icon, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,8 @@ class CustomElevatedButton extends StatelessWidget {
           backgroundColor: Colors.blueAccent,
 
         ),
-        onPressed: (){}, child:
+        onPressed: onPressed
+        , child:
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

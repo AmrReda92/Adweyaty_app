@@ -18,11 +18,15 @@ class OnboardingFirstPage extends StatelessWidget {
              SizedBox(height: 60.h,),
              Lottie.asset(InfoOnboarding.imageOnboardingOne),
              SizedBox(height: 16.h,),
-             Text( InfoOnboarding.textOnboardingOne,
-              textAlign: TextAlign.center, style: AppTextStyle.font20),
+             SizedBox(
+               height: 150.h,
+               child: Text( InfoOnboarding.textOnboardingOne,
+                textAlign: TextAlign.center, style: AppTextStyle.font20),
+             ),
            SizedBox(height: 90.h,),
            InkWell(
                onTap: onTapNextPage,
+
                child: CustomButton(title: "Next",)),
 
          ],
