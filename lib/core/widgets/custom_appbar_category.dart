@@ -7,7 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget? leading ;
-  const CustomAppbarCategory({super.key, required this.title, this.leading});
+  final Widget? icon ;
+  const CustomAppbarCategory({super.key, required this.title, this.leading, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
       centerTitle: true,
       backgroundColor: Colors.blueAccent,
       actions: [
-        SvgPicture.asset(AppImages.cartIcon,width: 30.w,height: 30.h,),
+        icon??
+        SvgPicture.asset(
+          AppImages.cartIcon,width: 30.w,height: 30.h,),
         SizedBox(width: 10.w,)
       ],
     );

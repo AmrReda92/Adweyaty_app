@@ -2,14 +2,14 @@ import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButtonProfile extends StatelessWidget {
   final String title ;
   final IconData? icon ;
   final double? width ;
   final IconData? iconProfileScreen ;
 
 
-  const CustomButton({super.key, required this.title, this.icon, this.width, this.iconProfileScreen, });
+  const CustomButtonProfile({super.key, required this.title, this.icon, this.width, this.iconProfileScreen, });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,10 +26,15 @@ class CustomButton extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Center(
-        child:
+      child: Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 10.w),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
             Text(title,style: AppTextStyle.font20White),
-
+            Icon(iconProfileScreen,size: 40.w,color: Colors.white,),
+          ],
+        ),
       ),
     );
   }

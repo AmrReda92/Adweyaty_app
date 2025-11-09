@@ -15,7 +15,7 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomAppbarCategory(
-        title: "Cart",
+        title: "My Cart",
         leading: InkWell(
           onTap: () {},
           child: Icon(Icons.arrow_back, size: 28.sp),
@@ -41,8 +41,8 @@ class CartScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Total Price",style: AppTextStyle.font20White,),
-                  Text("0",style: AppTextStyle.font20White,)
+                  Text("Total Price",style: AppTextStyle.font20black,),
+                  Text("0",style: AppTextStyle.font20black)
                 ],
               ),
               SizedBox(height: 10.h,),
