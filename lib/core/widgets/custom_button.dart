@@ -15,7 +15,14 @@ class CustomButton extends StatelessWidget {
       width: width,
       height: 50.h,
       decoration: BoxDecoration(
-        color: Colors.blueAccent,
+        gradient: const LinearGradient(
+          colors: [
+            Color(0xFFB140C5),
+            Color(0xFF007AFF),
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(

@@ -11,25 +11,40 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24)
-          ),
-          padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
-          backgroundColor: Colors.blueAccent,
-
+    return  Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color(0xFFB140C5),
+            Color(0xFF007AFF),
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
         ),
-        onPressed: onPressed
-        , child:
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title,style: AppTextStyle.font20White.copyWith(color: Colors.white)),
-        if(icon!=null ) icon!,
-      ],
+        borderRadius: BorderRadius.circular(24),
+      ),
 
-    )
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24)
+            ),
+            padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+
+          ),
+          onPressed: onPressed
+          , child:
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,style: AppTextStyle.font20White.copyWith(color: Colors.white)),
+          if(icon!=null ) icon!,
+        ],
+
+      )
+      ),
     );
   }
 }
