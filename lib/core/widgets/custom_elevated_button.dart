@@ -25,7 +25,7 @@ class CustomElevatedButton extends StatelessWidget {
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title,style: AppTextStyle.font20.copyWith(color: Colors.white)),
+        Text(title,style: AppTextStyle.font20White.copyWith(color: Colors.white)),
         if(icon!=null ) icon!,
       ],
 

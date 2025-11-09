@@ -92,7 +92,7 @@ class CategoryItems extends StatelessWidget {
                       color: Colors.white,
 
                     ),
-                    child: Text(categories[index].title,style: AppTextStyle.font20.copyWith(fontSize: 18),textAlign: TextAlign.center,))
+                    child: Text(categories[index].title,style: AppTextStyle.font20black.copyWith(fontSize: 18),textAlign: TextAlign.center,))
               ],
 
             );

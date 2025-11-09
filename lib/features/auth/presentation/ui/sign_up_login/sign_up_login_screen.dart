@@ -34,7 +34,7 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
                   SizedBox(height: 65.h,),
                   Image.asset(AppImages.homePhoto),
                   SizedBox(height: 65.h,),
-                  Text("Adweyaty",style: AppTextStyle.font20.copyWith(fontSize: 30.sp),),
+                  Text("Welcome To Adweyaty",style: AppTextStyle.font20black.copyWith(fontSize: 30.sp),),
                   SizedBox(height: 99.h,),
                   InkWell(
                     onTap: (){

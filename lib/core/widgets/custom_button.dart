@@ -7,6 +7,7 @@ class CustomButton extends StatelessWidget {
   final IconData? icon ;
   final double? width ;
 
+
   const CustomButton({super.key, required this.title, this.icon, this.width, });
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
       ),
       child: Center(
         child:
-            Text(title,style: AppTextStyle.font20),
+            Text(title,style: AppTextStyle.font20White),
 
 
 

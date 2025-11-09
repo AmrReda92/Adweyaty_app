@@ -41,8 +41,8 @@ class CartScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Total Price",style: AppTextStyle.font20,),
-                  Text("0",style: AppTextStyle.font20,)
+                  Text("Total Price",style: AppTextStyle.font20White,),
+                  Text("0",style: AppTextStyle.font20White,)
                 ],
               ),
               SizedBox(height: 10.h,),

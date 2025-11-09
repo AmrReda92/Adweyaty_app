@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Lottie.asset(InfoOnboarding.splashImage,height: 160),
                 SizedBox(height: 30.h,),
-                Text("صيدلية",style: AppTextStyle.font20.copyWith(color: Colors.black))
+                Text("صيدلية",style: AppTextStyle.font20White.copyWith(color: Colors.black))
               ],
             ),
           ),

@@ -50,9 +50,9 @@ class _ValidationSuccessScreenState extends State<ValidationSuccessScreen> {
                         child: Icon(Icons.check),
                       ),
                       SizedBox(height: 16.h,),
-                      Text("Account successfully created",style: AppTextStyle.font20.copyWith(fontSize: 20),),
+                      Text("Account successfully created",style: AppTextStyle.font20black.copyWith(fontSize: 20),),
                       SizedBox(height: 8.h,),
-                      Text("Welcome to Adweyaty!",style: AppTextStyle.font20.copyWith(fontSize: 18,color: Colors.grey),),
+                      Text("Welcome to Adweyaty!",style: AppTextStyle.font20White.copyWith(fontSize: 18,color: Colors.grey),),
                       SizedBox(height: 260.h,),
                       InkWell(
                         onTap: (){

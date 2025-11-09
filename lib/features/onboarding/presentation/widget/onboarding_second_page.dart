@@ -23,7 +23,7 @@ class OnboardingSecondPage extends StatelessWidget {
             SizedBox(
               height: 150.h,
               child: Text(InfoOnboarding.textOnboardingTwo,
-              textAlign: TextAlign.center, style: AppTextStyle.font20),
+              textAlign: TextAlign.center, style: AppTextStyle.font20black),
             ),
           SizedBox(height: 116.h,),
           InkWell(

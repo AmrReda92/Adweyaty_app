@@ -1,3 +1,5 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
+import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:flutter/material.dart';
@@ -26,17 +28,26 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomAppbar(),
-                  SizedBox(height: 107.h,),
+                  SizedBox(height: 30.h,),
+                  Image.asset(AppImages.user,width: 80.w,height: 80.h,),
+                  SizedBox(height: 40.h,),
+                  Text("Sign in to your account",style: AppTextStyle.font28),
+                  SizedBox(height: 66.h,),
                   CustomTextFormField(hintText: "Email"),
                   SizedBox(height: 20.h,),
                   CustomTextFormField(hintText: "Password",isPassword: true,),
-                  SizedBox(height: 50.h,),
+                  SizedBox(height: 20.h,),
+                  Align(
+                    alignment: Alignment.centerRight,
+                      child: Text("Forgot password?",style: AppTextStyle.hintStyle,)),
+                  SizedBox(height: 40.h,),
                   InkWell(
                     onTap: (){
                       setState(() {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ValidationSuccessScreen()));
+                        Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen, (e)=>false);
                       });
                     },
                       child: CustomButton(title: "Login")),

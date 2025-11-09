@@ -31,8 +31,8 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Categories",style: AppTextStyle.font20.copyWith(fontSize: 18)),
-                    Text("Show All >",style: AppTextStyle.font20.copyWith(fontSize: 18)),
+                    Text("Categories",style: AppTextStyle.font20black.copyWith(fontSize: 18)),
+                    Text("Show All >",style: AppTextStyle.font20black.copyWith(fontSize: 18)),
                   ],
                 ),
                 SizedBox(height: 10.h,),
