@@ -19,19 +19,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState()  {
-    navigateToOnboarding();
     super.initState();
+    navigateToOnboarding();
   }
 
-  Future<void> navigateToOnboarding() async {
-    await Future.delayed(const Duration(seconds: 3));
-     Navigator.pushNamedAndRemoveUntil(context, Routes.onboardingScreen, (e)=>false);
+  void navigateToOnboarding() async{
+    await  Future.delayed(Duration(seconds: 2));
+    Navigator.pushNamedAndRemoveUntil(context, Routes.onboardingScreen, (e)=>false);
   }
-
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+    return  Scaffold(
       backgroundColor: Colors.white,
       body: Container(
         decoration: BoxDecoration(
@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Lottie.asset(InfoOnboarding.splashImage,height: 160),
                 SizedBox(height: 30.h,),
-                Text("صيدلية",style: AppTextStyle.font20White.copyWith(color: Colors.black))
+                Text("ِADWEYATY APP",style: AppTextStyle.font20White.copyWith(color: Colors.black))
               ],
             ),
           ),

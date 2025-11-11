@@ -15,9 +15,9 @@ class MedicineDetailsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: 5.w,right: 5.w),
+      padding:  EdgeInsets.only(left: 5.w,right: 5.w,),
       child: Card(
-        elevation: 4,
+        elevation: 6,
         color: Colors.white,
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),

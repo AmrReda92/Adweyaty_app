@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
@@ -14,7 +15,11 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppbarCategory(
           title: "My profile",
-        icon: Icon(Icons.logout,size: 30.w,),
+        icon: InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, Routes.signUpLoginScreen);
+          },
+            child: Icon(Icons.logout,size: 30.w,)),
       ),
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 18.w,vertical: 20.h),
