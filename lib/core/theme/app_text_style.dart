@@ -40,7 +40,7 @@ class AppTextStyle {
       fontWeight: FontWeight.normal
   );
   static TextStyle appBarTitle = TextStyle(
-      fontSize: 28.sp,
+      fontSize: 24.sp,
       color: Colors.white,
       fontWeight: FontWeight.normal
   );

@@ -1,8 +1,5 @@
 import 'package:adweyaty_application/core/routes/app_route.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
-import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,10 +27,10 @@ class Adweyaty extends StatelessWidget {
 
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          fontFamily: "Cairo",
-            scaffoldBackgroundColor: Color(0xffF0FFFF)
+            scaffoldBackgroundColor: Color(0xffF0FFFF),
+         fontFamily: "Cairo"
         ),
-           initialRoute: Routes.splashScreen,
+           initialRoute:  Routes.splashScreen,
       ),
     );
   }

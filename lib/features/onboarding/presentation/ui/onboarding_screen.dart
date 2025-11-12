@@ -1,5 +1,6 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
+import 'package:adweyaty_application/features/onboarding/presentation/widget/custom_dot_indicator.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_second_page.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_third_page.dart';
 import 'package:flutter/material.dart';
@@ -41,12 +42,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     children:  [
                       OnboardingFirstPage(
                         onTapNextPage: (){
-                          nextPage.animateToPage(1, duration: Duration(milliseconds: 700), curve: Curves.easeIn);
+                          nextPage.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
                         },
                       ),
                       OnboardingSecondPage(
                         onTapNextPage: (){
-                          nextPage.animateToPage(2, duration: Duration(milliseconds: 700), curve: Curves.easeIn);
+                          nextPage.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
                         },
                       ),
                       OnboardingThirdPage(onTapNextPage: (){
@@ -56,15 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ],
                 ),
               ),
-              AnimatedSmoothIndicator(
-                activeIndex: currentIndex ,
-                count: 3,
-                effect: WormEffect(
-                  dotHeight: 10,
-                  dotWidth: 30,
-                  activeDotColor: Colors.blue
-                ),
-              ),
+              CustomDotIndicator(activeIndex: currentIndex),
               SizedBox(height: 50.h),
             ],
 

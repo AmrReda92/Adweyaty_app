@@ -1,6 +1,7 @@
 import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/category_items.dart';
+import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,12 +15,11 @@ class HomeScreen extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlueAccent,
-          leading: IconButton(onPressed: (){}, icon: SvgPicture.asset(AppImages.cartIcon,width: 30.w,height: 30.h)),
-          actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.list,size: 40,))
-          ],
+        appBar: CustomAppbarCategory(
+          title: "Home Page",
+          icon: Icon(Icons.shopping_cart,size: 30.h,),
+          leading: Icon(Icons.list,size: 30.h,),
+        
         ),
         body: SafeArea(
           child: Padding(
@@ -44,7 +44,6 @@ class HomeScreen extends StatelessWidget {
                   icon: Icon(Icons.camera_alt_rounded,size: 34.r,color: Colors.white,)
                 ),
                 SizedBox(height: 26.h,),
-
               ],
             ),
           ),
