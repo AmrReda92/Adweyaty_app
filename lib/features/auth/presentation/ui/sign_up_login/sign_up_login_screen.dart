@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/core/app_images/app_images.dart';
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/login_screen.dart';
@@ -35,11 +36,11 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
                   Image.asset(AppImages.homePhoto),
                   SizedBox(height: 65.h,),
                   Text("Welcome To Adweyaty",style: AppTextStyle.font20black.copyWith(fontSize: 30.sp),),
-                  SizedBox(height: 99.h,),
+                  SizedBox(height: 90.h,),
                   InkWell(
                     onTap: (){
                       setState(() {
-                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SignUpScreen()), (e)=>false);
+                        Navigator.pushNamedAndRemoveUntil(context, Routes.signUpScreen, (e)=>false);
                       });
                     },
                       child: CustomButton(title: "Register")
@@ -48,7 +49,7 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
                   InkWell(
                       onTap: (){
                         setState(() {
-                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>LoginScreen()), (e)=>false);
+                          Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (e)=>false);
                         });
                       },
                       child: CustomButton(title: "Login")

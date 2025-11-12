@@ -1,4 +1,6 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/login/login_screen.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/sign_up_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
@@ -20,6 +22,13 @@ class AppRoute {
 
       case Routes.signUpLoginScreen :
         return MaterialPageRoute(builder: (_)=>SignUpLoginScreen());
+
+      case Routes.signUpScreen :
+        return MaterialPageRoute(builder: (_)=>SignUpScreen());
+
+      case Routes.loginScreen :
+        return MaterialPageRoute(builder: (_)=>LoginScreen());
+
 
       case Routes.homeScreen :
         return MaterialPageRoute(builder: (_)=>HomeScreen());

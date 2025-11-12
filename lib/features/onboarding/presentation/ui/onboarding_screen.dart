@@ -1,11 +1,9 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/custom_dot_indicator.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_second_page.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/onboarding_third_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../widget/onboarding_first_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
