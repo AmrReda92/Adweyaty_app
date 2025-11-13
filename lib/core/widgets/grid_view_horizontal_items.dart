@@ -3,8 +3,8 @@ import 'package:adweyaty_application/features/home/presentation/widgets/grid_ite
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CategoryItems extends StatelessWidget {
-  const CategoryItems({super.key});
+class GridViewHorizontalItems extends StatelessWidget {
+  const GridViewHorizontalItems({super.key});
 
 
   @override
@@ -18,7 +18,7 @@ class CategoryItems extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 12,
             crossAxisSpacing: 12,
-            childAspectRatio: 1,
+            childAspectRatio: .9,
           ),
           itemCount: GridItemPrototype.categories.length,
           itemBuilder: (context,index) {

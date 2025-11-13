@@ -3,7 +3,6 @@ import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:adweyaty_application/core/widgets/custom_text_form_field.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

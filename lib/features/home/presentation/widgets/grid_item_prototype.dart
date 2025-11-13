@@ -1,7 +1,6 @@
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/app_images/app_images.dart';
 import '../../../category_screens/cough_medicines/ui/cough_medicines_screen.dart';
 import '../../../category_screens/headache/ui/headache_screen.dart';
@@ -79,11 +78,10 @@ class GridItemPrototype extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
-
             ),
             child: Text(categories[index].title,style: AppTextStyle.font20black.copyWith(fontSize: 18),textAlign: TextAlign.center,))
       ],
 
-    );;
+    );
   }
 }

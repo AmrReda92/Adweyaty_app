@@ -1,11 +1,9 @@
-import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
-import 'package:adweyaty_application/core/widgets/category_items.dart';
+import 'package:adweyaty_application/core/widgets/grid_view_horizontal_items.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
    const HomeScreen({super.key});
@@ -35,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10.h,),
-                CategoryItems(),
+                GridViewHorizontalItems(),
                 SizedBox(height: 40.h,),
                 CustomElevatedButton(
                   title: "Send your Prescription",
