@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.title, this.icon, this.width, this.iconProfileScreen, });
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       width: width,
       height: 50.h,
       decoration: BoxDecoration(

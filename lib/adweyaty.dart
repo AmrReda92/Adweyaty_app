@@ -24,13 +24,12 @@ class Adweyaty extends StatelessWidget {
         supportedLocales: [
           Locale('ar','AR'), // arabic
         ],
-
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             scaffoldBackgroundColor: Color(0xffF0FFFF),
          fontFamily: "Cairo"
         ),
-           initialRoute:  Routes.bottomNavBarScreen,
+           initialRoute:  Routes.splashScreen,
       ),
     );
   }

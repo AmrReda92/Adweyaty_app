@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "704907043996",
+    "project_id": "adweyaty-app",
+    "storage_bucket": "adweyaty-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704907043996:android:d9f445322b34d35b263959",
+        "android_client_info": {
+          "package_name": "com.example.adweyaty_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8jiHyVL74WYXOa5kyBWZCHpYWQOvlHgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

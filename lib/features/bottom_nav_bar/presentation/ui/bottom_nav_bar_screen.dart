@@ -37,9 +37,9 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           backgroundColor: Colors.blueAccent,
           type: BottomNavigationBarType.fixed,
             items: [
-              BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.homeIcon,width: 28.w,height: 28.h,),label: "Home",),
+              BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.homeIcon,width: 28.w,height: 28.h,colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),),label: "Home",),
               BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.favouriteIcon,width: 28.w,height: 28.h,),label: "Favourite"),
-              BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.cartIcon,width: 28.w,height: 28.h,),label: "Cart"),
+              BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.cartIcon,width: 28.w,height: 28.h,),label: "Cart",),
               BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.profileIcon,width: 28.w,height: 28.h,),label: "Profile"),
             ]
         ),

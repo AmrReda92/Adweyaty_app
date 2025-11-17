@@ -45,7 +45,7 @@ class CartScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10.h,),
-              CustomButton(title: "Chekout"),
+              const  CustomButton(title: "Chekout"),
               SizedBox(height: 20.h,)
 
             ],

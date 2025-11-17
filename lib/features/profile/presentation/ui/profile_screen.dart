@@ -1,8 +1,6 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
-import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
-import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:adweyaty_application/core/widgets/custom_button_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
