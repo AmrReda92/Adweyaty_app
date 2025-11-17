@@ -14,7 +14,7 @@ class Adweyaty extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-        onGenerateRoute: AppRoute.Function ,
+        onGenerateRoute: AppRoute.generateRoute,
 
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,

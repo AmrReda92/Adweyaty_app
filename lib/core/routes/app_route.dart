@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 
 class AppRoute {
 
- static Route<dynamic>? Function(RouteSettings setting){
+ static Route<dynamic>? generateRoute (RouteSettings setting){
     switch (setting.name){
       case Routes.splashScreen :
         return MaterialPageRoute(builder: (_)=>SplashScreen());
