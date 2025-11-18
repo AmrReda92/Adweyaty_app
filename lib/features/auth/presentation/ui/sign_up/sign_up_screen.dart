@@ -66,6 +66,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                      }else if(state is AuthSuccess){
                        Navigator.pushNamedAndRemoveUntil(
                            context, Routes.validationScreen, (e) => false);
+                     }else if (state is AuthError){
+                       ScaffoldMessenger.of(context)
+                           .showSnackBar(SnackBar(content: Text(state.message)));
                      }
                     },
                     child: InkWell(

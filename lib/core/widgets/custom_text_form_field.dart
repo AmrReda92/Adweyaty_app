@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatefulWidget {
   final String hintText;
   final bool isPassword;
-  final TextEditingController? controller;
+  final TextEditingController controller;
 
-  const CustomTextFormField({super.key, required this.hintText, this.isPassword=false,  this.controller,});
+  const CustomTextFormField({super.key, required this.hintText, this.isPassword=false, required this.controller,});
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();

@@ -7,14 +7,25 @@ part 'auth_state.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
-  createUserWithEmailAndPassword({required String emailAddress,required String password }){
+  createUserWithEmailAndPassword({required String emailAddress,required String password })async{
     emit(AuthLoading());
     try{
-      AuthRepo.createUserWithEmailAndPassword(emailAddress: emailAddress, password: password);
+   await   AuthRepo.createUserWithEmailAndPassword(emailAddress: emailAddress, password: password);
       emit(AuthSuccess());
     }
     catch(e){
-      emit(AuthError());
+      emit(AuthError(e.toString()));
+    }
+  }
+
+  signInWithEmailAndPassword({required String emailAddress,required String password })async{
+    emit(AuthLoading());
+    try{
+      await   AuthRepo.signInWithEmailAndPassword(emailAddress: emailAddress, password: password);
+      emit(AuthSuccess());
+    }
+    catch(e){
+      emit(AuthError(e.toString()));
     }
   }
 }

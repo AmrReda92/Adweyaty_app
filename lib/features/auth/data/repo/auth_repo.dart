@@ -10,13 +10,31 @@ class AuthRepo {
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        throw('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        throw('The account already exists for that email.');
       }
     } catch (e) {
-      print(e);
+      throw('something went wrong');
     }
   }
+
+  static signInWithEmailAndPassword({required String emailAddress,required String password })async{
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailAddress,
+          password: password
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        throw('Wrong password provided for that user.');
+      }else{
+        throw('something went wrong');
+      }
+    }
+  }
+
 
 }
