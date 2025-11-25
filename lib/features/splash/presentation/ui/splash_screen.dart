@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../generated/l10n.dart';
+
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -47,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Lottie.asset(InfoOnboarding.splashImage,height: 160),
                 SizedBox(height: 30.h,),
-                Text("ِADWEYATY APP",style: AppTextStyle.font20White.copyWith(color: Colors.black))
+                Text( S.of(context).splashText,style: AppTextStyle.font20White.copyWith(color: Colors.black))
               ],
             ),
           ),

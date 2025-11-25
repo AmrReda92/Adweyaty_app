@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'generated/l10n.dart';
+
 class Adweyaty extends StatelessWidget {
   const Adweyaty({super.key});
 
@@ -15,21 +17,20 @@ class Adweyaty extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         onGenerateRoute: AppRoute.generateRoute,
-
-        localizationsDelegates: [
+        locale: Locale("ar"),
+        localizationsDelegates: const [
+          S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
-          Locale('ar','AR'), // arabic
-        ],
+        supportedLocales: S.delegate.supportedLocales,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             scaffoldBackgroundColor: Color(0xffF0FFFF),
          fontFamily: "Cairo"
         ),
-           initialRoute:  Routes.splashScreen,
+           initialRoute:  Routes.homeScreen,
       ),
     );
   }
