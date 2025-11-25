@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../generated/l10n.dart';
+
 class OnboardingFirstPage extends StatelessWidget {
   final void Function() onTapNextPage ;
   const OnboardingFirstPage({super.key, required this.onTapNextPage});
@@ -20,14 +22,15 @@ class OnboardingFirstPage extends StatelessWidget {
              SizedBox(height: 16.h,),
              SizedBox(
                height: 150.h,
-               child: Text( InfoOnboarding.textOnboardingOne,
+               child: Text( S.of(context).textOnboardingOne,
                 textAlign: TextAlign.center, style: AppTextStyle.font20black),
              ),
            SizedBox(height: 90.h,),
            InkWell(
                onTap: onTapNextPage,
 
-               child: CustomButton(title: "Next",)),
+               child: CustomButton(title: S.of(context).titleOnBoardingOne)
+           ),
 
          ],
       ),

@@ -68,6 +68,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Browse and discover Adweyaty's wide range of products for quick and effective discovery`
+  String get textOnboardingTwo {
+    return Intl.message(
+      'Browse and discover Adweyaty\'s wide range of products for quick and effective discovery',
+      name: 'textOnboardingTwo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Support: Connect with our dedicated Adweyaty support team for quick and friendly assistance, and order easily and conveniently through our user-friendly interface.`
+  String get textOnboardingThree {
+    return Intl.message(
+      'Customer Support: Connect with our dedicated Adweyaty support team for quick and friendly assistance, and order easily and conveniently through our user-friendly interface.',
+      name: 'textOnboardingThree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get titleOnBoardingOne {
+    return Intl.message('Next', name: 'titleOnBoardingOne', desc: '', args: []);
+  }
+
+  /// `Next`
+  String get titleOnBoardingTwo {
+    return Intl.message('Next', name: 'titleOnBoardingTwo', desc: '', args: []);
+  }
+
+  /// `Start`
+  String get titleOnBoardingThree {
+    return Intl.message(
+      'Start',
+      name: 'titleOnBoardingThree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome To Adweyaty`
+  String get signUpLoginText {
+    return Intl.message(
+      'Welcome To Adweyaty',
+      name: 'signUpLoginText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message('Register', name: 'register', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

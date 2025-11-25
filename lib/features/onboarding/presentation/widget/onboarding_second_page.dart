@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../../core/theme/app_text_style.dart';
+import '../../../../generated/l10n.dart';
 
 class OnboardingSecondPage extends StatelessWidget {
   final void Function() onTapNextPage ;
@@ -22,13 +23,13 @@ class OnboardingSecondPage extends StatelessWidget {
           SizedBox(height: 16.h,),
             SizedBox(
               height: 150.h,
-              child: Text(InfoOnboarding.textOnboardingTwo,
+              child: Text(S.of(context).textOnboardingTwo,
               textAlign: TextAlign.center, style: AppTextStyle.font20black),
             ),
           SizedBox(height: 116.h,),
           InkWell(
               onTap: onTapNextPage,
-              child: CustomButton(title: "Next"))
+              child: CustomButton(title: S.of(context).titleOnBoardingTwo))
         ],
       ),
     );

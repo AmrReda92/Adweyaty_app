@@ -25,41 +25,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Directionality(
-          textDirection: TextDirection.rtl,
-          child: Column(
-            children: [
-              Expanded(
-                child: PageView(
-                  controller: nextPage,
-                  onPageChanged: (index){
-                    setState(() {
-                      currentIndex=index;
-                    });
-                  },
-                    children:  [
-                      OnboardingFirstPage(
-                        onTapNextPage: (){
-                          nextPage.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-                        },
-                      ),
-                      OnboardingSecondPage(
-                        onTapNextPage: (){
-                          nextPage.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-                        },
-                      ),
-                      OnboardingThirdPage(onTapNextPage: (){
-                        Navigator.pushNamedAndRemoveUntil(context, Routes.signUpLoginScreen, (e)=>false);
+        body: Column(
+          children: [
+            Expanded(
+              child: PageView(
+                controller: nextPage,
+                onPageChanged: (index){
+                  setState(() {
+                    currentIndex=index;
+                  });
+                },
+                  children:  [
+                    OnboardingFirstPage(
+                      onTapNextPage: (){
+                        nextPage.animateToPage(1, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
                       },
-                      ),
-                    ],
-                ),
+                    ),
+                    OnboardingSecondPage(
+                      onTapNextPage: (){
+                        nextPage.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+                      },
+                    ),
+                    OnboardingThirdPage(onTapNextPage: (){
+                      Navigator.pushNamedAndRemoveUntil(context, Routes.signUpLoginScreen, (e)=>false);
+                    },
+                    ),
+                  ],
               ),
-              CustomDotIndicator(activeIndex: currentIndex),
-              SizedBox(height: 50.h),
-            ],
+            ),
+            CustomDotIndicator(activeIndex: currentIndex),
+            SizedBox(height: 50.h),
+          ],
 
-          ),
         ),
 
     );

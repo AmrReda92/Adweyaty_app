@@ -1,4 +1,14 @@
 {
  "splashText" : "ADWEYATY APP",
- "textOnboardingOne" : "Adweyaty is not just an app, it's your healthcare companion, putting the pharmacy at your fingertips. Adweyaty is here to simplify your healthcare journey."
+ "textOnboardingOne" : "Adweyaty is not just an app, it's your healthcare companion, putting the pharmacy at your fingertips. Adweyaty is here to simplify your healthcare journey.",
+ "textOnboardingTwo"  : "Browse and discover Adweyaty's wide range of products for quick and effective discovery",
+ "textOnboardingThree" : "Customer Support: Connect with our dedicated Adweyaty support team for quick and friendly assistance, and order easily and conveniently through our user-friendly interface.",
+ "titleOnBoardingOne" : "Next",
+ "titleOnBoardingTwo" : "Next",
+ "titleOnBoardingThree" : "Start",
+ "signUpLoginText" : "Welcome To Adweyaty",
+ "register": "Register",
+ "login": "Login"
+
+
 }

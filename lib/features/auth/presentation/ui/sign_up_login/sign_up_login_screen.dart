@@ -7,6 +7,8 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/sign_
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../generated/l10n.dart';
+
 class SignUpLoginScreen extends StatefulWidget {
   const SignUpLoginScreen({super.key});
 
@@ -35,7 +37,7 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
                   SizedBox(height: 65.h,),
                   Image.asset(AppImages.homePhoto),
                   SizedBox(height: 65.h,),
-                  Text("Welcome To Adweyaty",style: AppTextStyle.font20black.copyWith(fontSize: 30.sp),),
+                  Text(S.of(context).signUpLoginText,style: AppTextStyle.font20black.copyWith(fontSize: 30.sp),),
                   SizedBox(height: 90.h,),
                   InkWell(
                     onTap: (){
@@ -43,7 +45,7 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
                         Navigator.pushNamedAndRemoveUntil(context, Routes.signUpScreen, (e)=>false);
                       });
                     },
-                      child: CustomButton(title: "Register")
+                      child: CustomButton(title:S.of(context).register )
                   ),
                   SizedBox(height: 20.h,),
                   InkWell(
@@ -52,7 +54,7 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
                           Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (e)=>false);
                         });
                       },
-                      child: CustomButton(title: "Login")
+                      child: CustomButton(title: S.of(context).login)
                   ),
 
 

@@ -22,6 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "login": MessageLookupByLibrary.simpleMessage("دخول"),
+    "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "signUpLoginText": MessageLookupByLibrary.simpleMessage(
+      "أهلا بك في أدويتي",
+    ),
     "splashText": MessageLookupByLibrary.simpleMessage("تطبيق صيدلية"),
+    "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
+      "أدويتي ليس مجرد تطبيق، بل هو رفيقك في الرعاية الصحية، يضع الصيدلية بين يديك ، أدويتي هنا لتبسيط رحلة الرعاية الصحية الخاصة بك",
+    ),
+    "textOnboardingThree": MessageLookupByLibrary.simpleMessage(
+      "دعم العملاء: تواصل مع فريق دعم أدويتي المتخصص للحصول على مساعدة سريعة وودية واطلب بكل سهولة ويسر من خلال واجهة سهلة الاستخدام",
+    ),
+    "textOnboardingTwo": MessageLookupByLibrary.simpleMessage(
+      "تصفح واكتشف مجموعة منتجات أدويتي الواسعة لاكتشاف سريع وفعال",
+    ),
+    "titleOnBoardingOne": MessageLookupByLibrary.simpleMessage("التالي"),
+    "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
+    "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("التالي"),
   };
 }

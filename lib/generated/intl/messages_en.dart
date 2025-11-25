@@ -22,7 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "signUpLoginText": MessageLookupByLibrary.simpleMessage(
+      "Welcome To Adweyaty",
+    ),
     "splashText": MessageLookupByLibrary.simpleMessage("ADWEYATY APP"),
-    "textOnboardingOne": MessageLookupByLibrary.simpleMessage(""),
+    "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
+      "Adweyaty is not just an app, it\'s your healthcare companion, putting the pharmacy at your fingertips. Adweyaty is here to simplify your healthcare journey.",
+    ),
+    "textOnboardingThree": MessageLookupByLibrary.simpleMessage(
+      "Customer Support: Connect with our dedicated Adweyaty support team for quick and friendly assistance, and order easily and conveniently through our user-friendly interface.",
+    ),
+    "textOnboardingTwo": MessageLookupByLibrary.simpleMessage(
+      "Browse and discover Adweyaty\'s wide range of products for quick and effective discovery",
+    ),
+    "titleOnBoardingOne": MessageLookupByLibrary.simpleMessage("Next"),
+    "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("Start"),
+    "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("Next"),
   };
 }
