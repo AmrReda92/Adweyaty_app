@@ -128,6 +128,76 @@ class S {
   String get login {
     return Intl.message('Login', name: 'login', desc: '', args: []);
   }
+
+  /// `Sign in to your account`
+  String get signInText {
+    return Intl.message(
+      'Sign in to your account',
+      name: 'signInText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get hintEmail {
+    return Intl.message('Email', name: 'hintEmail', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get hintPassword {
+    return Intl.message('Password', name: 'hintPassword', desc: '', args: []);
+  }
+
+  /// `Forgot Password?`
+  String get forgot {
+    return Intl.message('Forgot Password?', name: 'forgot', desc: '', args: []);
+  }
+
+  /// `Register to your account`
+  String get signUpText {
+    return Intl.message(
+      'Register to your account',
+      name: 'signUpText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get hintName {
+    return Intl.message('Name', name: 'hintName', desc: '', args: []);
+  }
+
+  /// `Mobile`
+  String get hintMobile {
+    return Intl.message('Mobile', name: 'hintMobile', desc: '', args: []);
+  }
+
+  /// `Account successfully created`
+  String get accountSuccess {
+    return Intl.message(
+      'Account successfully created',
+      name: 'accountSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Adweyaty!`
+  String get welcome {
+    return Intl.message(
+      'Welcome to Adweyaty!',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Now`
+  String get startNow {
+    return Intl.message('Start Now', name: 'startNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

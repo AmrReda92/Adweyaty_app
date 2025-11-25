@@ -22,12 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accountSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء الحساب بنجاح",
+    ),
+    "forgot": MessageLookupByLibrary.simpleMessage("نسيت الرقم السري؟"),
+    "hintEmail": MessageLookupByLibrary.simpleMessage("الإيميل"),
+    "hintMobile": MessageLookupByLibrary.simpleMessage("الهاتف"),
+    "hintName": MessageLookupByLibrary.simpleMessage("الإسم"),
+    "hintPassword": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "login": MessageLookupByLibrary.simpleMessage("دخول"),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "signInText": MessageLookupByLibrary.simpleMessage("سجل الدخول إلى حسابك"),
     "signUpLoginText": MessageLookupByLibrary.simpleMessage(
       "أهلا بك في أدويتي",
     ),
+    "signUpText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حسابك"),
     "splashText": MessageLookupByLibrary.simpleMessage("تطبيق صيدلية"),
+    "startNow": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
     "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
       "أدويتي ليس مجرد تطبيق، بل هو رفيقك في الرعاية الصحية، يضع الصيدلية بين يديك ، أدويتي هنا لتبسيط رحلة الرعاية الصحية الخاصة بك",
     ),
@@ -40,5 +51,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOnBoardingOne": MessageLookupByLibrary.simpleMessage("التالي"),
     "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
     "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("التالي"),
+    "welcome": MessageLookupByLibrary.simpleMessage("أهلا بك في أدويتي!"),
   };
 }
