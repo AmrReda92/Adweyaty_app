@@ -154,6 +154,16 @@ class S {
     return Intl.message('Forgot Password?', name: 'forgot', desc: '', args: []);
   }
 
+  /// `password is not correct`
+  String get passwordIsNotCorrect {
+    return Intl.message(
+      'password is not correct',
+      name: 'passwordIsNotCorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Register to your account`
   String get signUpText {
     return Intl.message(

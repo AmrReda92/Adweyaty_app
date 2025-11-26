@@ -17,6 +17,8 @@
   "hintEmail" : "الإيميل",
   "hintPassword" : "الرقم السري",
   "forgot": "نسيت الرقم السري؟",
+  "passwordIsNotCorrect" : "الرقم السري غير صحيح",
+
 
   "signUpText" : "قم بإنشاء حسابك",
   "hintName" : "الإسم",
@@ -26,10 +28,6 @@
   "emailIsNotCorrect"  : "الإيميل غير صحيح",
   "passwordSixChar" : "الرقم السري يجب ان يكون اكثر من 6 خانات",
   "allFieldsCorrectly" : "من فضلك املأ الخانات بشكل صحيح",
-
-
-
-
 
 
   "accountSuccess" : "تم إنشاء الحساب بنجاح",

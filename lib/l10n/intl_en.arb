@@ -16,6 +16,7 @@
  "hintEmail" : "Email",
  "hintPassword" : "Password",
  "forgot": "Forgot Password?",
+ "passwordIsNotCorrect" : "password is not correct",
 
  "signUpText" : "Register to your account",
  "hintName" : "Name",

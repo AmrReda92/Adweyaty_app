@@ -41,6 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرقم غير صحيح!",
     ),
     "nameIsRequired": MessageLookupByLibrary.simpleMessage("الإسم مطلوب!"),
+    "passwordIsNotCorrect": MessageLookupByLibrary.simpleMessage(
+      "الرقم السري غير صحيح",
+    ),
     "passwordSixChar": MessageLookupByLibrary.simpleMessage(
       "الرقم السري يجب ان يكون اكثر من 6 خانات",
     ),

@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: emailController,
                     validator: (value){
                       if(value==null || value.isEmpty ||!value.contains("@")){
-                        return "Email is not correct";
+                        return S.of(context).emailIsNotCorrect;
                       }
                       return null;
                     },
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: passwordController,
                     validator: (value){
                       if(value==null || value.isEmpty || value.length<6){
-                        return "password must more than 6 char";
+                        return S.of(context).passwordIsNotCorrect;
                       }
                       return null;
                     },

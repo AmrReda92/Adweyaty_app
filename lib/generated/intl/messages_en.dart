@@ -41,6 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Mobile is not correct!",
     ),
     "nameIsRequired": MessageLookupByLibrary.simpleMessage("Name is required!"),
+    "passwordIsNotCorrect": MessageLookupByLibrary.simpleMessage(
+      "password is not correct",
+    ),
     "passwordSixChar": MessageLookupByLibrary.simpleMessage(
       "password must be more than 6 char",
     ),
