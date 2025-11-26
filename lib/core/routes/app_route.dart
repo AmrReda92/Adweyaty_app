@@ -1,7 +1,8 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
-import 'package:adweyaty_application/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/login/login_screen.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/sign_up_screen.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/login/cubit/login_cubit.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/login/ui/login_screen.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/cubit/sign_up_cubit.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/ui/sign_up_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login/sign_up_login_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
@@ -28,14 +29,14 @@ class AppRoute {
       case Routes.signUpScreen :
         return MaterialPageRoute(builder: (_) =>
             BlocProvider(
-              create: (context) => AuthCubit(),
+              create: (context) => SignUpCubit(),
               child: SignUpScreen(),
             ));
 
       case Routes.loginScreen :
         return MaterialPageRoute(builder: (_) =>
             BlocProvider(
-              create: (context) => AuthCubit(),
+              create: (context) => LoginCubit(),
               child: LoginScreen(),
             ));
 

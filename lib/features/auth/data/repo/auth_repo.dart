@@ -1,13 +1,21 @@
+import 'package:adweyaty_application/features/auth/data/models/login_model.dart';
+import 'package:adweyaty_application/features/auth/data/models/sign_up_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepo {
 
- static createUserWithEmailAndPassword({required String emailAddress,required String password })async{
+ static createUserWithEmailAndPassword({ required SignUpModel model })async{
     try {
       final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailAddress,
-        password: password,
+        email: model.email,
+        password: model.password,
       );
+
+      await FirebaseFirestore.instance.
+      collection("users").doc(credential.user!.uid).set(model.toJson());
+
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         throw('The password provided is too weak.');
@@ -19,11 +27,11 @@ class AuthRepo {
     }
   }
 
-  static signInWithEmailAndPassword({required String emailAddress,required String password })async{
+  static signInWithEmailAndPassword({required LoginModel model })async{
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: emailAddress,
-          password: password
+          email: model.email,
+          password: model.password,
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
