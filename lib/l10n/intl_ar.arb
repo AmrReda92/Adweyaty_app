@@ -21,6 +21,16 @@
   "signUpText" : "قم بإنشاء حسابك",
   "hintName" : "الإسم",
   "hintMobile" : "الهاتف",
+  "nameIsRequired" : "الإسم مطلوب!",
+  "mobileIsNotCorrect" : "الرقم غير صحيح!",
+  "emailIsNotCorrect"  : "الإيميل غير صحيح",
+  "passwordSixChar" : "الرقم السري يجب ان يكون اكثر من 6 خانات",
+  "allFieldsCorrectly" : "من فضلك املأ الخانات بشكل صحيح",
+
+
+
+
+
 
   "accountSuccess" : "تم إنشاء الحساب بنجاح",
   "welcome" : "أهلا بك في أدويتي!",

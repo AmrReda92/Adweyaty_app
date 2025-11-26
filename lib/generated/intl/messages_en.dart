@@ -25,12 +25,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "accountSuccess": MessageLookupByLibrary.simpleMessage(
       "Account successfully created",
     ),
+    "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
+      "Please fill all fields correctly",
+    ),
+    "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
+      "Email is not correct",
+    ),
     "forgot": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "hintEmail": MessageLookupByLibrary.simpleMessage("Email"),
     "hintMobile": MessageLookupByLibrary.simpleMessage("Mobile"),
     "hintName": MessageLookupByLibrary.simpleMessage("Name"),
     "hintPassword": MessageLookupByLibrary.simpleMessage("Password"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "mobileIsNotCorrect": MessageLookupByLibrary.simpleMessage(
+      "Mobile is not correct!",
+    ),
+    "nameIsRequired": MessageLookupByLibrary.simpleMessage("Name is required!"),
+    "passwordSixChar": MessageLookupByLibrary.simpleMessage(
+      "password must be more than 6 char",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "signInText": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",

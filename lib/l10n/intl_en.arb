@@ -20,9 +20,15 @@
  "signUpText" : "Register to your account",
  "hintName" : "Name",
  "hintMobile" : "Mobile",
+ "nameIsRequired" : "Name is required!",
+ "mobileIsNotCorrect" : "Mobile is not correct!",
+ "emailIsNotCorrect"  : "Email is not correct",
+ "passwordSixChar" : "password must be more than 6 char",
+ "allFieldsCorrectly" : "Please fill all fields correctly",
 
  "accountSuccess" : "Account successfully created",
  "welcome" : "Welcome to Adweyaty!",
  "startNow" : "Start Now"
+
 
 }

@@ -81,7 +81,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: nameController,
                     validator: (value){
                       if(value==null || value.isEmpty){
-                        return "Name is required!";
+                        return S.of(context).nameIsRequired;
                       }
                       return null;
                     },
@@ -94,7 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: mobileController,
                     validator: (value){
                       if(value==null || value.isEmpty || value.length<11){
-                        return "Mobile number is not correct";
+                        return S.of(context).mobileIsNotCorrect;
                       }
                       return null;
                     },
@@ -106,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: emailController,
                     validator: (value){
                       if(value==null || value.isEmpty ||!value.contains("@")){
-                        return "Email is not correct";
+                        return S.of(context).emailIsNotCorrect;
                       }
                       return null;
                     },
@@ -118,7 +118,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     isPassword: true,controller: passwordController,
                     validator: (value){
                       if(value==null || value.isEmpty || value.length<6){
-                        return "password must more than 6 char";
+                        return S.of(context).passwordSixChar;
                       }
                       return null;
                     },
@@ -139,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           }else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text("Please fill all fields correctly"),
+                                content: Text(S.of(context).allFieldsCorrectly),
                                 backgroundColor: Colors.red,
                               ),
                             );

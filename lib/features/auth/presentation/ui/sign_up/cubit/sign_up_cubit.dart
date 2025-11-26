@@ -11,7 +11,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   createUserWithEmailAndPassword({required SignUpModel model })async{
     emit(SignUpLoading());
     try{
-      await   AuthRepo.createUserWithEmailAndPassword(model: model);
+      await AuthRepo.createUserWithEmailAndPassword(model: model);
       emit(SignUpSuccess());
     }
     catch(e){
@@ -21,25 +21,3 @@ class SignUpCubit extends Cubit<SignUpState> {
 }
 
 
-/*
-import 'package:adweyaty_application/features/auth/data/models/sign_up_model.dart';
-import 'package:adweyaty_application/features/auth/data/repo/auth_repo.dart';
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
-
-part 'auth_state.dart';
-
-class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(AuthInitial());
-
-  createUserWithEmailAndPassword({required SignUpModel model })async{
-    emit(AuthLoading());
-    try{
-   await   AuthRepo.createUserWithEmailAndPassword(model: model);
-      emit(AuthSuccess());
-    }
-    catch(e){
-      emit(AuthError(e.toString()));
-    }
-  }
- */

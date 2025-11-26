@@ -174,6 +174,56 @@ class S {
     return Intl.message('Mobile', name: 'hintMobile', desc: '', args: []);
   }
 
+  /// `Name is required!`
+  String get nameIsRequired {
+    return Intl.message(
+      'Name is required!',
+      name: 'nameIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile is not correct!`
+  String get mobileIsNotCorrect {
+    return Intl.message(
+      'Mobile is not correct!',
+      name: 'mobileIsNotCorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email is not correct`
+  String get emailIsNotCorrect {
+    return Intl.message(
+      'Email is not correct',
+      name: 'emailIsNotCorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `password must be more than 6 char`
+  String get passwordSixChar {
+    return Intl.message(
+      'password must be more than 6 char',
+      name: 'passwordSixChar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill all fields correctly`
+  String get allFieldsCorrectly {
+    return Intl.message(
+      'Please fill all fields correctly',
+      name: 'allFieldsCorrectly',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Account successfully created`
   String get accountSuccess {
     return Intl.message(

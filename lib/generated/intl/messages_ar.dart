@@ -25,12 +25,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "accountSuccess": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح",
     ),
+    "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
+      "من فضلك املأ الخانات بشكل صحيح",
+    ),
+    "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
+      "الإيميل غير صحيح",
+    ),
     "forgot": MessageLookupByLibrary.simpleMessage("نسيت الرقم السري؟"),
     "hintEmail": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "hintMobile": MessageLookupByLibrary.simpleMessage("الهاتف"),
     "hintName": MessageLookupByLibrary.simpleMessage("الإسم"),
     "hintPassword": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "login": MessageLookupByLibrary.simpleMessage("دخول"),
+    "mobileIsNotCorrect": MessageLookupByLibrary.simpleMessage(
+      "الرقم غير صحيح!",
+    ),
+    "nameIsRequired": MessageLookupByLibrary.simpleMessage("الإسم مطلوب!"),
+    "passwordSixChar": MessageLookupByLibrary.simpleMessage(
+      "الرقم السري يجب ان يكون اكثر من 6 خانات",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
     "signInText": MessageLookupByLibrary.simpleMessage("سجل الدخول إلى حسابك"),
     "signUpLoginText": MessageLookupByLibrary.simpleMessage(
