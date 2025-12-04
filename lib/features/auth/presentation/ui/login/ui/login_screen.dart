@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/helper/validation_service.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
@@ -77,24 +78,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomTextFormField(
                     hintText: S.of(context).hintEmail,
                     controller: emailController,
-                    validator: (value){
-                      if(value==null || value.isEmpty ||!value.contains("@")){
-                        return S.of(context).emailIsNotCorrect;
-                      }
-                      return null;
-                    },
+                    validator: ValidationService.validateEmail
                   ),
                   SizedBox(height: 20.h),
                   CustomTextFormField(
                     hintText: S.of(context).hintPassword,
                     isPassword: true,
                     controller: passwordController,
-                    validator: (value){
-                      if(value==null || value.isEmpty || value.length<6){
-                        return S.of(context).passwordIsNotCorrect;
-                      }
-                      return null;
-                    },
+                    validator: ValidationService.validatePassword
                   ),
                   SizedBox(height: 20.h),
                   Align(

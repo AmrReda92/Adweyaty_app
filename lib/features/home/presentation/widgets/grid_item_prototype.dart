@@ -30,47 +30,45 @@ class GridItemPrototype extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         InkWell(
-          child: InkWell(
-            onTap: (){
-              Widget page ;
-              switch(index){
-                case 0 :
-                  page = const PressureMedicinesScreen();
-                  break ;
+          onTap: (){
+            Widget page ;
+            switch(index){
+              case 0 :
+                page = const PressureMedicinesScreen();
+                break ;
 
-                case 1 :
-                  page = const CoughMedicinesScreen();
-                  break ;
+              case 1 :
+                page = const CoughMedicinesScreen();
+                break ;
 
-                case 2 :
-                  page =  const HeadacheScreen();
-                  break ;
+              case 2 :
+                page =  const HeadacheScreen();
+                break ;
 
-                case 3 :
-                  page = const TemperatureScreen();
-                  break ;
+              case 3 :
+                page = const TemperatureScreen();
+                break ;
 
-                case 4 :
-                  page = const WomanProductsScreen();
-                  break ;
+              case 4 :
+                page = const WomanProductsScreen();
+                break ;
 
-                case 5 :
-                  page = const VitaminScreen();
-                  break ;
+              case 5 :
+                page = const VitaminScreen();
+                break ;
 
-                default :
-                  page = const PressureMedicinesScreen();
+              default :
+                page = const PressureMedicinesScreen();
 
-              }
-              Navigator.push(context, MaterialPageRoute(builder: (_)=>page));
-            },
-            child: Container(
-              height: 180.h,
-              decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(16.r),
-                  image: DecorationImage(image: AssetImage(categories[index].image),fit: BoxFit.cover)
-              ),
+            }
+            Navigator.push(context, MaterialPageRoute(builder: (_)=>page));
+          },
+          child: Container(
+            height: 180.h,
+            decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(16.r),
+                image: DecorationImage(image: AssetImage(categories[index].image),fit: BoxFit.cover)
             ),
           ),
         ),

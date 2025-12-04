@@ -46,7 +46,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         nextPage.animateToPage(2, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
                       },
                     ),
-                    OnboardingThirdPage(onTapNextPage: (){
+                    OnboardingThirdPage(
+                      onTapNextPage: (){
                       Navigator.pushNamedAndRemoveUntil(context, Routes.signUpLoginScreen, (e)=>false);
                     },
                     ),

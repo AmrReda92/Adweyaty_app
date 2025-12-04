@@ -28,9 +28,9 @@ class Adweyaty extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             scaffoldBackgroundColor: Color(0xffF0FFFF),
-         fontFamily: "Cairo"
+            fontFamily: "Cairo"
         ),
-           initialRoute:  Routes.signUpLoginScreen,
+           initialRoute:  Routes.onboardingScreen,
       ),
     );
   }

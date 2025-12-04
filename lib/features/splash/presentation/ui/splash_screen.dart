@@ -2,7 +2,6 @@ import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/features/onboarding/data/model/info_onboarding.dart';
-import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';

@@ -9,6 +9,7 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/cubit
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../../core/helper/validation_service.dart';
 import '../../../../../../core/theme/app_text_style.dart';
 import '../../../../../../generated/l10n.dart';
 
@@ -79,12 +80,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   CustomTextFormField(
                     hintText: S.of(context).hintName,
                     controller: nameController,
-                    validator: (value){
-                      if(value==null || value.isEmpty){
-                        return S.of(context).nameIsRequired;
-                      }
-                      return null;
-                    },
+                    validator: ValidationService.validateName
 
                   ),
                   SizedBox(height: 20.h,),
@@ -92,36 +88,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   CustomTextFormField(
                     hintText: S.of(context).hintMobile,
                     controller: mobileController,
-                    validator: (value){
-                      if(value==null || value.isEmpty || value.length<11){
-                        return S.of(context).mobileIsNotCorrect;
-                      }
-                      return null;
-                    },
+                    validator: ValidationService.validatePhoneNumber
                   ),
                   SizedBox(height: 20.h,),
 
                   CustomTextFormField(
                     hintText: S.of(context).hintEmail,
                     controller: emailController,
-                    validator: (value){
-                      if(value==null || value.isEmpty ||!value.contains("@")){
-                        return S.of(context).emailIsNotCorrect;
-                      }
-                      return null;
-                    },
+                    validator: ValidationService.validateEmail
                   ),
                   SizedBox(height: 20.h,),
 
                   CustomTextFormField(
                     hintText: S.of(context).hintPassword,
                     isPassword: true,controller: passwordController,
-                    validator: (value){
-                      if(value==null || value.isEmpty || value.length<6){
-                        return S.of(context).passwordSixChar;
-                      }
-                      return null;
-                    },
+                    validator: ValidationService.validatePassword
                   ),
                   SizedBox(height: 50.h,),
 
@@ -136,6 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     mobile: mobileController.text
                                 )
                             );
+
                           }else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
