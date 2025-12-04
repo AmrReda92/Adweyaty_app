@@ -8,14 +8,15 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
   final String title;
   final Widget? leading ;
   final Widget? icon ;
-  const CustomAppbarCategory({super.key, required this.title, this.leading, this.icon});
+  final bool? centerTitle ;
+  const CustomAppbarCategory({super.key, required this.title, this.leading, this.icon, this.centerTitle});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leading: leading ,
       title: Text(title,style: AppTextStyle.appBarTitle,),
-      centerTitle: true,
+      centerTitle: centerTitle,
       backgroundColor: Colors.blueAccent,
       actions: [
         icon??

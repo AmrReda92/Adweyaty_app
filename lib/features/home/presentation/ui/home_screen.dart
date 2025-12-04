@@ -10,40 +10,36 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: Scaffold(
-        appBar: CustomAppbarCategory(
-          title: "Home Page",
-          icon: Icon(Icons.shopping_cart,size: 30.h,),
-          leading: Icon(Icons.list,size: 30.h,),
-        
-        ),
-        body: SafeArea(
-          child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 12.w),
-            child: Column(
-              children: [
-                SizedBox(height: 20.h,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Categories",style: AppTextStyle.font20black.copyWith(fontSize: 18)),
-                    Text("Show All >",style: AppTextStyle.font20black.copyWith(fontSize: 18)),
-                  ],
-                ),
-                SizedBox(height: 10.h,),
-                const  GridViewHorizontalItems(),
-                SizedBox(height: 40.h,),
-                CustomElevatedButton(
-                  title: "Send your Prescription",
-                  onPressed: (){
-                  },
-                  icon: Icon(Icons.camera_alt_rounded,size: 34.r,color: Colors.white,)
-                ),
-                SizedBox(height: 26.h,),
-              ],
-            ),
+    return Scaffold(
+      appBar: CustomAppbarCategory(
+        centerTitle: false,
+        title: "Welcome Amr Reda",
+        icon: Icon(Icons.shopping_cart,size: 30.h,color: Colors.white,),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 12.w),
+          child: Column(
+            children: [
+              SizedBox(height: 20.h,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Categories",style: AppTextStyle.font20black.copyWith(fontSize: 18)),
+                  Text("Show All >",style: AppTextStyle.font20black.copyWith(fontSize: 18)),
+                ],
+              ),
+              SizedBox(height: 10.h,),
+              const  GridViewHorizontalItems(),
+              SizedBox(height: 40.h,),
+              CustomElevatedButton(
+                title: "Send your Prescription",
+                onPressed: (){
+                },
+                icon: Icon(Icons.camera_alt_rounded,size: 34.r,color: Colors.white,)
+              ),
+              SizedBox(height: 26.h,),
+            ],
           ),
         ),
       ),
