@@ -39,12 +39,25 @@ class AuthRepo {
 
   }
 
-  static signInWithEmailAndPassword({required LoginModel model })async{
+  static Future<UserModel>  signInWithEmailAndPassword({required LoginModel model })async{
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: model.email,
           password: model.password,
       );
+
+      final uid = credential.user!.uid ;
+      final userDoc = await FirebaseFirestore.instance.collection("users").
+      doc(uid).get();
+
+      if(userDoc.exists){
+        final Map<String,dynamic> userData =userDoc.data()!;
+        return UserModel.fromJson(userData);
+      }else{
+        throw ("user is not in firebase");
+      }
+
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         throw('No user found for that email.');
@@ -53,6 +66,8 @@ class AuthRepo {
       }else{
         throw('something went wrong');
       }
+    }catch(e){
+      throw Exception("Unknown error: $e");
     }
   }
 
