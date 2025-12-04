@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/features/auth/data/models/login_model.dart';
+import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
@@ -12,8 +13,8 @@ class LoginCubit extends Cubit<LoginState> {
   signInWithEmailAndPassword({required LoginModel model })async{
     emit(LoginLoading());
     try{
-      await   AuthRepo.signInWithEmailAndPassword(model : model);
-      emit(LoginSuccess());
+      final user =  await AuthRepo.signInWithEmailAndPassword(model : model);
+      emit(LoginSuccess(user));
     }
     catch(e){
       emit(LoginError(e.toString()));

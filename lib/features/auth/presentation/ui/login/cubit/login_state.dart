@@ -10,6 +10,9 @@ final class LoginError extends LoginState {
   final String error;
   LoginError( this.error);
 }
-final class LoginSuccess extends LoginState {}
+final class LoginSuccess extends LoginState {
+  final UserModel user ;
+  LoginSuccess(this.user);
+}
 
 
