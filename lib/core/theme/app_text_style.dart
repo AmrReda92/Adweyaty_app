@@ -49,5 +49,11 @@ class AppTextStyle {
       color: Colors.grey,
       fontWeight: FontWeight.normal
   );
+  static TextStyle search16 = TextStyle(
+      fontSize: 16.sp,
+      color: Color(0xFF828282),
+      fontWeight: FontWeight.w400
+  );
+
 
 }

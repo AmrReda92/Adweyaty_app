@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
+import 'package:adweyaty_application/core/widgets/custom_search_field.dart';
 import 'package:adweyaty_application/core/widgets/grid_view_horizontal_items.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
@@ -29,6 +30,8 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Column(
                 children: [
+                  SizedBox(height: 20.h,),
+                  CustomSearchField(),
                   SizedBox(height: 20.h,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
