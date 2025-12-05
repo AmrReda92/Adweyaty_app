@@ -2,7 +2,9 @@ import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_button_profile.dart';
+import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -29,7 +31,14 @@ class ProfileScreen extends StatelessWidget {
                   radius: 50.r,
                 ),
                 SizedBox(width: 20.w,),
-                Text("Amr Reda",style: AppTextStyle.font20black,)
+                BlocBuilder<HomeCubit, HomeState>(
+                builder: (context, state) {
+                  if(state is HomeDataSuccess){
+                    return Text(state.user.name,style: AppTextStyle.font20black,);
+                  }
+                  return Text("User");
+                },
+                )
               ],
             ),
             SizedBox(height: 40.h,),
