@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
+import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/cubit/login_cubit.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/ui/login_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/cubit/sign_up_cubit.dart';
@@ -7,6 +8,7 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
 import 'package:adweyaty_application/features/cart/presentation/ui/cart_screen.dart';
+import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/home/presentation/ui/home_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
@@ -45,13 +47,20 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => HomeScreen());
 
       case Routes.bottomNavBarScreen :
-        return MaterialPageRoute(builder: (_) => BottomNavBarScreen());
+        final user = setting.arguments as UserModel ;
+        return MaterialPageRoute(builder: (_) =>
+            BlocProvider(
+              create: (context) => HomeCubit()..loadUserData(user),
+              child: BottomNavBarScreen(),
+            ));
 
       case Routes.cartScreen :
         return MaterialPageRoute(builder: (_) => CartScreen());
 
       case Routes.validationScreen :
-        return MaterialPageRoute(builder: (_) => ValidationSuccessScreen());
+        final user = setting.arguments as UserModel;
+        return MaterialPageRoute(builder: (_) => ValidationSuccessScreen(user:user));
     }
+    return null;
   }
 }

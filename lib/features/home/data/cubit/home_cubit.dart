@@ -6,7 +6,7 @@ part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
-  void loadUserData({required UserModel userDataLoaded}){
+  void loadUserData( UserModel userDataLoaded){
     emit(HomeDataSuccess(userDataLoaded));
   }
 }

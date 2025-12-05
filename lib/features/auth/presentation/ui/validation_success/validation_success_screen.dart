@@ -1,6 +1,7 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
+import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,7 +10,8 @@ import '../../../../../generated/l10n.dart';
 import '../sign_up_login/sign_up_login_screen.dart';
 
 class ValidationSuccessScreen extends StatefulWidget {
-  const ValidationSuccessScreen({super.key});
+  final UserModel user ;
+  const ValidationSuccessScreen({super.key, required this.user});
 
   @override
   State<ValidationSuccessScreen> createState() => _ValidationSuccessScreenState();
@@ -55,9 +57,7 @@ class _ValidationSuccessScreenState extends State<ValidationSuccessScreen> {
                     SizedBox(height: 260.h,),
                     InkWell(
                       onTap: (){
-                        setState(() {
-                          Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen, (e)=>false);
-                        });
+                          Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen,arguments: widget.user, (e)=>false);
                       },
                         child: CustomButton(title: S.of(context).startNow)
                     )

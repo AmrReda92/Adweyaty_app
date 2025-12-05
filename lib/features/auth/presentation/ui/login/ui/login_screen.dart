@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     else if(state is LoginSuccess){
       Navigator.pop(context);
-      Navigator.pushReplacementNamed(context, Routes.bottomNavBarScreen);
+      Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen,arguments: state.user, (e)=>false);
     }
 
     else if(state is LoginError){

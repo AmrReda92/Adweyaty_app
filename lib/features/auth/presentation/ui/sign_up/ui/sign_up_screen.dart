@@ -48,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     }else if(state is SignUpSuccess){
       Navigator.pop(context);
-      Navigator.pushReplacementNamed(context, Routes.validationScreen);
+      Navigator.pushNamedAndRemoveUntil(context, Routes.validationScreen,arguments: state.user, (e)=>false);
 
     }else if(state is SignUpError){
       Navigator.pop(context);
