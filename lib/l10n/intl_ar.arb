@@ -32,10 +32,17 @@
 
   "accountSuccess" : "تم إنشاء الحساب بنجاح",
   "welcome" : "أهلا بك في أدويتي!",
-  "startNow" : "إبدأ الان"
+  "startNow" : "إبدأ الان",
 
-
-
-
+  "welcomeUser" : "مرحبا بالمستخدم",
+  "welcomeOnly" : "مرحبا",
+  "searchFor" : "ابحث عن.....",
+  "pressure": "أدوية الضغط" ,
+  "cough" : "أدوية الكحة" ,
+  "headache" : "أدوية الصداع",
+  "temperature" : "أدوية الحرارة",
+  "woman" : "منتجات المرأة",
+  "vitamin" : "فيتامينات",
+  "Prescription" : "أرسل الروشتة الخاصة بك"
 
 }

@@ -15,6 +15,9 @@ import 'package:adweyaty_application/features/splash/presentation/ui/splash_scre
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/home/data/model/homeCategoryModel.dart';
+import '../../features/product_screens/ui/product_screen.dart';
+
 class AppRoute {
 
   static Route<dynamic>? generateRoute(RouteSettings setting) {
@@ -56,6 +59,12 @@ class AppRoute {
 
       case Routes.cartScreen :
         return MaterialPageRoute(builder: (_) => CartScreen());
+      
+      case Routes.productScreen :
+        final category = setting.arguments as HomeCategoryModel;
+
+        return MaterialPageRoute(builder: (_) => ProductScreen(categoryProduct: category));
+
 
       case Routes.validationScreen :
         final user = setting.arguments as UserModel;

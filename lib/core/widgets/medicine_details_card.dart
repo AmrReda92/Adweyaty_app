@@ -1,16 +1,13 @@
+import 'package:adweyaty_application/core/models/drug_item_details.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
-import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
 import 'package:adweyaty_application/core/widgets/custom_elvated_button_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../app_images/app_images.dart';
 
 class MedicineDetailsCard extends StatelessWidget {
-  final String image ;
-  final String name ;
-  final String price ;
-  const MedicineDetailsCard({super.key, required this.image, required this.name, required this.price});
+  final DrugItemDetails drugItem ;
+  const MedicineDetailsCard({super.key, required this.drugItem});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +21,11 @@ class MedicineDetailsCard extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(image,height: 100.h,),
+              Image.asset(drugItem.image ,height: 100.h,),
               SizedBox(height: 6.h,),
-              Text(name,style: AppTextStyle.medicineName,),
+              Text(drugItem.name,style: AppTextStyle.medicineName,),
               SizedBox(height: 6.h,),
-              Text(price,style: AppTextStyle.price,),
+              Text(drugItem.price,style: AppTextStyle.price,),
               SizedBox(height: 6.h,),
               SizedBox(
                 width: double.infinity,

@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../generated/l10n.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -15,9 +17,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
-        String title= "Welcome user";
+        String title= S.of(context).welcomeUser;
         if(state is HomeDataSuccess){
-           title = "Welcome ${state.user.name}";
+           title = "${S.of(context).welcomeOnly} ${state.user.name}";
         }
         return Scaffold(
           appBar: CustomAppbarCategory(

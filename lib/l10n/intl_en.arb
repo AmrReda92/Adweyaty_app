@@ -29,7 +29,17 @@
 
  "accountSuccess" : "Account successfully created",
  "welcome" : "Welcome to Adweyaty!",
- "startNow" : "Start Now"
+ "startNow" : "Start Now",
 
+ "welcomeUser" : "Welcome user",
+ "welcomeOnly" : "Welcome",
+ "searchFor" : "Search for.....",
+ "pressure": "pressure medicines" ,
+ "cough" : "cough medicines" ,
+ "headache" : "headache medicines",
+ "temperature" : "temperature medicines",
+ "woman" : "woman products",
+ "vitamin" : "vitamin medicines",
+ "Prescription" : "Send your Prescription"
 
 }

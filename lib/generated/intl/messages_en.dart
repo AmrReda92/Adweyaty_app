@@ -22,16 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Prescription": MessageLookupByLibrary.simpleMessage(
+      "Send your Prescription",
+    ),
     "accountSuccess": MessageLookupByLibrary.simpleMessage(
       "Account successfully created",
     ),
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields correctly",
     ),
+    "cough": MessageLookupByLibrary.simpleMessage("cough medicines"),
     "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "Email is not correct",
     ),
     "forgot": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "headache": MessageLookupByLibrary.simpleMessage("headache medicines"),
     "hintEmail": MessageLookupByLibrary.simpleMessage("Email"),
     "hintMobile": MessageLookupByLibrary.simpleMessage("Mobile"),
     "hintName": MessageLookupByLibrary.simpleMessage("Name"),
@@ -47,7 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordSixChar": MessageLookupByLibrary.simpleMessage(
       "password must be more than 6 char",
     ),
+    "pressure": MessageLookupByLibrary.simpleMessage("pressure medicines"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "searchFor": MessageLookupByLibrary.simpleMessage("Search for....."),
     "signInText": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",
     ),
@@ -59,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "splashText": MessageLookupByLibrary.simpleMessage("ADWEYATY APP"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "temperature": MessageLookupByLibrary.simpleMessage(
+      "temperature medicines",
+    ),
     "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
       "Adweyaty is not just an app, it\'s your healthcare companion, putting the pharmacy at your fingertips. Adweyaty is here to simplify your healthcare journey.",
     ),
@@ -71,6 +81,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOnBoardingOne": MessageLookupByLibrary.simpleMessage("Next"),
     "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("Start"),
     "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("Next"),
+    "vitamin": MessageLookupByLibrary.simpleMessage("vitamin medicines"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to Adweyaty!"),
+    "welcomeOnly": MessageLookupByLibrary.simpleMessage("Welcome"),
+    "welcomeUser": MessageLookupByLibrary.simpleMessage("Welcome user"),
+    "woman": MessageLookupByLibrary.simpleMessage("woman products"),
   };
 }

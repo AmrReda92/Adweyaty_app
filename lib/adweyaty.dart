@@ -1,6 +1,10 @@
 import 'package:adweyaty_application/core/routes/app_route.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
+import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
+import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
+import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'generated/l10n.dart';
@@ -29,7 +33,10 @@ class Adweyaty extends StatelessWidget {
             scaffoldBackgroundColor: Color(0xffF0FFFF),
             fontFamily: "Cairo"
         ),
-           initialRoute:  Routes.splashScreen,
+        home: BlocProvider(
+          create: (context) => HomeCubit()..loadUserData(UserModel(name:"test", email: "test@test.com", uid: "2", phone: "01234567899")),
+          child: BottomNavBarScreen(),
+        ),
       ),
     );
   }

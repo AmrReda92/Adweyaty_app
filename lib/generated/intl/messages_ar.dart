@@ -22,16 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Prescription": MessageLookupByLibrary.simpleMessage(
+      "أرسل الروشتة الخاصة بك",
+    ),
     "accountSuccess": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح",
     ),
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "من فضلك املأ الخانات بشكل صحيح",
     ),
+    "cough": MessageLookupByLibrary.simpleMessage("أدوية الكحة"),
     "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "الإيميل غير صحيح",
     ),
     "forgot": MessageLookupByLibrary.simpleMessage("نسيت الرقم السري؟"),
+    "headache": MessageLookupByLibrary.simpleMessage("أدوية الصداع"),
     "hintEmail": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "hintMobile": MessageLookupByLibrary.simpleMessage("الهاتف"),
     "hintName": MessageLookupByLibrary.simpleMessage("الإسم"),
@@ -47,7 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwordSixChar": MessageLookupByLibrary.simpleMessage(
       "الرقم السري يجب ان يكون اكثر من 6 خانات",
     ),
+    "pressure": MessageLookupByLibrary.simpleMessage("أدوية الضغط"),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن....."),
     "signInText": MessageLookupByLibrary.simpleMessage("سجل الدخول إلى حسابك"),
     "signUpLoginText": MessageLookupByLibrary.simpleMessage(
       "أهلا بك في أدويتي",
@@ -55,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUpText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حسابك"),
     "splashText": MessageLookupByLibrary.simpleMessage("تطبيق صيدلية"),
     "startNow": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
+    "temperature": MessageLookupByLibrary.simpleMessage("أدوية الحرارة"),
     "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
       "أدويتي ليس مجرد تطبيق، بل هو رفيقك في الرعاية الصحية، يضع الصيدلية بين يديك ، أدويتي هنا لتبسيط رحلة الرعاية الصحية الخاصة بك",
     ),
@@ -67,6 +75,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOnBoardingOne": MessageLookupByLibrary.simpleMessage("التالي"),
     "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
     "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("التالي"),
+    "vitamin": MessageLookupByLibrary.simpleMessage("فيتامينات"),
     "welcome": MessageLookupByLibrary.simpleMessage("أهلا بك في أدويتي!"),
+    "welcomeOnly": MessageLookupByLibrary.simpleMessage("مرحبا"),
+    "welcomeUser": MessageLookupByLibrary.simpleMessage("مرحبا بالمستخدم"),
+    "woman": MessageLookupByLibrary.simpleMessage("منتجات المرأة"),
   };
 }

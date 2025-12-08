@@ -258,6 +258,91 @@ class S {
   String get startNow {
     return Intl.message('Start Now', name: 'startNow', desc: '', args: []);
   }
+
+  /// `Welcome user`
+  String get welcomeUser {
+    return Intl.message(
+      'Welcome user',
+      name: 'welcomeUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcomeOnly {
+    return Intl.message('Welcome', name: 'welcomeOnly', desc: '', args: []);
+  }
+
+  /// `Search for.....`
+  String get searchFor {
+    return Intl.message(
+      'Search for.....',
+      name: 'searchFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `pressure medicines`
+  String get pressure {
+    return Intl.message(
+      'pressure medicines',
+      name: 'pressure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cough medicines`
+  String get cough {
+    return Intl.message('cough medicines', name: 'cough', desc: '', args: []);
+  }
+
+  /// `headache medicines`
+  String get headache {
+    return Intl.message(
+      'headache medicines',
+      name: 'headache',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `temperature medicines`
+  String get temperature {
+    return Intl.message(
+      'temperature medicines',
+      name: 'temperature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `woman products`
+  String get woman {
+    return Intl.message('woman products', name: 'woman', desc: '', args: []);
+  }
+
+  /// `vitamin medicines`
+  String get vitamin {
+    return Intl.message(
+      'vitamin medicines',
+      name: 'vitamin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send your Prescription`
+  String get Prescription {
+    return Intl.message(
+      'Send your Prescription',
+      name: 'Prescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
