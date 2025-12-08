@@ -78,7 +78,7 @@ class ProductScreen extends StatelessWidget {
     final products = productByCategory[categoryProduct.id]??[];
     return Scaffold(
         backgroundColor: Color(0xfff4f4f4),
-        appBar: CustomAppbarCategory(title: "Cough Medicines"),
+        appBar: CustomAppbarCategory(title: categoryProduct.title),
         body: products.isEmpty
             ? const Center(child: Text("No products for this category yet"))
             : GridView.builder(
