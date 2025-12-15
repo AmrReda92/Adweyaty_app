@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_search_field.dart';
 import 'package:adweyaty_application/core/widgets/grid_view_horizontal_items.dart';
@@ -42,9 +43,14 @@ class HomeScreen extends StatelessWidget {
                       Text("Categories",
                           style: AppTextStyle.font20black.copyWith(
                               fontSize: 18)),
-                      Text("Show All >",
-                          style: AppTextStyle.font20black.copyWith(
-                              fontSize: 18,color: AppColor.primaryColor)),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, Routes.showAllCategoriesScreen);
+                        },
+                        child: Text("Show All >",
+                            style: AppTextStyle.font20black.copyWith(
+                                fontSize: 18,color: AppColor.primaryColor)),
+                      ),
                     ],
                   ),
                   SizedBox(height: 10.h,),

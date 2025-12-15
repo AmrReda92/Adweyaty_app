@@ -11,6 +11,7 @@ import 'package:adweyaty_application/features/cart/presentation/ui/cart_screen.d
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/home/presentation/ui/home_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
+import 'package:adweyaty_application/features/show_all_category/presentation/ui/show_all_categories_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,6 +46,8 @@ class AppRoute {
               child: LoginScreen(),
             ));
 
+      case Routes.showAllCategoriesScreen :
+        return MaterialPageRoute(builder: (_)=>ShowAllCategoriesScreen());
 
       case Routes.homeScreen :
         return MaterialPageRoute(builder: (_) => HomeScreen());
