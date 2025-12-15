@@ -19,7 +19,7 @@ import '../../features/home/data/model/homeCategoryModel.dart';
 import '../../features/product_screens/ui/product_screen.dart';
 
 class AppRoute {
-
+  
   static Route<dynamic>? generateRoute(RouteSettings setting) {
     switch (setting.name) {
       case Routes.splashScreen :

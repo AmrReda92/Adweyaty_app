@@ -6,18 +6,66 @@ class DrugItemDetails {
   DrugItemDetails({required this.price,required this.name,required this.image});
 }
 
+final Map <String,List<DrugItemDetails>> productByCategory =
+{
+  "0":
+  [
 
-/*
-List<CardItems> cardItem =[
-  CardItems(price: "\$ 23", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 60", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 20", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 10", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 10", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 10", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 10", name: "panadol tablets", image: "assets/images/panadol.png"),
-  CardItems(price: "\$ 10", name: "panadol tablets", image: "assets/images/panadol.png"),
-];
+    DrugItemDetails(
+        price: "20",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "40",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "60",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "80",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "100",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+  ],
 
- */
+  "1" :
+  [
+    DrugItemDetails(
+        price: "20",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "40",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "60",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "80",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+    DrugItemDetails(
+        price: "100",
+        name: "panadol tablets",
+        image: "assets/images/panadol.png"
+    ),
+  ]
 
+}
+;

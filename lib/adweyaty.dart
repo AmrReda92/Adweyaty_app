@@ -1,5 +1,4 @@
 import 'package:adweyaty_application/core/routes/app_route.dart';
-import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';

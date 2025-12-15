@@ -10,68 +10,7 @@ class ProductScreen extends StatelessWidget {
   final HomeCategoryModel categoryProduct;
   const ProductScreen({super.key, required this.categoryProduct});
 
-  static Map <String,List<DrugItemDetails>> productByCategory =
-  {
-    "1":
-      [
-      DrugItemDetails(
-          price: "20",
-          name: "panadol tablets",
-          image: "assets/images/panadol.png"
-      ),
-      DrugItemDetails(
-            price: "40",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "60",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "80",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "100",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-      ],
 
-   "2" :
-      [
-        DrugItemDetails(
-            price: "20",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "40",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "60",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "80",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-        DrugItemDetails(
-            price: "100",
-            name: "panadol tablets",
-            image: "assets/images/panadol.png"
-        ),
-      ]
-
-  }
-  ;
 
   @override
   Widget build(BuildContext context) {
