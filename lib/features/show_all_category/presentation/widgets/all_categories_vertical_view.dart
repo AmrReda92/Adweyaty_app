@@ -3,7 +3,6 @@ import 'package:adweyaty_application/features/show_all_category/presentation/wid
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/widgets/custom_show_dialogue.dart';
 
 
 class AllCategoriesVerticalView extends StatelessWidget {

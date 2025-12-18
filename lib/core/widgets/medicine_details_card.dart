@@ -1,6 +1,7 @@
-import 'package:adweyaty_application/core/models/drug_item_details.dart';
+import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_elvated_button_card.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,11 +22,11 @@ class MedicineDetailsCard extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(drugItem.image ,height: 100.h,),
+              CachedNetworkImage(imageUrl:drugItem.image ,fit:BoxFit.cover, height: 100.h,),
               SizedBox(height: 6.h,),
               Text(drugItem.name,style: AppTextStyle.medicineName,),
               SizedBox(height: 6.h,),
-              Text(drugItem.price,style: AppTextStyle.price,),
+              Text(drugItem.price.toString(),style: AppTextStyle.price,),
               SizedBox(height: 6.h,),
               SizedBox(
                 width: double.infinity,

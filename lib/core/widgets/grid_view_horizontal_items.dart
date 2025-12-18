@@ -1,12 +1,10 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
-import 'package:adweyaty_application/features/home/data/model/homeCategoryModel.dart';
 import 'package:adweyaty_application/features/home/presentation/widgets/custom_category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'custom_show_dialogue.dart';
 
 class GridViewHorizontalItems extends StatelessWidget {
   const GridViewHorizontalItems({super.key});

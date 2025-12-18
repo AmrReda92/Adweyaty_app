@@ -13,6 +13,8 @@ import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
 import 'package:adweyaty_application/features/home/presentation/ui/home_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
+import 'package:adweyaty_application/features/product_screens/data/cubit/products_cubit.dart';
+import 'package:adweyaty_application/features/product_screens/data/products_repo/products_repo.dart';
 import 'package:adweyaty_application/features/show_all_category/presentation/ui/show_all_categories_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,30 +30,32 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
 
       case Routes.onboardingScreen:
-        return MaterialPageRoute(builder: (_) =>const OnboardingScreen());
+        return MaterialPageRoute(builder: (_) => const OnboardingScreen());
 
       case Routes.signUpLoginScreen:
-        return MaterialPageRoute(builder: (_) =>const SignUpLoginScreen());
+        return MaterialPageRoute(builder: (_) => const SignUpLoginScreen());
 
       case Routes.signUpScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => SignUpCubit(),
-            child:const SignUpScreen(),
-          ),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => SignUpCubit(),
+                child: const SignUpScreen(),
+              ),
         );
 
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => LoginCubit(),
-            child:const LoginScreen(),
-          ),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => LoginCubit(),
+                child: const LoginScreen(),
+              ),
         );
 
       case Routes.showAllCategoriesScreen:
         return MaterialPageRoute(
-            builder: (_) =>const ShowAllCategoriesScreen()
+            builder: (_) => const ShowAllCategoriesScreen()
         );
 
       case Routes.bottomNavBarScreen:
@@ -66,7 +70,11 @@ class AppRoute {
         final category = setting.arguments as HomeCategoryModel;
 
         return MaterialPageRoute(
-          builder: (_) => ProductScreen(categoryProduct: category),
+          builder: (_) =>
+              BlocProvider(
+                create: (context) => ProductsCubit(ProductsRepo())..getProductsByCategory(category.id),
+                child: ProductScreen(categoryProduct: category),
+              ),
         );
 
       case Routes.validationScreen:
