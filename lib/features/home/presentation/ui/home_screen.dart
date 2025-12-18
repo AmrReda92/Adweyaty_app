@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 10.h,),
-                  const GridViewHorizontalItems(),
+                   GridViewHorizontalItems(),
                   SizedBox(height: 40.h,),
                   CustomElevatedButton(
                       title: "Send your Prescription",

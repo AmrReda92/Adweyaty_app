@@ -1,5 +1,6 @@
 import 'package:adweyaty_application/core/theme/app_color.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../data/model/homeCategoryModel.dart';
@@ -24,7 +25,7 @@ class CustomCategoryModel extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.circular(8.r),
-                  image: DecorationImage(image: AssetImage(category.image),fit: BoxFit.cover)
+                  image: DecorationImage(image: CachedNetworkImageProvider(category.image),fit: BoxFit.cover)
               ),
             ),
           ),

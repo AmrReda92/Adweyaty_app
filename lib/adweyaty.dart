@@ -1,7 +1,10 @@
 import 'package:adweyaty_application/core/routes/app_route.dart';
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
+import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
+import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -17,24 +20,37 @@ class Adweyaty extends StatelessWidget {
       designSize: const Size(390, 800),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
-        onGenerateRoute: AppRoute.generateRoute,
-        locale: Locale("en"),
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => HomeCubit()..loadUserData(
+                UserModel(
+                    name: "Test",
+                    email: "test@test.com",
+                    uid: "2",
+                    phone: "01126068679")
+            ),
+          ),
+          BlocProvider(
+            create: (context) => CategoriesCubit(HomeRepo())..getCategories(),
+          ),
         ],
-        supportedLocales: S.delegate.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            scaffoldBackgroundColor: Color(0xffF0FFFF),
-            fontFamily: "Cairo"
-        ),
-        home: BlocProvider(
-          create: (context) => HomeCubit()..loadUserData(UserModel(name:"test", email: "test@test.com", uid: "2", phone: "01234567899")),
-          child: BottomNavBarScreen(),
+        child: MaterialApp(
+          onGenerateRoute: AppRoute.generateRoute,
+          locale: Locale("en"),
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+              scaffoldBackgroundColor: Color(0xffF0FFFF),
+              fontFamily: "Cairo"
+          ),
+          initialRoute: Routes.bottomNavBarScreen
         ),
       ),
     );

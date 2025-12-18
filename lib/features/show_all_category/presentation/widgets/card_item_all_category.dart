@@ -1,4 +1,5 @@
 import 'package:adweyaty_application/features/home/data/model/homeCategoryModel.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_color.dart';
@@ -21,7 +22,8 @@ class CardItemAllCategory extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(category.image, fit: BoxFit.contain),
+            CachedNetworkImage(imageUrl: category.image, width: 70.w,
+                height: 70.h, fit: BoxFit.contain),
             Text(
               category.title,
               style: AppTextStyle.font20black.copyWith(
