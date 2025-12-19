@@ -32,92 +32,51 @@ class HomeScreen extends StatelessWidget {
           body: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 20.h,),
-                  CustomSearchField(),
-                  SizedBox(height: 20.h,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Categories",
-                          style: AppTextStyle.font20black.copyWith(
-                              fontSize: 18)),
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.pushNamed(context, Routes.showAllCategoriesScreen);
-                        },
-                        child: Text("Show All >",
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 20.h,),
+                    CustomSearchField(),
+                    
+                    SizedBox(height: 20.h,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Categories",
                             style: AppTextStyle.font20black.copyWith(
-                                fontSize: 18,color: AppColor.primaryColor)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.h,),
-                   GridViewHorizontalItems(),
-                  SizedBox(height: 40.h,),
-                  CustomElevatedButton(
-                      title: "Send your Prescription",
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.camera_alt_rounded, size: 34.r,
-                        color: Colors.white,)
-                  ),
-                  SizedBox(height: 26.h,),
-                ],
+                                fontSize: 18)),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, Routes.showAllCategoriesScreen);
+                          },
+                          child: Text("Show All >",
+                              style: AppTextStyle.font20black.copyWith(
+                                  fontSize: 18,color: AppColor.primaryColor)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10.h,),
+                    GridViewHorizontalItems(),
+                    SizedBox(height: 40.h,),
+                    CustomElevatedButton(
+                        title: "Send your Prescription",
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.camera_alt_rounded, size: 34.r,
+                          color: Colors.white,)
+                    ),
+                    SizedBox(height: 26.h,),
+                  ],
+                ),
               ),
             ),
           ),
+          drawer: Drawer(
+            backgroundColor: Colors.blue.shade200,
+
+            ),
         );
       },
     );
   }
 }
-
-/*
-import 'package:adweyaty_application/core/theme/app_text_style.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../data/model/homeCategoryModel.dart';
-
-class CustomCategoryModel extends StatelessWidget {
-  final HomeCategoryModel category ;
-
-
-  const CustomCategoryModel({super.key, required this.category,});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          Container(
-            height: 180.h,
-            decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(12.r),
-                image: DecorationImage(image: AssetImage(category.image),fit: BoxFit.cover)
-            ),
-          ),
-          Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12.r),bottomRight: Radius.circular(12.r),),
-                gradient: const LinearGradient(
-                    colors: [
-                      Color(0xFFB140C5),
-                      Color(0xFF007AFF),
-                    ]
-                )
-              ),
-              child: Text(category.title,style: AppTextStyle.font20black.copyWith(color:Colors.white,fontSize: 18),textAlign: TextAlign.center,))
-        ],
-
-      ),
-    );
-  }
-}
-
- */

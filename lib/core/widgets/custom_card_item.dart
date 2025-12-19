@@ -4,8 +4,17 @@ import '../app_images/app_images.dart';
 import '../theme/app_text_style.dart';
 import 'custom_circle_button.dart';
 
-class CustomCardItem extends StatelessWidget {
+class CustomCardItem extends StatefulWidget {
   const CustomCardItem({super.key});
+
+  @override
+  State<CustomCardItem> createState() => _CustomCardItemState();
+}
+
+class _CustomCardItemState extends State<CustomCardItem> {
+
+  int textNum =0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +48,7 @@ class CustomCardItem extends StatelessWidget {
                     ),
                     SizedBox(width: 54.w),
                     Text(
-                      "\$ 230",
+                      "\$ 23",
                       style: AppTextStyle.font18,
                     ),
                   ],
@@ -49,9 +58,24 @@ class CustomCardItem extends StatelessWidget {
                 Row(
                   spacing: 10.w,
                   children: [
-                    CustomCircleButton(icon: Icons.add,),
-                    Text("01", style: AppTextStyle.font18),
-                    CustomCircleButton(icon: Icons.remove,),
+                    GestureDetector(
+                       onTap: (){
+                         setState(() {
+                           textNum+=1;
+                         });
+                       },
+                        child: CustomCircleButton(icon: Icons.add,)),
+                    Text(textNum.toString(), style: AppTextStyle.font18),
+                    GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          if(textNum!=0){
+                            textNum=textNum-1;
+                          }
+
+                        });
+                      },
+                        child: CustomCircleButton(icon: Icons.remove,)),
 
                   ],
                 ),

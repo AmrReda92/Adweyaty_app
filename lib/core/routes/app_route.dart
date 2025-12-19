@@ -68,7 +68,6 @@ class AppRoute {
 
       case Routes.productScreen:
         final category = setting.arguments as HomeCategoryModel;
-
         return MaterialPageRoute(
           builder: (_) =>
               BlocProvider(

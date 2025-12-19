@@ -31,8 +31,8 @@ class AppTextStyle {
   );
   static TextStyle price = TextStyle(
       fontSize: 16.sp,
-      color: Color(0xffF24E1E),
-      fontWeight: FontWeight.w600
+      color: Colors.red,
+      fontWeight: FontWeight.w700
   );
   static TextStyle hintStyle = TextStyle(
       fontSize: 18.sp,

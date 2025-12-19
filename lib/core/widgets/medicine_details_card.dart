@@ -16,7 +16,7 @@ class MedicineDetailsCard extends StatelessWidget {
       padding:  EdgeInsets.only(left: 5.w,right: 5.w,),
       child: Card(
         elevation: 6,
-        color: Colors.white,
+        color: Colors.blue.shade200,
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
           child: Column(

@@ -23,7 +23,7 @@ class CartScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: ListView.separated(
-          itemCount: 8,
+          itemCount: 2,
           itemBuilder: (BuildContext context, int index) {
             return CustomCardItem();
           },
@@ -51,7 +51,7 @@ class CartScreen extends StatelessWidget {
             ],
           ),
         ),
-        ),
+      ),
     );
   }
 }
