@@ -25,7 +25,6 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.hardEdge,
-      width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.blue.shade200,
         borderRadius: BorderRadius.circular(20.r),
@@ -40,7 +39,8 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
                 return Image.asset(
                   sliders[index],
                   width: double.infinity,
-                  fit: BoxFit.cover,
+
+                  fit: BoxFit.fill,
                 );
               },
               options: CarouselOptions(

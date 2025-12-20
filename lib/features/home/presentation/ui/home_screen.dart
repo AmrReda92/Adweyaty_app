@@ -16,69 +16,89 @@ import '../../../../generated/l10n.dart';
 import '../../data/model/homeCategoryModel.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key,});
-
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
-        String title= S.of(context).welcomeUser;
-        if(state is HomeDataSuccess){
-           title = "${S.of(context).welcomeOnly} ${state.user.name}";
+        String title = S.of(context).welcomeUser;
+        if (state is HomeDataSuccess) {
+          title = "${S.of(context).welcomeOnly} ${state.user.name}";
         }
         return Scaffold(
           appBar: CustomAppbarCategory(
             centerTitle: false,
             title: title,
-            icon: Icon(Icons.shopping_cart, size: 30.h, color: Colors.white,),
+            icon: Icon(Icons.shopping_cart, size: 30.h, color: Colors.white),
           ),
           body: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.w),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h,),
-                    CustomSearchField(),
-                    CustomCarouselSlider(),
-                    SizedBox(height: 20.h,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 12.w),
+                    child: Column(
                       children: [
-                        Text("Categories",
-                            style: AppTextStyle.font20black.copyWith(
-                                fontSize: 18)),
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.pushNamed(context, Routes.showAllCategoriesScreen );
-                          },
-                          child: Text("Show All >",
-                              style: AppTextStyle.font20black.copyWith(
-                                  fontSize: 18,color: AppColor.primaryColor)),
-                        ),
+                        SizedBox(height: 20.h),
+                        CustomSearchField(),
                       ],
                     ),
-                    SizedBox(height: 10.h,),
-                    GridViewHorizontalItems(),
-                    SizedBox(height: 40.h,),
-                    CustomElevatedButton(
-                        title: "Send your Prescription",
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.camera_alt_rounded, size: 34.r,
-                          color: Colors.white,)
+                  ),
+                  SizedBox(height: 12.h,),
+                  CustomCarouselSlider(),
+                  SizedBox(height: 20.h),
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 12.w),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Categories",
+                              style: AppTextStyle.font20black.copyWith(
+                                fontSize: 18,
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.showAllCategoriesScreen,
+                                );
+                              },
+                              child: Text(
+                                "Show All >",
+                                style: AppTextStyle.font20black.copyWith(
+                                  fontSize: 18,
+                                  color: AppColor.primaryColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10.h),
+                        GridViewHorizontalItems(),
+                        SizedBox(height: 40.h),
+                        CustomElevatedButton(
+                          title: "Send your Prescription",
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.camera_alt_rounded,
+                            size: 34.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 26.h),
+                      ],
                     ),
-                    SizedBox(height: 26.h,),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
-          drawer: Drawer(
-            backgroundColor: Colors.blue.shade200,
-
-            ),
+          drawer: Drawer(backgroundColor: Colors.blue.shade200),
         );
       },
     );
