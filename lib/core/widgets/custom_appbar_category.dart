@@ -3,7 +3,6 @@ import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'custom_search_field.dart';
 
 class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidget {
@@ -37,9 +36,7 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
       ),
         );
 
-
   }
-
   @override
   Size get preferredSize =>  Size.fromHeight(kToolbarHeight + 60.h);
 

@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
@@ -16,6 +17,7 @@ class CartScreen extends StatelessWidget {
         title: "My Cart",
         leading: InkWell(
           onTap: () {
+            Navigator.pushNamed(context, Routes.bottomNavBarScreen);
           },
           child: Icon(Icons.arrow_back, size: 28.sp),
         ),
