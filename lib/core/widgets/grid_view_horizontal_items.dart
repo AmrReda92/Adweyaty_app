@@ -31,8 +31,8 @@ class GridViewHorizontalItems extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
                 childAspectRatio: 1,
               ),
               itemCount: categories.length,

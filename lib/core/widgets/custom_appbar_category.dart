@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'custom_search_field.dart';
+
 class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget? leading ;
@@ -14,20 +16,31 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: leading ,
-      title: Text(title,style: AppTextStyle.appBarTitle,),
-      centerTitle: centerTitle,
-      backgroundColor: Colors.blueAccent,
-      actions: [
-        icon??
-        SvgPicture.asset(
-          AppImages.cartIcon,width: 30.w,height: 30.h,),
-        SizedBox(width: 10.w,)
-      ],
-    );
+          leading: leading ,
+          title: Text(title,style: AppTextStyle.appBarTitle,),
+          centerTitle: centerTitle,
+          backgroundColor: Colors.blueAccent,
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: 12.w),
+              child: icon??
+              SvgPicture.asset(
+                AppImages.cartIcon,width: 30.w,height: 30.h,),
+            ),
+          ],
+      bottom: PreferredSize(
+          preferredSize: Size.fromHeight(60.h),
+          child: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 12.w,vertical:12.h),
+            child: const CustomSearchField(),
+          ),
+      ),
+        );
+
+
   }
 
   @override
-  Size get preferredSize =>  Size.fromHeight(56.h);
+  Size get preferredSize =>  Size.fromHeight(kToolbarHeight + 60.h);
 
 }

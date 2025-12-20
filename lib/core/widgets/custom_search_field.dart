@@ -14,6 +14,8 @@ class CustomSearchField extends StatelessWidget {
     return TextField(
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+        fillColor: AppColor.searchBackground,
+        filled: true,
         prefixIcon: Icon(Icons.search) ,
         suffixIcon: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10.w),
@@ -31,6 +33,6 @@ class CustomSearchField extends StatelessWidget {
         ),
       ),
 
-    );;
+    );
   }
 }
