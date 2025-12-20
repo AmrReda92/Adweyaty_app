@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/home/data/model/homeCategoryModel.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -11,28 +12,36 @@ class CardItemAllCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      child: Container(
-        height: 80.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.r),
-          gradient: AppColor.customElevated,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CachedNetworkImage(imageUrl: category.image, width: 70.w,
-                height: 70.h, fit: BoxFit.contain),
-            Text(
-              category.title,
-              style: AppTextStyle.font20black.copyWith(
-                color: Colors.white,
-                fontSize: 18.sp,
-              ),
+    return Padding(
+      padding:  EdgeInsets.only(bottom: 8.0.h),
+      child: GestureDetector(
+        onTap: (){
+          Navigator.pushNamed(context, Routes.productScreen,arguments: category);
+        },
+        child: Card(
+          elevation: 4,
+          child: Container(
+            height: 80.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.r),
+              gradient: AppColor.customElevated,
             ),
-            Icon(Icons.arrow_right, size: 50, color: Colors.white),
-          ],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CachedNetworkImage(imageUrl: category.image, width: 70.w,
+                    height: 80.h, fit: BoxFit.cover),
+                Text(
+                  category.title,
+                  style: AppTextStyle.font20black.copyWith(
+                    color: Colors.white,
+                    fontSize: 18.sp,
+                  ),
+                ),
+                Icon(Icons.arrow_right, size: 50, color: Colors.white),
+              ],
+            ),
+          ),
         ),
       ),
     );

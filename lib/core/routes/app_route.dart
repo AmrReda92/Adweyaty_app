@@ -55,7 +55,7 @@ class AppRoute {
 
       case Routes.showAllCategoriesScreen:
         return MaterialPageRoute(
-            builder: (_) => const ShowAllCategoriesScreen()
+            builder: (_) =>  ShowAllCategoriesScreen(),
         );
 
       case Routes.bottomNavBarScreen:

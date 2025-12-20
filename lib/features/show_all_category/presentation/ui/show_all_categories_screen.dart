@@ -3,6 +3,7 @@ import 'package:adweyaty_application/features/show_all_category/presentation/wid
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
 class ShowAllCategoriesScreen extends StatelessWidget {
   const ShowAllCategoriesScreen({super.key});
 

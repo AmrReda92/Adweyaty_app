@@ -17,4 +17,11 @@ class AppImages {
  static const String vitamin ="assets/images/vitamin.jpg";
  static const String womanProduct ="assets/images/womanProduct.jpg";
 
+
+ static const String carro1 ="assets/images/carro1.png";
+ static const String carro2 ="assets/images/carro2.png";
+ static const String carro3 ="assets/images/carro3.png";
+
+
+
 }

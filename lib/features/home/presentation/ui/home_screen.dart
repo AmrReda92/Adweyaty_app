@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_search_field.dart';
@@ -5,15 +6,18 @@ import 'package:adweyaty_application/core/widgets/grid_view_horizontal_items.dar
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
+import 'package:adweyaty_application/features/home/presentation/widgets/custom_carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/theme/app_color.dart';
 import '../../../../generated/l10n.dart';
+import '../../data/model/homeCategoryModel.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key,});
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: 20.h,),
                     CustomSearchField(),
-                    
+                    CustomCarouselSlider(),
                     SizedBox(height: 20.h,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                                 fontSize: 18)),
                         GestureDetector(
                           onTap: (){
-                            Navigator.pushNamed(context, Routes.showAllCategoriesScreen);
+                            Navigator.pushNamed(context, Routes.showAllCategoriesScreen );
                           },
                           child: Text("Show All >",
                               style: AppTextStyle.font20black.copyWith(

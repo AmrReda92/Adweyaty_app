@@ -8,16 +8,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class ProductScreen extends StatelessWidget {
-  final HomeCategoryModel categoryProduct;
+  final HomeCategoryModel? categoryProduct;
 
-  const ProductScreen({super.key, required this.categoryProduct});
+  const ProductScreen({super.key,required this.categoryProduct});
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xfff4f4f4),
-        appBar: CustomAppbarCategory(title: categoryProduct.title),
+        appBar: CustomAppbarCategory(title: categoryProduct!.title),
         body: BlocBuilder<ProductsCubit, ProductsState>(
           builder: (context, state) {
             if(state is ProductsLoading){
