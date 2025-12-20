@@ -7,13 +7,11 @@ import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_elevated_button.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/home/presentation/widgets/custom_carousel_slider.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_color.dart';
 import '../../../../generated/l10n.dart';
-import '../../data/model/homeCategoryModel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -52,6 +50,16 @@ class HomeScreen extends StatelessWidget {
                     padding:  EdgeInsets.symmetric(horizontal: 12.w),
                     child: Column(
                       children: [
+                        CustomElevatedButton(
+                          title: "Send your Prescription",
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.camera_alt_rounded,
+                            size: 34.r,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 20.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -80,17 +88,6 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 10.h),
                         GridViewHorizontalItems(),
-                        SizedBox(height: 40.h),
-                        CustomElevatedButton(
-                          title: "Send your Prescription",
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.camera_alt_rounded,
-                            size: 34.r,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: 26.h),
                       ],
                     ),
                   ),

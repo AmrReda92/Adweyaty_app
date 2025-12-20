@@ -33,7 +33,7 @@ class GridViewHorizontalItems extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: .85,
+                childAspectRatio: 1,
               ),
               itemCount: categories.length,
               itemBuilder: (context, index) {
