@@ -1,7 +1,6 @@
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/routes/routes.dart';
 
 class FavouriteScreen extends StatelessWidget {

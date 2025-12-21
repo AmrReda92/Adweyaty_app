@@ -6,10 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
-class MedicineDetailsCard extends StatelessWidget {
+class MedicineDetailsCard extends StatefulWidget {
   final DrugItemDetails drugItem ;
   const MedicineDetailsCard({super.key, required this.drugItem});
 
+  @override
+  State<MedicineDetailsCard> createState() => _MedicineDetailsCardState();
+}
+
+class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,20 +24,37 @@ class MedicineDetailsCard extends StatelessWidget {
         elevation: 6,
         color: Colors.blue.shade200,
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+          padding:  EdgeInsets.only(left: 14.w,right:14.w,top: 12.h),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CachedNetworkImage(imageUrl:drugItem.image ,fit:BoxFit.cover, height: 100.h,),
-              SizedBox(height: 6.h,),
-              Text(drugItem.name,style: AppTextStyle.medicineName,),
-              SizedBox(height: 6.h,),
-              Text(drugItem.price.toString(),style: AppTextStyle.price,),
-              SizedBox(height: 6.h,),
+              Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 26.w,
+                  height: 26.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),child: GestureDetector(
+                     onTap: (){
+                       setState(() {
+                         isSelected = !isSelected;
+
+                       });
+                     },
+                    child: isSelected? Icon(Icons.favorite,size: 20,color: Colors.red,) : Icon(Icons.favorite_border,size: 20,)
+                ),
+                ),
+              ),
+              CachedNetworkImage(imageUrl:widget.drugItem.image ,fit:BoxFit.contain, height: 100.h,),
+              Text(widget.drugItem.name,style: AppTextStyle.medicineName,maxLines:1,overflow:TextOverflow.ellipsis ),
+              Text(widget.drugItem.price.toString(),style: AppTextStyle.price,),
               SizedBox(
-                width: double.infinity,
-                child: CustomElvatedButtonCard()
-              )
+                    width: double.infinity,
+                    child: CustomElvatedButtonCard()
+                  ),
+
             ],
           ),
         ),

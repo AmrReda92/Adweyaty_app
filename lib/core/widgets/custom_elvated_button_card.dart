@@ -15,9 +15,7 @@ class CustomElvatedButtonCard extends StatelessWidget {
           ),
           padding: EdgeInsets.symmetric(vertical: 8.h),
         ),
-
         child: Text("Add to Cart",style: AppTextStyle.medicineName.copyWith(color: Colors.white),)
-
     );
   }
 }
