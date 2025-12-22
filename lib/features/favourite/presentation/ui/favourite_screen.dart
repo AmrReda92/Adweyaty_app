@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/routes/routes.dart';
 
 class FavouriteScreen extends StatelessWidget {
-  const FavouriteScreen({super.key});
+  const FavouriteScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class FavouriteScreen extends StatelessWidget {
            child: Icon(Icons.arrow_back, size: 28.sp)),
            icon: Icon(Icons.shopping_cart, size: 30.h, color: Colors.white),
      ),
+
     );
   }
 }
