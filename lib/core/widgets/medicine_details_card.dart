@@ -49,7 +49,7 @@ class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
               ),
               CachedNetworkImage(imageUrl:widget.drugItem.image ,fit:BoxFit.contain, height: 100.h,),
               Text(widget.drugItem.name,style: AppTextStyle.medicineName,maxLines:1,overflow:TextOverflow.ellipsis ),
-              Text(widget.drugItem.price.toString(),style: AppTextStyle.price,),
+              Text(("${widget.drugItem.price} EGP"),style: AppTextStyle.price,),
               SizedBox(
                     width: double.infinity,
                     child: CustomElvatedButtonCard()

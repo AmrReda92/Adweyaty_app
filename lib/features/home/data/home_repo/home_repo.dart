@@ -2,11 +2,11 @@ import 'package:adweyaty_application/features/home/data/model/homeCategoryModel.
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeRepo {
-  final firestore = FirebaseFirestore.instance ;
+  final fireStore = FirebaseFirestore.instance ;
 
   Future<List<HomeCategoryModel>> getCategories () async{
     try{
-      final snapshot = await firestore.collection('categories').get();
+      final snapshot = await fireStore.collection('categories').get();
 
       return snapshot.docs
           .map(
