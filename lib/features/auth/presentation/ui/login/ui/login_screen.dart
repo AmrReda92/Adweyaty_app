@@ -5,6 +5,7 @@ import 'package:adweyaty_application/core/widgets/custom_appbar.dart';
 import 'package:adweyaty_application/core/widgets/custom_show_dialogue.dart';
 import 'package:adweyaty_application/features/auth/data/models/login_model.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/cubit/login_cubit.dart';
+import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,6 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     else if(state is LoginSuccess){
+      context.read<HomeCubit>().loadUserData(state.user);
       Navigator.pop(context);
       Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen,arguments: state.user, (e)=>false);
     }

@@ -12,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/helper/validation_service.dart';
 import '../../../../../../core/theme/app_text_style.dart';
 import '../../../../../../generated/l10n.dart';
+import '../../../../../home/data/cubit/home_cubit.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -47,6 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       customShowLoadingDialog(context);
 
     }else if(state is SignUpSuccess){
+      context.read<HomeCubit>().loadUserData(state.user);
       Navigator.pop(context);
       Navigator.pushNamedAndRemoveUntil(context, Routes.validationScreen,arguments: state.user, (e)=>false);
 

@@ -8,6 +8,9 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
 import 'package:adweyaty_application/features/cart/presentation/ui/cart_screen.dart';
+import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
+import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
+import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/product_screens/data/cubit/products_cubit.dart';
 import 'package:adweyaty_application/features/product_screens/data/products_repo/products_repo.dart';
@@ -56,7 +59,14 @@ class AppRoute {
 
       case Routes.bottomNavBarScreen:
         return MaterialPageRoute(
-          builder: (_) => const BottomNavBarScreen(),
+          builder: (_) => MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                    create: (context)=> CategoriesCubit(HomeRepo())..getCategories()
+                ),
+              ],
+              child: const BottomNavBarScreen()
+          ),
         );
 
       case Routes.cartScreen:
