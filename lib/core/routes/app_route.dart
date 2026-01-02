@@ -13,7 +13,9 @@ import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/product_screens/data/cubit/products_cubit.dart';
+import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:adweyaty_application/features/product_screens/data/products_repo/products_repo.dart';
+import 'package:adweyaty_application/features/product_screens/ui/product_details_screen.dart';
 import 'package:adweyaty_application/features/show_all_category/presentation/ui/show_all_categories_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -87,6 +89,10 @@ class AppRoute {
         return MaterialPageRoute(
           builder: (_) => ValidationSuccessScreen(user: user),
         );
+
+      case Routes.productDetailsScreen :
+        final drugItemDetails = setting.arguments as DrugItemDetails;
+        return MaterialPageRoute(builder: (_)=>ProductDetailsScreen(drugItem: drugItemDetails,));
     }
     return null;
   }
