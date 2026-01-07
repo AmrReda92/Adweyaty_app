@@ -25,11 +25,17 @@ class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final emailFocus = FocusNode();
+  final passwordFocus = FocusNode();
+
 
   @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+
     super.dispose();
   }
 
@@ -78,16 +84,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(S.of(context).signInText, style: AppTextStyle.font28),
                   SizedBox(height: 66.h),
                   CustomTextFormField(
+                    focusNode: emailFocus,
+                    textInputAction: TextInputAction.next,
                     hintText: S.of(context).hintEmail,
                     controller: emailController,
-                    validator: ValidationService.validateEmail
+                    validator: ValidationService.validateEmail,
+                    onFieldSubmitted: (_){
+                      FocusScope.of(context).requestFocus(passwordFocus);
+                    },
                   ),
                   SizedBox(height: 20.h),
                   CustomTextFormField(
+                    focusNode: passwordFocus,
+                    textInputAction: TextInputAction.done,
                     hintText: S.of(context).hintPassword,
                     isPassword: true,
                     controller: passwordController,
-                    validator: ValidationService.validatePassword
+                    validator: ValidationService.validatePassword,
+                    onFieldSubmitted: (_){
+                      FocusScope.of(context).unfocus();
+                    },
                   ),
                   SizedBox(height: 20.h),
                   Align(

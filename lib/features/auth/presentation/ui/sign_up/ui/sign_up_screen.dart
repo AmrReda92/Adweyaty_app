@@ -28,8 +28,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  final nameFocus = FocusNode();
+  final mobileFocus = FocusNode();
+  final emailFocus = FocusNode();
+  final passwordFocus = FocusNode();
+
   @override
   void dispose() {
+    nameFocus.dispose();
+    mobileFocus.dispose();
+    emailFocus.dispose();
+    passwordFocus.dispose();
     nameController.dispose();
     mobileController.dispose();
     emailController.dispose();
@@ -80,14 +89,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Text(S.of(context).signUpText, style: AppTextStyle.font28),
                   SizedBox(height: 40.h,),
                   CustomTextFormField(
+                    focusNode: nameFocus,
+                    textInputAction: TextInputAction.next,
+                    onFieldSubmitted: (_){
+                      FocusScope.of(context).requestFocus(mobileFocus);
+                    },
                     hintText: S.of(context).hintName,
                     controller: nameController,
                     validator: ValidationService.validateName
 
                   ),
                   SizedBox(height: 20.h,),
-
                   CustomTextFormField(
+                    focusNode: mobileFocus,
+                    textInputAction: TextInputAction.next,
+                    onFieldSubmitted: (_){
+                      FocusScope.of(context).requestFocus(emailFocus);
+                    },
                     hintText: S.of(context).hintMobile,
                     controller: mobileController,
                     validator: ValidationService.validatePhoneNumber
@@ -95,6 +113,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h,),
 
                   CustomTextFormField(
+                    focusNode: emailFocus,
+                    textInputAction: TextInputAction.next,
+                    onFieldSubmitted: (_){
+                      FocusScope.of(context).requestFocus(passwordFocus);
+                    },
                     hintText: S.of(context).hintEmail,
                     controller: emailController,
                     validator: ValidationService.validateEmail
@@ -102,6 +125,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20.h,),
 
                   CustomTextFormField(
+                    focusNode: passwordFocus,
+                    textInputAction: TextInputAction.done,
+                    onFieldSubmitted: (_){
+                      FocusScope.of(context).unfocus();
+                    },
                     hintText: S.of(context).hintPassword,
                     isPassword: true,controller: passwordController,
                     validator: ValidationService.validatePassword
