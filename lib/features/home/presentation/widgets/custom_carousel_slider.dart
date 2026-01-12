@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/app_images/app_images.dart';
-import '../../../../core/theme/app_color.dart';
 
 class CustomCarouselSlider extends StatelessWidget {
   const CustomCarouselSlider({super.key});
-
-
 
 
   static const List<String> sliders = [
