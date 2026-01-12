@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/cubit/login_cubit.dart';
@@ -15,6 +17,9 @@ import 'package:adweyaty_application/features/product_screens/data/cubit/product
 import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:adweyaty_application/features/product_screens/data/products_repo/products_repo.dart';
 import 'package:adweyaty_application/features/product_screens/ui/product_details_screen.dart';
+import 'package:adweyaty_application/features/profile/data/cubit/profile_cubit.dart';
+import 'package:adweyaty_application/features/profile/data/repo/profile_photo_repo.dart';
+import 'package:adweyaty_application/features/profile/presentation/ui/profile_screen.dart';
 import 'package:adweyaty_application/features/show_all_category/presentation/ui/show_all_categories_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -68,6 +73,9 @@ class AppRoute {
                 BlocProvider(
                     create: (context)=> CategoriesCubit(HomeRepo())..getCategories()
                 ),
+                BlocProvider(
+                    create: (context)=> ProfileCubit(ProfilePhotoRepo())
+                )
               ],
               child: const BottomNavBarScreen()
           ),
@@ -75,6 +83,10 @@ class AppRoute {
 
       case Routes.cartScreen:
         return MaterialPageRoute(builder: (_) => const CartScreen());
+
+      case Routes.profileScreen :
+        return MaterialPageRoute(builder: (_)=>const ProfileScreen());
+
 
       case Routes.productScreen:
         final category = setting.arguments as HomeCategoryModel;
