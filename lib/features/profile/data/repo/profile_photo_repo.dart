@@ -13,13 +13,14 @@ class ProfilePhotoRepo {
     storage.
     ref().
     child("users").
-    child("uid").
+    child(uid).
     child("profile.jpg");
 
     await reference.putFile(image);
 
     final imageUrl = await reference.getDownloadURL();
-    await fireStore.collection("users").doc("users").update(
+
+    await fireStore.collection("users").doc(uid).update(
         {"profileImageUrl": imageUrl});
 
     return imageUrl;

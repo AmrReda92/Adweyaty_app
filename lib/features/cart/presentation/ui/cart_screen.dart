@@ -23,15 +23,16 @@ class CartScreen extends StatelessWidget {
           child: Icon(Icons.arrow_back, size: 28.sp),
         ),
       ),
-      body: Padding(
+      body:
+      Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: ListView.separated(
-          itemCount: 2,
+          itemCount: 8,
           itemBuilder: (BuildContext context, int index) {
             return CustomCardItem();
           },
           separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(height: 10.h,);
+            return SizedBox(height: 5.h,);
           },
         ),
       ),
@@ -43,7 +44,10 @@ class CartScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Total Price",style: AppTextStyle.font20black,),
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.h),
+                    child: Text("Total Price",style: AppTextStyle.font20black,),
+                  ),
                   Text("0",style: AppTextStyle.font20black)
                 ],
               ),

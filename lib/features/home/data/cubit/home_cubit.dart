@@ -9,4 +9,16 @@ class HomeCubit extends Cubit<HomeState> {
   void loadUserData( UserModel userDataLoaded){
     emit(HomeDataSuccess(userDataLoaded));
   }
+
+  void updateProfileImage(String imageUrl) {
+    if (state is HomeDataSuccess) {
+      final currentUser = (state as HomeDataSuccess).user;
+
+      emit(
+        HomeDataSuccess(
+          currentUser.copyWith(profileImageUrl: imageUrl),
+        ),
+      );
+    }
+  }
 }

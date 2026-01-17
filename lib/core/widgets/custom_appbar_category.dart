@@ -28,7 +28,7 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
             ),
           ],
       bottom: PreferredSize(
-          preferredSize: Size.fromHeight(60.h),
+          preferredSize: Size.fromHeight(0),
           child: Padding(
             padding:  EdgeInsets.symmetric(horizontal: 12.w,vertical:12.h),
             child: const CustomSearchField(),
@@ -38,6 +38,6 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
 
   }
   @override
-  Size get preferredSize =>  Size.fromHeight(kToolbarHeight + 60.h);
+  Size get preferredSize =>  Size.fromHeight(kToolbarHeight + 64.h);
 
 }

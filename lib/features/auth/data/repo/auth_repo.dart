@@ -20,6 +20,7 @@ class AuthRepo {
         phone: model.phone,
         uid: uid,
     );
+
       await FirebaseFirestore.instance.
       collection("users").doc(credential.user!.uid).set(userWithUid.toJson());
 

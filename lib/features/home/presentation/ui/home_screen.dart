@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           appBar: CustomAppbarCategory(
             centerTitle: false,
             title: title,
-            icon: Icon(Icons.shopping_cart, size: 30.h, color: Colors.white),
+            icon: Icon(Icons.shopping_cart, size: 25.h, color: Colors.white),
           ),
           body: SafeArea(
             child: SingleChildScrollView(
