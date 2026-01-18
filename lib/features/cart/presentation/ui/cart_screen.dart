@@ -11,82 +11,92 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class CartScreen extends StatelessWidget {
-
   const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final cartCubit =context.read<CartCubit>();
-    
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: CustomAppbarCategory(
-        title: "My Cart",
-        leading: InkWell(
-          onTap: () {
-            Navigator.pushNamed(context, Routes.bottomNavBarScreen);
-          },
-          child: Icon(Icons.arrow_back, size: 28.sp),
-        ),
-      ),
-      body:
-      StreamBuilder<List<CartItemModel>>(
-        stream: cartCubit.getCartItems(),
-        builder: (context, asyncSnapshot) {
+    final cartCubit = context.read<CartCubit>();
 
-          if (asyncSnapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
+    return StreamBuilder<List<CartItemModel>>(
+      stream: cartCubit.getCartItems(),
+      builder: (context, asyncSnapshot) {
 
-          if (asyncSnapshot.hasError) {
-            return const Center(child: Text("Error loading cart"));
-          }
+        if (asyncSnapshot.connectionState == ConnectionState.waiting) {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
+        }
 
-          final items = asyncSnapshot.data ?? [];
+        if (asyncSnapshot.hasError) {
+          return const Scaffold(
+            body: Center(child: Text("Error loading cart")),
+          );
+        }
 
-          if (items.isEmpty) {
-            return const Center(
-              child: Text("Your cart is empty 🛒"),
-            );
-          }
+        final items = asyncSnapshot.data ?? [];
 
-          return Padding(
+        // حساب التوتال هنا
+        num totalPrice = 0;
+        for (var item in items) {
+          totalPrice += item.price * item.quantity;
+        }
+
+        return Scaffold(
+          backgroundColor: Colors.white,
+          appBar: CustomAppbarCategory(
+            title: "My Cart",
+            leading: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.bottomNavBarScreen);
+              },
+              child: Icon(Icons.arrow_back, size: 28.sp),
+            ),
+          ),
+          body: items.isEmpty
+              ? const Center(child: Text("Your cart is empty 🛒"))
+              : Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: ListView.separated(
               itemCount: items.length,
               itemBuilder: (BuildContext context, int index) {
-                return CustomCardItem(item: items[index],);
+                return CustomCardItem(item: items[index]);
               },
               separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(height: 5.h,);
+                return SizedBox(height: 5.h);
               },
             ),
-          );
-        }
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: IntrinsicHeight(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          ),
+          bottomNavigationBar: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: IntrinsicHeight(
+              child: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 8.h),
-                    child: Text("Total Price",style: AppTextStyle.font20black,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 8.h),
+                        child: Text(
+                          "Total Price",
+                          style: AppTextStyle.font20black,
+                        ),
+                      ),
+                      Text(
+                        "$totalPrice EGP",
+                        style: AppTextStyle.font20black,
+                      ),
+                    ],
                   ),
-                  Text("0",style: AppTextStyle.font20black)
+                  SizedBox(height: 10.h),
+                  const CustomButton(title: "Checkout"),
+                  SizedBox(height: 20.h),
                 ],
               ),
-              SizedBox(height: 10.h,),
-              const  CustomButton(title: "Chekout"),
-              SizedBox(height: 20.h,)
-
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
+

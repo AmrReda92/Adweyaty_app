@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../features/cart/data/cart_cubit/cart_cubit.dart';
 import '../../features/cart/data/models/cart_item_model.dart';
-import '../app_images/app_images.dart';
 import '../theme/app_text_style.dart';
 import 'custom_circle_button.dart';
 
@@ -96,7 +95,7 @@ class CustomCardItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${item.price} EGP",
+                  "${(item.price)*(item.quantity)} EGP",
                   style: AppTextStyle.font18.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
