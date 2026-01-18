@@ -57,7 +57,7 @@ class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
                 Text(("${widget.drugItem.price} EGP"),style: AppTextStyle.price,),
                 SizedBox(
                       width: double.infinity,
-                      child: CustomElvatedButtonCard()
+                      child: CustomElvatedButtonCard(drugItem: widget.drugItem,)
                     ),
 
               ],

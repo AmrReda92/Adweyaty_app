@@ -3,8 +3,12 @@ import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:adweyaty_application/core/widgets/custom_card_item.dart';
+import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
+import 'package:adweyaty_application/features/cart/data/models/cart_item_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class CartScreen extends StatelessWidget {
 
@@ -12,6 +16,8 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartCubit =context.read<CartCubit>();
+    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomAppbarCategory(
@@ -24,17 +30,39 @@ class CartScreen extends StatelessWidget {
         ),
       ),
       body:
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: ListView.separated(
-          itemCount: 8,
-          itemBuilder: (BuildContext context, int index) {
-            return CustomCardItem();
-          },
-          separatorBuilder: (BuildContext context, int index) {
-            return SizedBox(height: 5.h,);
-          },
-        ),
+      StreamBuilder<List<CartItemModel>>(
+        stream: cartCubit.getCartItems(),
+        builder: (context, asyncSnapshot) {
+
+          if (asyncSnapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (asyncSnapshot.hasError) {
+            return const Center(child: Text("Error loading cart"));
+          }
+
+          final items = asyncSnapshot.data ?? [];
+
+          if (items.isEmpty) {
+            return const Center(
+              child: Text("Your cart is empty 🛒"),
+            );
+          }
+
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: ListView.separated(
+              itemCount: items.length,
+              itemBuilder: (BuildContext context, int index) {
+                return CustomCardItem(item: items[index],);
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return SizedBox(height: 5.h,);
+              },
+            ),
+          );
+        }
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),

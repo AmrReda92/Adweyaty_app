@@ -1,8 +1,9 @@
 import 'package:adweyaty_application/features/cart/data/models/cart_item_model.dart';
 import 'package:adweyaty_application/features/cart/data/repo/cart_repo.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 part 'cart_state.dart';
 
@@ -32,4 +33,35 @@ class CartCubit extends Cubit<CartState> {
   Stream<List<CartItemModel>> getCartItems(){
     return cartRepo.getCartItems(uid);
   }
+  Future<void> increaseQuantity(CartItemModel item) async {
+    try {
+      await cartRepo.updateQuantity(
+        uid: uid,
+        productId: item.productId,
+        quantity: item.quantity + 1,
+      );
+    } catch (e) {
+      emit(CartError(e.toString()));
+    }
+  }
+
+  Future<void> decreaseQuantity(CartItemModel item) async {
+    try {
+      if (item.quantity <= 1) {
+        await cartRepo.removeFromCart(
+          uid: uid,
+          productId: item.productId,
+        );
+      } else {
+        await cartRepo.updateQuantity(
+          uid: uid,
+          productId: item.productId,
+          quantity: item.quantity - 1,
+        );
+      }
+    } catch (e) {
+      emit(CartError(e.toString()));
+    }
+  }
+
 }

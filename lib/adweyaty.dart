@@ -2,6 +2,8 @@ import 'package:adweyaty_application/core/routes/app_route.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
+import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
+import 'package:adweyaty_application/features/cart/data/repo/cart_repo.dart';
 import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
@@ -22,26 +24,36 @@ class Adweyaty extends StatelessWidget {
       splitScreenMode: true,
       child: MultiBlocProvider(
         providers: [
-         BlocProvider(
-             create: (context)=> HomeCubit()
-         )
+          BlocProvider(
+              create: (context) => HomeCubit()
+          )
         ],
-        child: MaterialApp(
-            onGenerateRoute: AppRoute.generateRoute,
-            locale: Locale("en"),
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-                scaffoldBackgroundColor: Color(0xffF0FFFF),
-                fontFamily: "Cairo"
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+                create: (context)=>HomeCubit()
             ),
-            initialRoute: Routes.signUpLoginScreen
+            BlocProvider(
+                create: (context)=>CartCubit(CartRepo(), context.read<HomeCubit>())
+            )
+          ],
+          child: MaterialApp(
+              onGenerateRoute: AppRoute.generateRoute,
+              locale: Locale("en"),
+              localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                  scaffoldBackgroundColor: Color(0xffF0FFFF),
+                  fontFamily: "Cairo"
+              ),
+              initialRoute: Routes.signUpLoginScreen
+          ),
         ),
       ),
     );
