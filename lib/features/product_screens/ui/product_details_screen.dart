@@ -1,10 +1,14 @@
 import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/widgets/custom_appbar_category.dart';
 import '../../../core/theme/app_text_style.dart';
 import '../../../core/theme/app_color.dart';
+import '../../../core/widgets/custom_snackBar.dart';
+import '../../cart/data/cart_cubit/cart_cubit.dart';
+import '../../cart/data/models/cart_item_model.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final DrugItemDetails drugItem ;
@@ -91,6 +95,19 @@ class ProductDetailsScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
+                        final cartItem = CartItemModel(
+                          productId: drugItem.id,
+                          name: drugItem.name,
+                          image: drugItem.image,
+                          price: drugItem.price,
+                          quantity: 1,
+                        );
+                        context.read<CartCubit>().addToCart(cartItem);
+                        CustomSnackBar.show(
+                          context,
+                          message: "Added to cart",
+                          backgroundColor: Colors.green,
+                        );
 
                       },
                       child: Text(
