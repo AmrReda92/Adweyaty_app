@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/app_images/app_images.dart';
+import '../../../../../../core/helper/local_storage_service.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../../generated/l10n.dart';
@@ -42,13 +43,14 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       buildWhen: (previous,current)=>(current is! LoginError),
-  listener: (context, state) {
+  listener: (context, state) async {
 
     if(state is LoginLoading){
       customShowLoadingDialog(context);
     }
 
-    else if(state is LoginSuccess){
+    else if(state is LoginSuccess) {
+      await LocalStorageService.saveLogin(state.user.uid);
       context.read<HomeCubit>().loadUserData(state.user);
       Navigator.pop(context);
       Navigator.pushNamedAndRemoveUntil(context, Routes.bottomNavBarScreen,arguments: state.user, (e)=>false);

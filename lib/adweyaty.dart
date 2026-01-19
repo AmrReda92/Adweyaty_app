@@ -52,7 +52,7 @@ class Adweyaty extends StatelessWidget {
                   scaffoldBackgroundColor: Color(0xffF0FFFF),
                   fontFamily: "Cairo"
               ),
-              initialRoute: Routes.signUpLoginScreen
+              initialRoute: Routes.splashScreen
           ),
         ),
       ),

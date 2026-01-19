@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../core/helper/local_storage_service.dart';
 import '../../../../generated/l10n.dart';
 
 
@@ -26,8 +27,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToOnboarding() async{
-    await  Future.delayed(Duration(seconds: 2));
-    Navigator.pushNamedAndRemoveUntil(context, Routes.onboardingScreen, (e)=>false);
+    await  Future.delayed(Duration(seconds: 3));
+    if (LocalStorageService.isLoggedIn()) {
+      Navigator.pushReplacementNamed(context, Routes.bottomNavBarScreen);
+    } else {
+      Navigator.pushReplacementNamed(context, Routes.signUpLoginScreen);
+    }
+
   }
 
   @override
