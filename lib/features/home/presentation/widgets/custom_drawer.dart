@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/home/presentation/widgets/custom_row_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,8 +35,8 @@ class CustomDrawer extends StatelessWidget {
                 children: [
                   CustomRowDrawer(title: "Home",icon: Icons.home,),
                   CustomRowDrawer(title: "settings",icon: Icons.settings,),
-                  CustomRowDrawer(title: "Home",icon: Icons.home,),
-                  CustomRowDrawer(title: "Home",icon: Icons.home,),
+                  CustomRowDrawer(title: "Support & Help",icon: Icons.help,),
+                  CustomRowDrawer(title: "Policy & Privacy",icon: Icons.privacy_tip_sharp,),
                 ],
               ),
             ],

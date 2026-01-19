@@ -34,7 +34,7 @@ class Adweyaty extends StatelessWidget {
                 create: (context)=>HomeCubit()
             ),
             BlocProvider(
-                create: (context)=>CartCubit(CartRepo(), context.read<HomeCubit>())
+                create: (context)=>CartCubit(CartRepo(),)
             )
           ],
           child: MaterialApp(

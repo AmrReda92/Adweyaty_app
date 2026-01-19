@@ -1,6 +1,7 @@
 import 'package:adweyaty_application/features/cart/data/models/cart_item_model.dart';
 import 'package:adweyaty_application/features/cart/data/repo/cart_repo.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,15 +10,15 @@ part 'cart_state.dart';
 
 class CartCubit extends Cubit<CartState> {
   final CartRepo cartRepo;
-  final HomeCubit homeCubit;
-  CartCubit(this.cartRepo, this.homeCubit) : super(CartInitial());
+
+  CartCubit(this.cartRepo,) : super(CartInitial());
 
   String get uid {
-    final state = homeCubit.state;
-    if(state is HomeDataSuccess){
-      return state.user.uid;
-    }else{
+    final user = FirebaseAuth.instance.currentUser;
+    if(user == null){
       throw ("user is not logged in");
+    }else{
+      return user.uid;
     }
   }
 
