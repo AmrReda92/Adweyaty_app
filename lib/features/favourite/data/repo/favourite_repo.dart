@@ -23,12 +23,12 @@ class FavouriteRepo {
 
   Stream<List<FavouriteItemModel>> getFavourites(String uid){
     return getUserFavRef(uid).
-    orderBy("added at",descending: true).
+    orderBy("addedAt",descending: true).
     snapshots().
     map((snapshot){
       List<FavouriteItemModel> favList=[];
       for(var doc in snapshot.docs){
-        final data = doc.data as Map<String,dynamic> ;
+        final data = doc.data() as Map<String,dynamic> ;
         final item = FavouriteItemModel.fromJson(data);
         favList.add(item);
       }

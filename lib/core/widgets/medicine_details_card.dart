@@ -4,7 +4,11 @@ import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_elvated_button_card.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../features/favourite/data/cubit/favourite_cubit.dart';
+import '../../features/favourite/data/models/favourite_item_model.dart';
 
 
 class MedicineDetailsCard extends StatefulWidget {
@@ -43,6 +47,16 @@ class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
                       color: Colors.white,
                     ),child: GestureDetector(
                        onTap: (){
+                         final favCubit = context.read<FavouriteCubit>();
+                         final favItem = FavouriteItemModel(
+                           productId: widget.drugItem.id,
+                           name: widget.drugItem.name,
+                           image: widget.drugItem.image,
+                           price: widget.drugItem.price,
+                         );
+
+                         favCubit.toggleFavourite(favItem);
+
                          setState(() {
                            isSelected = !isSelected;
 

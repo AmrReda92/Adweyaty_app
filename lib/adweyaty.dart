@@ -3,6 +3,8 @@ import 'package:adweyaty_application/core/routes/app_route.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
 import 'package:adweyaty_application/features/cart/data/repo/cart_repo.dart';
+import 'package:adweyaty_application/features/favourite/data/cubit/favourite_cubit.dart';
+import 'package:adweyaty_application/features/favourite/data/repo/favourite_repo.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +31,9 @@ class Adweyaty extends StatelessWidget {
           ),
           BlocProvider(
               create: (context) => LanguageCubit()
+          ),
+          BlocProvider(
+              create: (context) => FavouriteCubit(FavouriteRepo())
           )
         ],
         child: BlocBuilder<LanguageCubit, Locale>(

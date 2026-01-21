@@ -10,6 +10,9 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
 import 'package:adweyaty_application/features/cart/presentation/ui/cart_screen.dart';
+import 'package:adweyaty_application/features/favourite/data/cubit/favourite_cubit.dart';
+import 'package:adweyaty_application/features/favourite/data/repo/favourite_repo.dart';
+import 'package:adweyaty_application/features/favourite/presentation/ui/favourite_screen.dart';
 import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
 import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
@@ -88,6 +91,8 @@ class AppRoute {
       case Routes.profileScreen :
         return MaterialPageRoute(builder: (_)=>const ProfileScreen());
 
+      case Routes.favouriteScreen :
+        return MaterialPageRoute(builder: (_)=>const FavouriteScreen());
 
       case Routes.productScreen:
         final category = setting.arguments as HomeCategoryModel;
