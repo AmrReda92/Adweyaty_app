@@ -12,6 +12,28 @@ class FavouriteCubit extends Cubit<FavouriteState> {
 
   FavouriteCubit(this.repo) : super(FavouriteInitial());
 
+
+  // ➕ ADD
+  Future<void> addFavourite(FavouriteItemModel item) async {
+    try {
+      emit(FavouriteLoading());
+      await repo.addToFavourite(uid: uid, item: item);
+      emit(FavouriteAdded());
+    } catch (e) {
+      emit(FavouriteError(e.toString()));
+    }
+  }
+
+  // ❌ REMOVE
+  Future<void> removeFavourite(FavouriteItemModel item) async {
+    try {
+      emit(FavouriteLoading());
+      await repo.removeFromFavourite(uid: uid, item: item);
+      emit(FavouriteRemoved());
+    } catch (e) {
+      emit(FavouriteError(e.toString()));
+    }
+  }
   // نفس أسلوب CartCubit
   String get uid {
     final user = FirebaseAuth.instance.currentUser;
@@ -22,32 +44,22 @@ class FavouriteCubit extends Cubit<FavouriteState> {
     }
   }
 
-  Future<void> toggleFavourite(FavouriteItemModel item) async {
+  Future<void> moveToCart(FavouriteItemModel item) async {
     try {
       emit(FavouriteLoading());
 
-      final isFav = await repo.isFavourite(
+      await repo.removeFromFavourite(
         uid: uid,
-        productId: item.productId,
+        item: item,
       );
 
-      if (isFav) {
-        await repo.removeFromFavourite(
-          uid: uid,
-          item: item,
-        );
-      } else {
-        await repo.addToFavourite(
-          uid: uid,
-          item: item,
-        );
-      }
-
-      emit(FavouriteSuccess());
+      emit(FavouriteAddedToCart());
     } catch (e) {
       emit(FavouriteError(e.toString()));
     }
   }
+
+
 
   Stream<List<FavouriteItemModel>> getFavourites() {
     return repo.getFavourites(uid);

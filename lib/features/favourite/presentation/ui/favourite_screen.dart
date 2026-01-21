@@ -1,14 +1,10 @@
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
-import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
-import 'package:adweyaty_application/features/cart/data/models/cart_item_model.dart';
 import 'package:adweyaty_application/features/favourite/data/models/favourite_item_model.dart';
 import 'package:adweyaty_application/features/favourite/presentation/widgets/favourite_cart_item.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/routes/routes.dart';
-import '../../../../core/theme/app_text_style.dart';
 import '../../data/cubit/favourite_cubit.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -21,11 +17,19 @@ class FavouriteScreen extends StatelessWidget {
 
     return BlocListener<FavouriteCubit, FavouriteState>(
       listener: (context, state) {
-        if(state is FavouriteSuccess){
+        if(state is FavouriteAddedToCart){
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text("Moved to cart"),
+              content: Text("Added to favourites"),
               backgroundColor: Colors.green,
+            ),
+          );
+        }
+        if (state is FavouriteRemoved) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Removed from favourites "),
+              backgroundColor: Colors.red,
             ),
           );
         }

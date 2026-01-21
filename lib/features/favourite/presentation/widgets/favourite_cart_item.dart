@@ -67,16 +67,7 @@ class FavouriteCartItem extends StatelessWidget {
                           );
 
                          await cartCubit.addToCart(cartItem);
-                         await favCubit.toggleFavourite(favouriteItemModel);
-
-
-
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Added to cart"),
-                              backgroundColor: Colors.green,
-                            ),
-                          );
+                         await favCubit.moveToCart(favouriteItemModel);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
@@ -116,7 +107,7 @@ class FavouriteCartItem extends StatelessWidget {
             child: Center(
               child: GestureDetector(
                 onTap: () {
-                  favCubit.toggleFavourite(favouriteItemModel);
+                  favCubit.removeFavourite(favouriteItemModel);
                 },
                 child: const Icon(
                   Icons.delete,

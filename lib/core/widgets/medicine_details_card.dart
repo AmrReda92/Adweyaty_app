@@ -55,7 +55,11 @@ class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
                            price: widget.drugItem.price,
                          );
 
-                         favCubit.toggleFavourite(favItem);
+                         if (isSelected) {
+                           favCubit.removeFavourite(favItem);
+                         } else {
+                           favCubit.addFavourite(favItem);
+                         }
 
                          setState(() {
                            isSelected = !isSelected;
