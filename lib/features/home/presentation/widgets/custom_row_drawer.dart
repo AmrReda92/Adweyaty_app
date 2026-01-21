@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_text_style.dart';
 
 class CustomRowDrawer extends StatelessWidget {
-  final IconData icon;
+  final IconData? icon;
   final String title ;
-  const CustomRowDrawer({super.key, required this.icon, required this.title});
+  const CustomRowDrawer({super.key, this.icon, required this.title});
 
   @override
   Widget build(BuildContext context) {

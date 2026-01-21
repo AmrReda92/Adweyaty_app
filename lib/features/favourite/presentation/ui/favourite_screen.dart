@@ -16,7 +16,7 @@ class FavouriteScreen extends StatelessWidget {
              Navigator.pushNamed(context, Routes.bottomNavBarScreen);
            },
            child: Icon(Icons.arrow_back, size: 28.sp)),
-           icon: Icon(Icons.shopping_cart, size: 30.h, color: Colors.white),
+       icon: Icon(Icons.shopping_cart, size: 25.h, color: Colors.white),
      ),
 
     );

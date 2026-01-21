@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/localization/language_cubit/language_cubit.dart';
 import 'package:adweyaty_application/core/routes/app_route.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
@@ -26,34 +27,34 @@ class Adweyaty extends StatelessWidget {
         providers: [
           BlocProvider(
               create: (context) => HomeCubit()
+          ),
+          BlocProvider(
+              create: (context) => CartCubit(CartRepo(),)
+          ),
+          BlocProvider(
+              create: (context) => LanguageCubit()
           )
         ],
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-                create: (context)=>HomeCubit()
-            ),
-            BlocProvider(
-                create: (context)=>CartCubit(CartRepo(),)
-            )
-          ],
-          child: MaterialApp(
-              onGenerateRoute: AppRoute.generateRoute,
-              locale: Locale("en"),
-              localizationsDelegates: const [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                  scaffoldBackgroundColor: Color(0xffF0FFFF),
-                  fontFamily: "Cairo"
-              ),
-              initialRoute: Routes.splashScreen
-          ),
+        child: BlocBuilder<LanguageCubit, Locale>(
+          builder: (context, locale) {
+            return MaterialApp(
+                onGenerateRoute: AppRoute.generateRoute,
+                locale: locale,
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: S.delegate.supportedLocales,
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(
+                    scaffoldBackgroundColor: Color(0xffF0FFFF),
+                    fontFamily: "Cairo"
+                ),
+                initialRoute: Routes.splashScreen
+            );
+          },
         ),
       ),
     );

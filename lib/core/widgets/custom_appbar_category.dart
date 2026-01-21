@@ -22,9 +22,7 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
           actions: [
             Padding(
               padding: EdgeInsets.only(right: 12.w),
-              child: icon??
-              SvgPicture.asset(
-                AppImages.cartIcon,width: 30.w,height: 30.h,),
+              child: icon
             ),
           ],
       bottom: PreferredSize(

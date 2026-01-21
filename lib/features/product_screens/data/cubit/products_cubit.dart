@@ -9,7 +9,9 @@ class ProductsCubit extends Cubit<ProductsState> {
   final ProductsRepo productsRepo ;
   ProductsCubit(this.productsRepo) : super(ProductsInitial());
 
+
   Future<void> getProductsByCategory (String categoryId )async{
+
     emit(ProductsLoading());
     try{
      final products = await productsRepo.getProductsByCategory(categoryId);
@@ -18,4 +20,5 @@ class ProductsCubit extends Cubit<ProductsState> {
       emit(ProductsError('Failed to load products'));
     }
   }
+
 }

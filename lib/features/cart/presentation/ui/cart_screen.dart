@@ -44,6 +44,7 @@ class CartScreen extends StatelessWidget {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: CustomAppbarCategory(
+            icon: Icon(Icons.shopping_cart, size: 25.h, color: Colors.white),
             title: "My Cart",
             leading: InkWell(
               onTap: () {
