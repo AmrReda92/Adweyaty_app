@@ -21,7 +21,7 @@ class CustomAppbarCategory extends StatelessWidget implements PreferredSizeWidge
           backgroundColor: Colors.blueAccent,
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: 12.w),
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: icon
             ),
           ],

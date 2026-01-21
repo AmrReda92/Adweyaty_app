@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
@@ -8,6 +9,9 @@ import 'package:adweyaty_application/features/cart/data/models/cart_item_model.d
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
+
+import '../../../../generated/l10n.dart';
 
 
 class CartScreen extends StatelessWidget {
@@ -45,7 +49,7 @@ class CartScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           appBar: CustomAppbarCategory(
             icon: Icon(Icons.shopping_cart, size: 25.h, color: Colors.white),
-            title: "My Cart",
+            title: S.of(context).myCart,
             leading: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, Routes.bottomNavBarScreen);
@@ -54,7 +58,7 @@ class CartScreen extends StatelessWidget {
             ),
           ),
           body: items.isEmpty
-              ? const Center(child: Text("Your cart is empty 🛒"))
+              ?  Center(child: Lottie.asset(AppImages.noProduct))
               : Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: ListView.separated(

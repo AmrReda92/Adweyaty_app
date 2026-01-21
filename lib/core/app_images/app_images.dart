@@ -9,6 +9,8 @@ class AppImages {
  static const String searchIcon ="assets/icons/search-normal.svg";
  static const String panadol ="assets/images/panadol.png";
  static const String user ="assets/images/user.png";
+ static const String noFavourite ="assets/images/noFav.json";
+ static const String noProduct ="assets/images/EmptyBox.json";
 
  static const String bloodPressure ="assets/images/bloodPressure.jpg";
  static const String coughMedicines ="assets/images/coughingPerson.jpg";

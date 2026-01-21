@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "PolicyAndPrivacy": MessageLookupByLibrary.simpleMessage(
+      "Policy & Privacy",
+    ),
     "Prescription": MessageLookupByLibrary.simpleMessage(
       "Send your Prescription",
     ),
@@ -31,21 +34,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields correctly",
     ),
+    "ar": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "cartNavBar": MessageLookupByLibrary.simpleMessage("Cart"),
+    "categories": MessageLookupByLibrary.simpleMessage("categories"),
     "cough": MessageLookupByLibrary.simpleMessage("cough medicines"),
     "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "Email is not correct",
     ),
+    "en": MessageLookupByLibrary.simpleMessage("English"),
+    "favouriteNavBar": MessageLookupByLibrary.simpleMessage("Favourite"),
     "forgot": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "headache": MessageLookupByLibrary.simpleMessage("headache medicines"),
     "hintEmail": MessageLookupByLibrary.simpleMessage("Email"),
     "hintMobile": MessageLookupByLibrary.simpleMessage("Mobile"),
     "hintName": MessageLookupByLibrary.simpleMessage("Name"),
     "hintPassword": MessageLookupByLibrary.simpleMessage("Password"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "homeNavBar": MessageLookupByLibrary.simpleMessage("Home"),
+    "language": MessageLookupByLibrary.simpleMessage("language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "mobileIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "Mobile is not correct!",
     ),
+    "myCart": MessageLookupByLibrary.simpleMessage("My Cart"),
+    "myFavourite": MessageLookupByLibrary.simpleMessage("My Favourite"),
+    "myProfile": MessageLookupByLibrary.simpleMessage("My Profile"),
     "nameIsRequired": MessageLookupByLibrary.simpleMessage("Name is required!"),
+    "noFavouritesYet": MessageLookupByLibrary.simpleMessage(
+      "No favourites yet",
+    ),
     "passwordIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "password is not correct",
     ),
@@ -53,8 +70,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "password must be more than 6 char",
     ),
     "pressure": MessageLookupByLibrary.simpleMessage("pressure medicines"),
+    "profileNavBar": MessageLookupByLibrary.simpleMessage("Profile"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "searchFor": MessageLookupByLibrary.simpleMessage("Search for....."),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "showAll": MessageLookupByLibrary.simpleMessage("Show All"),
     "signInText": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account",
     ),
@@ -66,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "splashText": MessageLookupByLibrary.simpleMessage("ADWEYATY APP"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "supportAndHelp": MessageLookupByLibrary.simpleMessage("Support & Help"),
     "temperature": MessageLookupByLibrary.simpleMessage(
       "temperature medicines",
     ),
@@ -86,5 +107,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcomeOnly": MessageLookupByLibrary.simpleMessage("Welcome"),
     "welcomeUser": MessageLookupByLibrary.simpleMessage("Welcome user"),
     "woman": MessageLookupByLibrary.simpleMessage("woman products"),
+    "yourCartEmpty": MessageLookupByLibrary.simpleMessage("Your Cart is Empty"),
   };
 }

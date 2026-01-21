@@ -343,6 +343,126 @@ class S {
       args: [],
     );
   }
+
+  /// `categories`
+  String get categories {
+    return Intl.message('categories', name: 'categories', desc: '', args: []);
+  }
+
+  /// `Show All`
+  String get showAll {
+    return Intl.message('Show All', name: 'showAll', desc: '', args: []);
+  }
+
+  /// `Home`
+  String get homeNavBar {
+    return Intl.message('Home', name: 'homeNavBar', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cartNavBar {
+    return Intl.message('Cart', name: 'cartNavBar', desc: '', args: []);
+  }
+
+  /// `Favourite`
+  String get favouriteNavBar {
+    return Intl.message(
+      'Favourite',
+      name: 'favouriteNavBar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profileNavBar {
+    return Intl.message('Profile', name: 'profileNavBar', desc: '', args: []);
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Support & Help`
+  String get supportAndHelp {
+    return Intl.message(
+      'Support & Help',
+      name: 'supportAndHelp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Policy & Privacy`
+  String get PolicyAndPrivacy {
+    return Intl.message(
+      'Policy & Privacy',
+      name: 'PolicyAndPrivacy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `language`
+  String get language {
+    return Intl.message('language', name: 'language', desc: '', args: []);
+  }
+
+  /// `Arabic`
+  String get ar {
+    return Intl.message('Arabic', name: 'ar', desc: '', args: []);
+  }
+
+  /// `English`
+  String get en {
+    return Intl.message('English', name: 'en', desc: '', args: []);
+  }
+
+  /// `My Favourite`
+  String get myFavourite {
+    return Intl.message(
+      'My Favourite',
+      name: 'myFavourite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Cart`
+  String get myCart {
+    return Intl.message('My Cart', name: 'myCart', desc: '', args: []);
+  }
+
+  /// `My Profile`
+  String get myProfile {
+    return Intl.message('My Profile', name: 'myProfile', desc: '', args: []);
+  }
+
+  /// `No favourites yet`
+  String get noFavouritesYet {
+    return Intl.message(
+      'No favourites yet',
+      name: 'noFavouritesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Cart is Empty`
+  String get yourCartEmpty {
+    return Intl.message(
+      'Your Cart is Empty',
+      name: 'yourCartEmpty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

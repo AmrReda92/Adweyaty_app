@@ -43,6 +43,28 @@
   "temperature" : "أدوية الحرارة",
   "woman" : "منتجات المرأة",
   "vitamin" : "فيتامينات",
-  "Prescription" : "أرسل الروشتة الخاصة بك"
+  "Prescription" : "أرسل الروشتة الخاصة بك",
+  "categories" : "الفئات",
+  "showAll" : "مشاهدة الكل",
+
+  "homeNavBar" : "الرئيسية",
+  "cartNavBar" : "سلة التسوق",
+  "favouriteNavBar" : "المفضلات",
+  "profileNavBar" : "صفحتي",
+
+  "home" : "الرئيسية",
+  "settings" : "الضبط",
+  "supportAndHelp" : "الدعم و المساعدة",
+  "PolicyAndPrivacy" : "السياسة و الخصوصية",
+  "language": "اللغة",
+  "ar": "عربي",
+  "en": "انجليزي",
+
+  "myFavourite": "مفضلاتي",
+  "myCart": "عربتي",
+  "myProfile": "صفحتي",
+
+  "noFavouritesYet": "لا يوجد مفضلات بعد",
+  "yourCartEmpty": "سلتك فارغة"
 
 }

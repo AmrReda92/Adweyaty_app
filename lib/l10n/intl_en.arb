@@ -40,6 +40,29 @@
  "temperature" : "temperature medicines",
  "woman" : "woman products",
  "vitamin" : "vitamin medicines",
- "Prescription" : "Send your Prescription"
+ "Prescription" : "Send your Prescription",
+ "categories" : "categories",
+ "showAll" : "Show All",
+
+ "homeNavBar" : "Home",
+ "cartNavBar" : "Cart",
+ "favouriteNavBar" : "Favourite",
+ "profileNavBar" : "Profile",
+
+ "home" : "Home",
+ "settings" : "Settings",
+ "supportAndHelp" : "Support & Help",
+ "PolicyAndPrivacy" : "Policy & Privacy",
+ "language": "language",
+ "ar": "Arabic",
+ "en": "English",
+
+ "myFavourite": "My Favourite",
+ "myCart": "My Cart",
+ "myProfile": "My Profile",
+
+ "noFavouritesYet": "No favourites yet",
+ "yourCartEmpty": "Your Cart is Empty"
+
 
 }

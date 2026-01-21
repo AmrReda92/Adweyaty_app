@@ -1,10 +1,13 @@
+import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/features/favourite/data/models/favourite_item_model.dart';
 import 'package:adweyaty_application/features/favourite/presentation/widgets/favourite_cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../core/routes/routes.dart';
+import '../../../../generated/l10n.dart';
 import '../../data/cubit/favourite_cubit.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -36,7 +39,7 @@ class FavouriteScreen extends StatelessWidget {
       },
       child: Scaffold(
         appBar: CustomAppbarCategory(
-          title: "My Favourite",
+          title: S.of(context).myFavourite,
           leading: GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, Routes.bottomNavBarScreen);
@@ -59,8 +62,8 @@ class FavouriteScreen extends StatelessWidget {
             final items = snapshot.data ?? [];
 
             if (items.isEmpty) {
-              return const Center(
-                child: Text("No favourites yet"),
+              return  Center(
+                child: Lottie.asset(AppImages.noFavourite),
               );
             }
 

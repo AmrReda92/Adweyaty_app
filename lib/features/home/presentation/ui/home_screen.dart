@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomElevatedButton(
-                          title: "Send your Prescription",
+                          title: S.of(context).Prescription,
                           onPressed: () {},
                           icon: Icon(
                             Icons.camera_alt_rounded,
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Categories",
+                              S.of(context).categories,
                               style: AppTextStyle.font20black.copyWith(
                                 fontSize: 18,
                               ),
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                                 );
                               },
                               child: Text(
-                                "Show All >",
+                                " ${S.of(context).showAll} >",
                                 style: AppTextStyle.font20black.copyWith(
                                   fontSize: 18,
                                   color: AppColor.primaryColor,

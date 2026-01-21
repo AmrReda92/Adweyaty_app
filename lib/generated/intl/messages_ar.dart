@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "PolicyAndPrivacy": MessageLookupByLibrary.simpleMessage(
+      "السياسة و الخصوصية",
+    ),
     "Prescription": MessageLookupByLibrary.simpleMessage(
       "أرسل الروشتة الخاصة بك",
     ),
@@ -31,21 +34,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "من فضلك املأ الخانات بشكل صحيح",
     ),
+    "ar": MessageLookupByLibrary.simpleMessage("عربي"),
+    "cartNavBar": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+    "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
     "cough": MessageLookupByLibrary.simpleMessage("أدوية الكحة"),
     "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "الإيميل غير صحيح",
     ),
+    "en": MessageLookupByLibrary.simpleMessage("انجليزي"),
+    "favouriteNavBar": MessageLookupByLibrary.simpleMessage("المفضلات"),
     "forgot": MessageLookupByLibrary.simpleMessage("نسيت الرقم السري؟"),
     "headache": MessageLookupByLibrary.simpleMessage("أدوية الصداع"),
     "hintEmail": MessageLookupByLibrary.simpleMessage("الإيميل"),
     "hintMobile": MessageLookupByLibrary.simpleMessage("الهاتف"),
     "hintName": MessageLookupByLibrary.simpleMessage("الإسم"),
     "hintPassword": MessageLookupByLibrary.simpleMessage("الرقم السري"),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "homeNavBar": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("دخول"),
     "mobileIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "الرقم غير صحيح!",
     ),
+    "myCart": MessageLookupByLibrary.simpleMessage("عربتي"),
+    "myFavourite": MessageLookupByLibrary.simpleMessage("مفضلاتي"),
+    "myProfile": MessageLookupByLibrary.simpleMessage("صفحتي"),
     "nameIsRequired": MessageLookupByLibrary.simpleMessage("الإسم مطلوب!"),
+    "noFavouritesYet": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد مفضلات بعد",
+    ),
     "passwordIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "الرقم السري غير صحيح",
     ),
@@ -53,8 +70,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرقم السري يجب ان يكون اكثر من 6 خانات",
     ),
     "pressure": MessageLookupByLibrary.simpleMessage("أدوية الضغط"),
+    "profileNavBar": MessageLookupByLibrary.simpleMessage("صفحتي"),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
     "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن....."),
+    "settings": MessageLookupByLibrary.simpleMessage("الضبط"),
+    "showAll": MessageLookupByLibrary.simpleMessage("مشاهدة الكل"),
     "signInText": MessageLookupByLibrary.simpleMessage("سجل الدخول إلى حسابك"),
     "signUpLoginText": MessageLookupByLibrary.simpleMessage(
       "أهلا بك في أدويتي",
@@ -62,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUpText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حسابك"),
     "splashText": MessageLookupByLibrary.simpleMessage("تطبيق صيدلية"),
     "startNow": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
+    "supportAndHelp": MessageLookupByLibrary.simpleMessage("الدعم و المساعدة"),
     "temperature": MessageLookupByLibrary.simpleMessage("أدوية الحرارة"),
     "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
       "أدويتي ليس مجرد تطبيق، بل هو رفيقك في الرعاية الصحية، يضع الصيدلية بين يديك ، أدويتي هنا لتبسيط رحلة الرعاية الصحية الخاصة بك",
@@ -80,5 +101,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcomeOnly": MessageLookupByLibrary.simpleMessage("مرحبا"),
     "welcomeUser": MessageLookupByLibrary.simpleMessage("مرحبا بالمستخدم"),
     "woman": MessageLookupByLibrary.simpleMessage("منتجات المرأة"),
+    "yourCartEmpty": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
   };
 }
