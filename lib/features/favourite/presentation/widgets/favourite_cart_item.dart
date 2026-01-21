@@ -57,7 +57,7 @@ class FavouriteCartItem extends StatelessWidget {
                     /// Add to Cart
                     Expanded(
                       child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async{
                           final cartItem = CartItemModel(
                             productId: favouriteItemModel.productId,
                             name: favouriteItemModel.name,
@@ -66,7 +66,10 @@ class FavouriteCartItem extends StatelessWidget {
                             quantity: 1,
                           );
 
-                          cartCubit.addToCart(cartItem);
+                         await cartCubit.addToCart(cartItem);
+                         await favCubit.toggleFavourite(favouriteItemModel);
+
+
 
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(

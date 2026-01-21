@@ -19,51 +19,63 @@ class FavouriteScreen extends StatelessWidget {
     final favCubit = context.read<FavouriteCubit>();
 
 
-    return Scaffold(
-      appBar: CustomAppbarCategory(
-        title: "My Favourite",
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, Routes.bottomNavBarScreen);
-          },
-          child: Icon(Icons.arrow_back, size: 28.sp),
-        ),
-        icon: Icon(Icons.shopping_cart, size: 25.h, color: Colors.white),
-      ),
-      body: StreamBuilder<List<FavouriteItemModel>>(
-        stream: favCubit.getFavourites(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-
-          if (snapshot.hasError) {
-            return const Center(child: Text("Error loading favourites"));
-          }
-
-          final items = snapshot.data ?? [];
-
-          if (items.isEmpty) {
-            return const Center(
-              child: Text("No favourites yet"),
-            );
-          }
-
-          return GridView.builder(
-            padding: EdgeInsets.all(12.w),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 12.h,
-              crossAxisSpacing: 12.w,
-              childAspectRatio: .72,
+    return BlocListener<FavouriteCubit, FavouriteState>(
+      listener: (context, state) {
+        if(state is FavouriteSuccess){
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Moved to cart"),
+              backgroundColor: Colors.green,
             ),
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              final item = items[index];
-              return FavouriteCartItem(favouriteItemModel: item,);
-            },
           );
-        },
+        }
+      },
+      child: Scaffold(
+        appBar: CustomAppbarCategory(
+          title: "My Favourite",
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.bottomNavBarScreen);
+            },
+            child: Icon(Icons.arrow_back, size: 28.sp),
+          ),
+          icon: Icon(Icons.shopping_cart, size: 25.h, color: Colors.white),
+        ),
+        body: StreamBuilder<List<FavouriteItemModel>>(
+          stream: favCubit.getFavourites(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            }
+
+            if (snapshot.hasError) {
+              return const Center(child: Text("Error loading favourites"));
+            }
+
+            final items = snapshot.data ?? [];
+
+            if (items.isEmpty) {
+              return const Center(
+                child: Text("No favourites yet"),
+              );
+            }
+
+            return GridView.builder(
+              padding: EdgeInsets.all(12.w),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 12.h,
+                crossAxisSpacing: 12.w,
+                childAspectRatio: .72,
+              ),
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                final item = items[index];
+                return FavouriteCartItem(favouriteItemModel: item,);
+              },
+            );
+          },
+        ),
       ),
     );
   }
