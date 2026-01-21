@@ -1,13 +1,9 @@
 import 'package:adweyaty_application/core/localization/language_cubit/language_cubit.dart';
 import 'package:adweyaty_application/core/routes/app_route.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
-import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
-import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
 import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
 import 'package:adweyaty_application/features/cart/data/repo/cart_repo.dart';
-import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
-import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
