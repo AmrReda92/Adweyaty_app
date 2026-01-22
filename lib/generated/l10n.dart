@@ -309,6 +309,11 @@ class S {
     );
   }
 
+  /// `kids medicines`
+  String get kids {
+    return Intl.message('kids medicines', name: 'kids', desc: '', args: []);
+  }
+
   /// `temperature medicines`
   String get temperature {
     return Intl.message(

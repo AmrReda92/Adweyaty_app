@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hintPassword": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "homeNavBar": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "kids": MessageLookupByLibrary.simpleMessage("أدوية الأطفال"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("دخول"),
     "mobileIsNotCorrect": MessageLookupByLibrary.simpleMessage(

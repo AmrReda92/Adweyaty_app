@@ -37,6 +37,7 @@
  "pressure": "pressure medicines" ,
  "cough" : "cough medicines" ,
  "headache" : "headache medicines",
+ "kids" : "kids medicines",
  "temperature" : "temperature medicines",
  "woman" : "woman products",
  "vitamin" : "vitamin medicines",

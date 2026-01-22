@@ -1,5 +1,6 @@
 import 'package:adweyaty_application/core/theme/app_color.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
+import 'package:adweyaty_application/generated/l10n_extension.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,7 +41,7 @@ class CustomCategoryModel extends StatelessWidget {
                 ),
                 child: Padding(
                   padding:  EdgeInsets.symmetric(horizontal: 4.w),
-                  child: Text(category.title,maxLines:1 , overflow :TextOverflow.ellipsis ,style: AppTextStyle.font20black.copyWith(color:Colors.white,fontSize: 18),textAlign: TextAlign.center,),
+                  child: Text(S.of(context).translate(category.id),maxLines:1 , overflow :TextOverflow.ellipsis ,style: AppTextStyle.font20black.copyWith(color:Colors.white,fontSize: 18),textAlign: TextAlign.center,),
                 )),
           )
         ],
