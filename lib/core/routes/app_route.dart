@@ -26,6 +26,7 @@ import 'package:adweyaty_application/features/profile/data/repo/profile_photo_re
 import 'package:adweyaty_application/features/profile/presentation/ui/profile_screen.dart';
 import 'package:adweyaty_application/features/show_all_category/presentation/ui/show_all_categories_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
+import 'package:adweyaty_application/features/wallet/presentation/ui/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -94,6 +95,9 @@ class AppRoute {
 
       case Routes.favouriteScreen :
         return MaterialPageRoute(builder: (_)=>const FavouriteScreen());
+
+      case Routes.walletScreen :
+        return MaterialPageRoute(builder: (_)=>const WalletScreen());
         
       case Routes.creditCheckoutScreen :
         final total = setting.arguments as num;

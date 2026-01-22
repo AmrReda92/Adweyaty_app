@@ -123,7 +123,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             SizedBox(height: 14.h),
             CustomButtonProfile(
-              title: "Reset Password",
+              onTap: (){
+                Navigator.pushNamed(context, Routes.walletScreen);
+              },
+              title: "My Wallet",
               iconProfileScreen: Icons.arrow_right,
             ),
             SizedBox(height: 14.h),
