@@ -7,29 +7,33 @@ class CustomButton extends StatelessWidget {
   final IconData? icon ;
   final double? width ;
   final IconData? iconProfileScreen ;
+  final void Function()? onTap ;
 
 
-  const CustomButton({super.key, required this.title, this.icon, this.width, this.iconProfileScreen, });
+  const CustomButton({super.key, required this.title, this.icon, this.width, this.iconProfileScreen, this.onTap, });
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      width: width,
-      height: 50.h,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            Color(0xFFB140C5),
-            Color(0xFF007AFF),
-          ],
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
+    return  GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: 50.h,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [
+              Color(0xFFB140C5),
+              Color(0xFF007AFF),
+            ],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
+          borderRadius: BorderRadius.circular(12),
         ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Center(
-        child:
-            Text(title,style: AppTextStyle.font20White),
+        child: Center(
+          child:
+              Text(title,style: AppTextStyle.font20White),
 
+        ),
       ),
     );
   }

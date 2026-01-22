@@ -93,7 +93,15 @@ class CartScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 10.h),
-                  const CustomButton(title: "Checkout"),
+                   CustomButton(title: "Checkout",
+                  onTap: (){
+                    Navigator.pushNamed(
+                      context,
+                      Routes.creditCheckoutScreen,
+                      arguments: totalPrice,
+                    );
+                  },
+                  ),
                   SizedBox(height: 20.h),
                 ],
               ),

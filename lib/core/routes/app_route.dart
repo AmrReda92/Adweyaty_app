@@ -10,6 +10,7 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up_login
 import 'package:adweyaty_application/features/auth/presentation/ui/validation_success/validation_success_screen.dart';
 import 'package:adweyaty_application/features/bottom_nav_bar/presentation/ui/bottom_nav_bar_screen.dart';
 import 'package:adweyaty_application/features/cart/presentation/ui/cart_screen.dart';
+import 'package:adweyaty_application/features/credit_checkout_screen/presentation/ui/credit_checkout_screen.dart';
 import 'package:adweyaty_application/features/favourite/data/cubit/favourite_cubit.dart';
 import 'package:adweyaty_application/features/favourite/data/repo/favourite_repo.dart';
 import 'package:adweyaty_application/features/favourite/presentation/ui/favourite_screen.dart';
@@ -93,6 +94,10 @@ class AppRoute {
 
       case Routes.favouriteScreen :
         return MaterialPageRoute(builder: (_)=>const FavouriteScreen());
+        
+      case Routes.creditCheckoutScreen :
+        final total = setting.arguments as num;
+        return MaterialPageRoute(builder: (_)=> CreditCheckoutScreen(totalPrice: total));
 
       case Routes.productScreen:
         final category = setting.arguments as HomeCategoryModel;
