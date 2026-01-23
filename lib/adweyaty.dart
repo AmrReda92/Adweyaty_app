@@ -6,10 +6,12 @@ import 'package:adweyaty_application/features/cart/data/repo/cart_repo.dart';
 import 'package:adweyaty_application/features/favourite/data/cubit/favourite_cubit.dart';
 import 'package:adweyaty_application/features/favourite/data/repo/favourite_repo.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
+import 'package:adweyaty_application/features/wallet/data/cubit/wallet_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'features/wallet/data/models/repo/wallet_repo.dart';
 import 'generated/l10n.dart';
 
 class Adweyaty extends StatelessWidget {
@@ -34,6 +36,9 @@ class Adweyaty extends StatelessWidget {
           ),
           BlocProvider(
               create: (context) => FavouriteCubit(FavouriteRepo())
+          ),
+          BlocProvider(
+              create: (context)=>WalletCubit(WalletRepo())
           )
         ],
         child: BlocBuilder<LanguageCubit, Locale>(

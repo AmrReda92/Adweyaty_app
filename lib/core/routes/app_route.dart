@@ -80,10 +80,6 @@ class AppRoute {
               BlocProvider(
                 create: (context) => ProfileCubit(ProfilePhotoRepo()),
               ),
-              BlocProvider(
-                create: (context) => WalletCubit(WalletRepo()),
-                child: WalletScreen(),
-              ),
             ],
             child: const BottomNavBarScreen(),
           ),
@@ -100,7 +96,7 @@ class AppRoute {
 
       case Routes.walletScreen:
         return MaterialPageRoute(
-          builder: (_) => WalletScreen(),
+          builder: (_) => const WalletScreen(),
         );
 
       case Routes.creditCheckoutScreen:
