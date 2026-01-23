@@ -4,7 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../models/repo/waleet_repo.dart';
+import '../models/repo/wallet_repo.dart';
+
 
 part 'wallet_state.dart';
 
