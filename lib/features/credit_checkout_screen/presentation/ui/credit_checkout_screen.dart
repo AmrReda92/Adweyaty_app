@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_text_style.dart';
 import '../../../../core/widgets/custom_appbar_category.dart';
 import '../../../../core/widgets/custom_button.dart';
+import '../../../../generated/l10n.dart';
 
 
 class CreditCheckoutScreen extends StatelessWidget {
@@ -23,8 +24,8 @@ class CreditCheckoutScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const CustomAppbarCategory(
-        title: "Wallet Checkout",
+      appBar:  CustomAppbarCategory(
+        title: S.of(context).walletCheckout,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.w),
@@ -48,14 +49,14 @@ class CreditCheckoutScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Your Wallet Balance",
+                  S.of(context).yourWalletBalance,
                     style: AppTextStyle.font18.copyWith(
                       color: Colors.white70,
                     ),
                   ),
                   SizedBox(height: 8.h),
                   Text(
-                    "$userCredits Credits",
+                    "$userCredits ${S.of(context).points}",
                     style: AppTextStyle.font28.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -81,11 +82,11 @@ class CreditCheckoutScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Order Total",
+                        S.of(context).orderTotal,
                         style: AppTextStyle.font20black,
                       ),
                       Text(
-                        "$totalPrice Credits",
+                        "$totalPrice ${S.of(context).points}",
                         style: AppTextStyle.font20black.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -99,11 +100,11 @@ class CreditCheckoutScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Payment Status",
+                        S.of(context).paymentStatus,
                         style: AppTextStyle.font18,
                       ),
                       Text(
-                        canPay ? "Sufficient Balance" : "Insufficient Balance",
+                        canPay ?  S.of(context).sufficientBalance :   S.of(context).insufficientBalance,
                         style: AppTextStyle.font18.copyWith(
                           color: canPay ? Colors.green : Colors.red,
                           fontWeight: FontWeight.bold,
@@ -119,7 +120,7 @@ class CreditCheckoutScreen extends StatelessWidget {
 
             /// Action Button
             CustomButton(
-              title: canPay ? "Confirm Payment" : "Recharge Wallet",
+              title: canPay ? S.of(context).confirmPayment: S.of(context).rechargeWallet,
               onTap: () {
                 if (canPay) {
                   _showSuccessDialog(context);

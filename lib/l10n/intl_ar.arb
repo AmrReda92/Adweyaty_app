@@ -66,6 +66,22 @@
   "myProfile": "صفحتي",
 
   "noFavouritesYet": "لا يوجد مفضلات بعد",
-  "yourCartEmpty": "سلتك فارغة"
+  "yourCartEmpty": "سلتك فارغة",
+
+  "availableCredit": "الرصيد المتاح",
+  "points": "نقطة",
+  "addCredit": "إضافة رصيد",
+  "recentTransactions" : "المعاملات السابقة",
+  "noTransactionYet": "لا يوجد معاملات بعد",
+  "myWallet": "محفظتي",
+
+  "walletCheckout": "إتمام الدفع",
+  "yourWalletBalance": "رصيد محفظتك",
+  "orderTotal": "السعر الاجمالي",
+  "paymentStatus": "حالة الدفع",
+  "sufficientBalance" : "رصيد كافي",
+  "insufficientBalance" : "رصيد غير كافي",
+  "confirmPayment" :"تأكيد الدفع",
+  "rechargeWallet" : "إضافة رصيد"
 
 }

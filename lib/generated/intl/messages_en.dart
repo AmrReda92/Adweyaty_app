@@ -31,12 +31,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "accountSuccess": MessageLookupByLibrary.simpleMessage(
       "Account successfully created",
     ),
+    "addCredit": MessageLookupByLibrary.simpleMessage("Add Credit"),
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields correctly",
     ),
     "ar": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "availableCredit": MessageLookupByLibrary.simpleMessage("Available Credit"),
     "cartNavBar": MessageLookupByLibrary.simpleMessage("Cart"),
     "categories": MessageLookupByLibrary.simpleMessage("categories"),
+    "confirmPayment": MessageLookupByLibrary.simpleMessage("Confirm Payment"),
     "cough": MessageLookupByLibrary.simpleMessage("cough medicines"),
     "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "Email is not correct",
@@ -51,6 +54,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "hintPassword": MessageLookupByLibrary.simpleMessage("Password"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "homeNavBar": MessageLookupByLibrary.simpleMessage("Home"),
+    "insufficientBalance": MessageLookupByLibrary.simpleMessage(
+      "Insufficient Balance",
+    ),
     "kids": MessageLookupByLibrary.simpleMessage("kids medicines"),
     "language": MessageLookupByLibrary.simpleMessage("language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -60,18 +66,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "myCart": MessageLookupByLibrary.simpleMessage("My Cart"),
     "myFavourite": MessageLookupByLibrary.simpleMessage("My Favourite"),
     "myProfile": MessageLookupByLibrary.simpleMessage("My Profile"),
+    "myWallet": MessageLookupByLibrary.simpleMessage("My Wallet"),
     "nameIsRequired": MessageLookupByLibrary.simpleMessage("Name is required!"),
     "noFavouritesYet": MessageLookupByLibrary.simpleMessage(
       "No favourites yet",
     ),
+    "noTransactionYet": MessageLookupByLibrary.simpleMessage(
+      "No Transaction Yet",
+    ),
+    "orderTotal": MessageLookupByLibrary.simpleMessage("Order Total"),
     "passwordIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "password is not correct",
     ),
     "passwordSixChar": MessageLookupByLibrary.simpleMessage(
       "password must be more than 6 char",
     ),
+    "paymentStatus": MessageLookupByLibrary.simpleMessage("Payment Status"),
+    "points": MessageLookupByLibrary.simpleMessage("Points"),
     "pressure": MessageLookupByLibrary.simpleMessage("pressure medicines"),
     "profileNavBar": MessageLookupByLibrary.simpleMessage("Profile"),
+    "recentTransactions": MessageLookupByLibrary.simpleMessage(
+      "Recent Transactions",
+    ),
+    "rechargeWallet": MessageLookupByLibrary.simpleMessage("Recharge Wallet"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "searchFor": MessageLookupByLibrary.simpleMessage("Search for....."),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -87,6 +104,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "splashText": MessageLookupByLibrary.simpleMessage("ADWEYATY APP"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+    "sufficientBalance": MessageLookupByLibrary.simpleMessage(
+      "Sufficient Balance",
+    ),
     "supportAndHelp": MessageLookupByLibrary.simpleMessage("Support & Help"),
     "temperature": MessageLookupByLibrary.simpleMessage(
       "temperature medicines",
@@ -104,10 +124,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("Start"),
     "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("Next"),
     "vitamin": MessageLookupByLibrary.simpleMessage("vitamin medicines"),
+    "walletCheckout": MessageLookupByLibrary.simpleMessage("Wallet Checkout"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to Adweyaty!"),
     "welcomeOnly": MessageLookupByLibrary.simpleMessage("Welcome"),
     "welcomeUser": MessageLookupByLibrary.simpleMessage("Welcome user"),
     "woman": MessageLookupByLibrary.simpleMessage("woman products"),
     "yourCartEmpty": MessageLookupByLibrary.simpleMessage("Your Cart is Empty"),
+    "yourWalletBalance": MessageLookupByLibrary.simpleMessage(
+      "Your Wallet Balance",
+    ),
   };
 }

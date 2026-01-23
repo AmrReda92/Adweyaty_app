@@ -4,17 +4,19 @@ import 'package:adweyaty_application/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../generated/l10n.dart';
+
 class WalletScreen extends StatelessWidget {
   const WalletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     // مؤقتًا رصيد وهمي
-    final double credits = 150.0;
+    final double credits = 250.0;
 
     return Scaffold(
-      appBar: const CustomAppbarCategory(
-        title: "My Wallet",
+      appBar:  CustomAppbarCategory(
+        title: S.of(context).myWallet,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.w),
@@ -40,14 +42,14 @@ class WalletScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Available Credits",
+                    S.of(context).availableCredit,
                     style: AppTextStyle.font20White.copyWith(
                       fontSize: 16.sp,
                     ),
                   ),
                   SizedBox(height: 12.h),
                   Text(
-                    "$credits Points",
+                    "$credits ${S.of(context).points}",
                     style: AppTextStyle.font20White.copyWith(
                       fontSize: 28.sp,
                       fontWeight: FontWeight.bold,
@@ -66,11 +68,11 @@ class WalletScreen extends StatelessWidget {
                 onTap: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text("Top up coming soon 🚀"),
+                      content: Text("Top up coming soon"),
                     ),
                   );
                 },
-                title: "Add Credits",
+                title: S.of(context).addCredit,
               ),
             ),
 
@@ -78,7 +80,7 @@ class WalletScreen extends StatelessWidget {
 
             /// Transactions Title
             Text(
-              "Recent Transactions",
+              S.of(context).recentTransactions,
               style: AppTextStyle.font20black.copyWith(
                 fontSize: 18.sp,
               ),
@@ -90,7 +92,7 @@ class WalletScreen extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Text(
-                  "No transactions yet",
+                  S.of(context).noTransactionYet,
                   style: AppTextStyle.hintStyle,
                 ),
               ),

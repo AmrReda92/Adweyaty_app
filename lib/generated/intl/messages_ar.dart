@@ -31,12 +31,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "accountSuccess": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح",
     ),
+    "addCredit": MessageLookupByLibrary.simpleMessage("إضافة رصيد"),
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "من فضلك املأ الخانات بشكل صحيح",
     ),
     "ar": MessageLookupByLibrary.simpleMessage("عربي"),
+    "availableCredit": MessageLookupByLibrary.simpleMessage("الرصيد المتاح"),
     "cartNavBar": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
     "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
+    "confirmPayment": MessageLookupByLibrary.simpleMessage("تأكيد الدفع"),
     "cough": MessageLookupByLibrary.simpleMessage("أدوية الكحة"),
     "emailIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "الإيميل غير صحيح",
@@ -51,6 +54,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "hintPassword": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "homeNavBar": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "insufficientBalance": MessageLookupByLibrary.simpleMessage(
+      "رصيد غير كافي",
+    ),
     "kids": MessageLookupByLibrary.simpleMessage("أدوية الأطفال"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("دخول"),
@@ -60,18 +66,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "myCart": MessageLookupByLibrary.simpleMessage("عربتي"),
     "myFavourite": MessageLookupByLibrary.simpleMessage("مفضلاتي"),
     "myProfile": MessageLookupByLibrary.simpleMessage("صفحتي"),
+    "myWallet": MessageLookupByLibrary.simpleMessage("محفظتي"),
     "nameIsRequired": MessageLookupByLibrary.simpleMessage("الإسم مطلوب!"),
     "noFavouritesYet": MessageLookupByLibrary.simpleMessage(
       "لا يوجد مفضلات بعد",
     ),
+    "noTransactionYet": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد معاملات بعد",
+    ),
+    "orderTotal": MessageLookupByLibrary.simpleMessage("السعر الاجمالي"),
     "passwordIsNotCorrect": MessageLookupByLibrary.simpleMessage(
       "الرقم السري غير صحيح",
     ),
     "passwordSixChar": MessageLookupByLibrary.simpleMessage(
       "الرقم السري يجب ان يكون اكثر من 6 خانات",
     ),
+    "paymentStatus": MessageLookupByLibrary.simpleMessage("حالة الدفع"),
+    "points": MessageLookupByLibrary.simpleMessage("نقطة"),
     "pressure": MessageLookupByLibrary.simpleMessage("أدوية الضغط"),
     "profileNavBar": MessageLookupByLibrary.simpleMessage("صفحتي"),
+    "recentTransactions": MessageLookupByLibrary.simpleMessage(
+      "المعاملات السابقة",
+    ),
+    "rechargeWallet": MessageLookupByLibrary.simpleMessage("إضافة رصيد"),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
     "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن....."),
     "settings": MessageLookupByLibrary.simpleMessage("الضبط"),
@@ -83,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUpText": MessageLookupByLibrary.simpleMessage("قم بإنشاء حسابك"),
     "splashText": MessageLookupByLibrary.simpleMessage("تطبيق صيدلية"),
     "startNow": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
+    "sufficientBalance": MessageLookupByLibrary.simpleMessage("رصيد كافي"),
     "supportAndHelp": MessageLookupByLibrary.simpleMessage("الدعم و المساعدة"),
     "temperature": MessageLookupByLibrary.simpleMessage("أدوية الحرارة"),
     "textOnboardingOne": MessageLookupByLibrary.simpleMessage(
@@ -98,10 +116,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOnBoardingThree": MessageLookupByLibrary.simpleMessage("إبدأ الان"),
     "titleOnBoardingTwo": MessageLookupByLibrary.simpleMessage("التالي"),
     "vitamin": MessageLookupByLibrary.simpleMessage("فيتامينات"),
+    "walletCheckout": MessageLookupByLibrary.simpleMessage("إتمام الدفع"),
     "welcome": MessageLookupByLibrary.simpleMessage("أهلا بك في أدويتي!"),
     "welcomeOnly": MessageLookupByLibrary.simpleMessage("مرحبا"),
     "welcomeUser": MessageLookupByLibrary.simpleMessage("مرحبا بالمستخدم"),
     "woman": MessageLookupByLibrary.simpleMessage("منتجات المرأة"),
     "yourCartEmpty": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
+    "yourWalletBalance": MessageLookupByLibrary.simpleMessage("رصيد محفظتك"),
   };
 }

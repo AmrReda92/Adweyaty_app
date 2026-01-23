@@ -63,7 +63,21 @@
  "myProfile": "My Profile",
 
  "noFavouritesYet": "No favourites yet",
- "yourCartEmpty": "Your Cart is Empty"
+ "yourCartEmpty": "Your Cart is Empty",
 
+ "availableCredit": "Available Credit",
+ "points": "Points",
+ "addCredit": "Add Credit",
+ "recentTransactions" : "Recent Transactions",
+ "noTransactionYet": "No Transaction Yet",
+ "myWallet": "My Wallet",
 
+ "walletCheckout": "Wallet Checkout",
+ "yourWalletBalance": "Your Wallet Balance",
+ "orderTotal": "Order Total",
+ "paymentStatus": "Payment Status",
+ "sufficientBalance" : "Sufficient Balance",
+ "insufficientBalance" : "Insufficient Balance",
+ "confirmPayment" :"Confirm Payment",
+ "rechargeWallet" : "Recharge Wallet"
 }

@@ -468,6 +468,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Available Credit`
+  String get availableCredit {
+    return Intl.message(
+      'Available Credit',
+      name: 'availableCredit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points`
+  String get points {
+    return Intl.message('Points', name: 'points', desc: '', args: []);
+  }
+
+  /// `Add Credit`
+  String get addCredit {
+    return Intl.message('Add Credit', name: 'addCredit', desc: '', args: []);
+  }
+
+  /// `Recent Transactions`
+  String get recentTransactions {
+    return Intl.message(
+      'Recent Transactions',
+      name: 'recentTransactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Transaction Yet`
+  String get noTransactionYet {
+    return Intl.message(
+      'No Transaction Yet',
+      name: 'noTransactionYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Wallet`
+  String get myWallet {
+    return Intl.message('My Wallet', name: 'myWallet', desc: '', args: []);
+  }
+
+  /// `Wallet Checkout`
+  String get walletCheckout {
+    return Intl.message(
+      'Wallet Checkout',
+      name: 'walletCheckout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Wallet Balance`
+  String get yourWalletBalance {
+    return Intl.message(
+      'Your Wallet Balance',
+      name: 'yourWalletBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Total`
+  String get orderTotal {
+    return Intl.message('Order Total', name: 'orderTotal', desc: '', args: []);
+  }
+
+  /// `Payment Status`
+  String get paymentStatus {
+    return Intl.message(
+      'Payment Status',
+      name: 'paymentStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sufficient Balance`
+  String get sufficientBalance {
+    return Intl.message(
+      'Sufficient Balance',
+      name: 'sufficientBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insufficient Balance`
+  String get insufficientBalance {
+    return Intl.message(
+      'Insufficient Balance',
+      name: 'insufficientBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Payment`
+  String get confirmPayment {
+    return Intl.message(
+      'Confirm Payment',
+      name: 'confirmPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recharge Wallet`
+  String get rechargeWallet {
+    return Intl.message(
+      'Recharge Wallet',
+      name: 'rechargeWallet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
