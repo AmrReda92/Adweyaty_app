@@ -9,6 +9,7 @@ import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/cubit
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../../../core/helper/validation_service.dart';
 import '../../../../../../core/theme/app_text_style.dart';
 import '../../../../../../generated/l10n.dart';
@@ -22,7 +23,8 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final formKey = GlobalKey<FormState>() ;
+  final formKey = GlobalKey<FormState>();
+
   final nameController = TextEditingController();
   final mobileController = TextEditingController();
   final emailController = TextEditingController();
@@ -49,125 +51,211 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
-      buildWhen: (previous,current)=>(current is! SignUpError),
-
+      buildWhen: (previous, current) => current is! SignUpError,
       listener: (context, state) {
+        if (state is SignUpLoading) {
+          customShowLoadingDialog(context);
+        } else if (state is SignUpSuccess) {
+          context.read<HomeCubit>().loadUserData(state.user);
+          Navigator.pop(context);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            Routes.validationScreen,
+            arguments: state.user,
+                (e) => false,
+          );
+        } else if (state is SignUpError) {
+          Navigator.pop(context);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.error),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      },
+      builder: (context, state) {
+        return Scaffold(
+          body: SafeArea(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    children: [
+                      const CustomAppbar(),
+                      SizedBox(height: 30.h),
 
-    if(state is SignUpLoading){
-      customShowLoadingDialog(context);
-
-    }else if(state is SignUpSuccess){
-      context.read<HomeCubit>().loadUserData(state.user);
-      Navigator.pop(context);
-      Navigator.pushNamedAndRemoveUntil(context, Routes.validationScreen,arguments: state.user, (e)=>false);
-
-    }else if(state is SignUpError){
-      Navigator.pop(context);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(state.error),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
-
-  },
-  builder: (context, state) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  CustomAppbar(),
-                  SizedBox(height: 30.h,),
-                  Image.asset(AppImages.user, width: 80.w, height: 80.h,),
-                  SizedBox(height: 40.h,),
-                  Text(S.of(context).signUpText, style: AppTextStyle.font28),
-                  SizedBox(height: 40.h,),
-                  CustomTextFormField(
-                    focusNode: nameFocus,
-                    textInputAction: TextInputAction.next,
-                    onFieldSubmitted: (_){
-                      FocusScope.of(context).requestFocus(mobileFocus);
-                    },
-                    hintText: S.of(context).hintName,
-                    controller: nameController,
-                    validator: ValidationService.validateName
-
-                  ),
-                  SizedBox(height: 20.h,),
-                  CustomTextFormField(
-                    focusNode: mobileFocus,
-                    textInputAction: TextInputAction.next,
-                    onFieldSubmitted: (_){
-                      FocusScope.of(context).requestFocus(emailFocus);
-                    },
-                    hintText: S.of(context).hintMobile,
-                    controller: mobileController,
-                    validator: ValidationService.validatePhoneNumber
-                  ),
-                  SizedBox(height: 20.h,),
-
-                  CustomTextFormField(
-                    focusNode: emailFocus,
-                    textInputAction: TextInputAction.next,
-                    onFieldSubmitted: (_){
-                      FocusScope.of(context).requestFocus(passwordFocus);
-                    },
-                    hintText: S.of(context).hintEmail,
-                    controller: emailController,
-                    validator: ValidationService.validateEmail
-                  ),
-                  SizedBox(height: 20.h,),
-
-                  CustomTextFormField(
-                    focusNode: passwordFocus,
-                    textInputAction: TextInputAction.done,
-                    onFieldSubmitted: (_){
-                      FocusScope.of(context).unfocus();
-                    },
-                    hintText: S.of(context).hintPassword,
-                    isPassword: true,controller: passwordController,
-                    validator: ValidationService.validatePassword
-                  ),
-                  SizedBox(height: 50.h,),
-
-                  InkWell(
-                        onTap: () {
-                          if(formKey.currentState!.validate()){
-                            context.read<SignUpCubit>().createUserWithEmailAndPassword(
-                                model: SignUpModel(
-                                    name: nameController.text,
-                                    email: emailController.text,
-                                    password: passwordController.text,
-                                    phone: mobileController.text
-                                )
-                            );
-
-                          }else {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(S.of(context).allFieldsCorrectly),
-                                backgroundColor: Colors.red,
-                              ),
-                            );
-                          }
-
+                      /// USER ICON ANIMATION
+                      TweenAnimationBuilder<double>(
+                        tween: Tween(begin: -60, end: 0),
+                        duration: const Duration(milliseconds: 800),
+                        curve: Curves.easeOutCubic,
+                        builder: (context, value, child) {
+                          return Transform.translate(
+                            offset: Offset(0, value),
+                            child: Opacity(
+                              opacity:
+                              (1 - (value.abs() / 60)).clamp(0.0, 1.0),
+                              child: child,
+                            ),
+                          );
                         },
-                        child: CustomButton(title: S.of(context).register)),
+                        child: Image.asset(
+                          AppImages.user,
+                          width: 80.w,
+                          height: 80.h,
+                        ),
+                      ),
 
-                ],
+                      SizedBox(height: 40.h),
+
+                      /// TITLE POP ANIMATION
+                      TweenAnimationBuilder<double>(
+                        tween: Tween(begin: 0.85, end: 1),
+                        duration: const Duration(milliseconds: 700),
+                        curve: Curves.easeOutBack,
+                        builder: (context, value, child) {
+                          return Transform.scale(
+                            scale: value,
+                            child: child,
+                          );
+                        },
+                        child: Text(
+                          S.of(context).signUpText,
+                          style: AppTextStyle.font28,
+                        ),
+                      ),
+
+                      SizedBox(height: 40.h),
+
+                      /// FORM SLIDE UP ANIMATION
+                      TweenAnimationBuilder<double>(
+                        tween: Tween(begin: 80, end: 0),
+                        duration: const Duration(milliseconds: 900),
+                        curve: Curves.easeOutCubic,
+                        builder: (context, value, child) {
+                          return Transform.translate(
+                            offset: Offset(0, value),
+                            child: child,
+                          );
+                        },
+                        child: Column(
+                          children: [
+                            CustomTextFormField(
+                              focusNode: nameFocus,
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (_) {
+                                FocusScope.of(context)
+                                    .requestFocus(mobileFocus);
+                              },
+                              hintText: S.of(context).hintName,
+                              controller: nameController,
+                              validator:
+                              ValidationService.validateName,
+                            ),
+                            SizedBox(height: 20.h),
+                            CustomTextFormField(
+                              focusNode: mobileFocus,
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (_) {
+                                FocusScope.of(context)
+                                    .requestFocus(emailFocus);
+                              },
+                              hintText: S.of(context).hintMobile,
+                              controller: mobileController,
+                              validator:
+                              ValidationService.validatePhoneNumber,
+                            ),
+                            SizedBox(height: 20.h),
+                            CustomTextFormField(
+                              focusNode: emailFocus,
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (_) {
+                                FocusScope.of(context)
+                                    .requestFocus(passwordFocus);
+                              },
+                              hintText: S.of(context).hintEmail,
+                              controller: emailController,
+                              validator:
+                              ValidationService.validateEmail,
+                            ),
+                            SizedBox(height: 20.h),
+                            CustomTextFormField(
+                              focusNode: passwordFocus,
+                              textInputAction: TextInputAction.done,
+                              onFieldSubmitted: (_) {
+                                FocusScope.of(context).unfocus();
+                              },
+                              hintText: S.of(context).hintPassword,
+                              isPassword: true,
+                              controller: passwordController,
+                              validator:
+                              ValidationService.validatePassword,
+                            ),
+                            SizedBox(height: 50.h),
+
+                            /// BUTTON BOUNCE
+                            TweenAnimationBuilder<double>(
+                              tween: Tween(begin: 0.9, end: 1),
+                              duration:
+                              const Duration(milliseconds: 500),
+                              curve: Curves.easeOutBack,
+                              builder: (context, value, child) {
+                                return Transform.scale(
+                                  scale: value,
+                                  child: child,
+                                );
+                              },
+                              child: InkWell(
+                                onTap: () {
+                                  if (formKey.currentState!
+                                      .validate()) {
+                                    context
+                                        .read<SignUpCubit>()
+                                        .createUserWithEmailAndPassword(
+                                      model: SignUpModel(
+                                        name:
+                                        nameController.text,
+                                        email:
+                                        emailController.text,
+                                        password:
+                                        passwordController.text,
+                                        phone:
+                                        mobileController.text,
+                                      ),
+                                    );
+                                  } else {
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          S.of(context)
+                                              .allFieldsCorrectly,
+                                        ),
+                                        backgroundColor: Colors.red,
+                                      ),
+                                    );
+                                  }
+                                },
+                                child: CustomButton(
+                                  title:
+                                  S.of(context).register,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
-  },
-);
   }
 }

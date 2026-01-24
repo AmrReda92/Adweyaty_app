@@ -78,7 +78,7 @@ class SignUpLoginScreen extends StatelessWidget {
 
                       },
                       child: TweenAnimationBuilder<double>(
-                          tween: Tween(begin: 80, end: 0),
+                          tween: Tween(begin: 40, end: 0),
                           duration: const Duration(milliseconds: 800),
                           curve: Curves.easeOut,
                           builder: (context, value, child) {
