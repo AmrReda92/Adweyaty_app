@@ -1,3 +1,4 @@
+import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +22,7 @@ class CreditCheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final walletCubit = context.read<WalletCubit>();
+    final cartCubit = context.read<CartCubit>();
 
     return BlocListener<WalletCubit, WalletState>(
       listener: (context, state) {
@@ -153,6 +155,7 @@ class CreditCheckoutScreen extends StatelessWidget {
                     onTap: () {
                       if (canPay) {
                         walletCubit.spendBalance(totalPrice);
+                        cartCubit.clearCart();
                       } else {
                         showDialog(
                           context: context,
