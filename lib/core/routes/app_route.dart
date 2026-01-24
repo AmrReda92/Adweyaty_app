@@ -14,6 +14,9 @@ import 'package:adweyaty_application/features/credit_checkout_screen/presentatio
 import 'package:adweyaty_application/features/favourite/presentation/ui/favourite_screen.dart';
 import 'package:adweyaty_application/features/home/data/cubit/categories_cubit.dart';
 import 'package:adweyaty_application/features/home/data/home_repo/home_repo.dart';
+import 'package:adweyaty_application/features/my_order/data/cubit/orders_cubit.dart';
+import 'package:adweyaty_application/features/my_order/data/repo/order_repo.dart';
+import 'package:adweyaty_application/features/my_order/presentation/ui/my_order_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:adweyaty_application/features/product_screens/data/cubit/products_cubit.dart';
 import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
@@ -88,6 +91,13 @@ class AppRoute {
       case Routes.cartScreen:
         return MaterialPageRoute(builder: (_) => const CartScreen());
 
+      case Routes.myOrderScreen:
+        return MaterialPageRoute(builder: (_) =>  BlocProvider(
+  create: (context) => OrdersCubit(OrdersRepo()),
+  child: MyOrderScreen(),
+));
+
+
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
 
@@ -102,7 +112,10 @@ class AppRoute {
       case Routes.creditCheckoutScreen:
         final total = setting.arguments as num;
         return MaterialPageRoute(
-          builder: (_) => CreditCheckoutScreen(totalPrice: total),
+          builder: (_) => BlocProvider(
+  create: (context) => OrdersCubit(OrdersRepo()),
+  child: CreditCheckoutScreen(totalPrice: total),
+),
         );
 
       case Routes.productScreen:

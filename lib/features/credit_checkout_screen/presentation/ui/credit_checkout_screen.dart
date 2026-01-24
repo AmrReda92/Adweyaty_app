@@ -1,12 +1,14 @@
 import 'package:adweyaty_application/features/cart/data/cart_cubit/cart_cubit.dart';
+import 'package:adweyaty_application/features/my_order/data/models/order_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/theme/app_text_style.dart';
 import '../../../../core/widgets/custom_appbar_category.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../generated/l10n.dart';
+import '../../../my_order/data/cubit/orders_cubit.dart';
 import '../../../wallet/data/cubit/wallet_cubit.dart';
 import '../widgets/recharge_dialog.dart';
 import '../widgets/success_dialog.dart';
@@ -23,6 +25,8 @@ class CreditCheckoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final walletCubit = context.read<WalletCubit>();
     final cartCubit = context.read<CartCubit>();
+    final ordersCubit = context.read<OrdersCubit>();
+
 
     return BlocListener<WalletCubit, WalletState>(
       listener: (context, state) {
@@ -35,11 +39,8 @@ class CreditCheckoutScreen extends StatelessWidget {
           );
         }
 
-        if (state is WalletSuccess) {
-          showDialog(
-            context: context,
-            builder: (_) => successDialog(context),
-          );
+        if (state is WalletSuccess)  {
+          _handleOrderSuccess(context, cartCubit, ordersCubit,totalPrice);
         }
       },
       child: Scaffold(
@@ -155,7 +156,6 @@ class CreditCheckoutScreen extends StatelessWidget {
                     onTap: () {
                       if (canPay) {
                         walletCubit.spendBalance(totalPrice);
-                        cartCubit.clearCart();
                       } else {
                         showDialog(
                           context: context,
@@ -175,4 +175,31 @@ class CreditCheckoutScreen extends StatelessWidget {
     );
   }
 
+}
+
+
+Future<void> _handleOrderSuccess(
+BuildContext context,
+CartCubit cartCubit,
+OrdersCubit ordersCubit,
+    num totalPrice,
+    ) async {
+  final cartItems = await cartCubit.getCartOnce();
+
+  // 2. كوّن OrderModel بسيط
+  final order = OrderModel(
+    id: DateTime.now().millisecondsSinceEpoch.toString(),
+    items: cartItems,
+    totalPrice: totalPrice,
+    date: Timestamp.now(), status: 'Success',
+  );
+  await ordersCubit.createOrder(order);
+  await cartCubit.clearCart();
+
+
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (_) => successDialog(context),
+  );
 }

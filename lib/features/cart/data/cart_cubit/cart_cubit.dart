@@ -74,4 +74,7 @@ class CartCubit extends Cubit<CartState> {
       emit(CartError(e.toString()));
     }
   }
+  Future<List<CartItemModel>> getCartOnce() async {
+    return await cartRepo.getCartOnce(uid);
+  }
 }

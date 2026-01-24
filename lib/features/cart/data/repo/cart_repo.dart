@@ -85,4 +85,16 @@ class CartRepo {
     }
   }
 
+  Future<List<CartItemModel>> getCartOnce(String uid) async {
+    final snap = await _firebaseFirestore
+        .collection("users")
+        .doc(uid)
+        .collection("cart")
+        .get();
+
+    return snap.docs
+        .map((doc) => CartItemModel.fromJson(doc.data()))
+        .toList();
+  }
+
 }

@@ -113,6 +113,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             SizedBox(height: 40.h),
             CustomButtonProfile(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.myOrderScreen);
+              },
               title: "My orders",
               iconProfileScreen: Icons.arrow_right,
             ),

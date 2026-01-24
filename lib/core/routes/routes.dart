@@ -16,4 +16,5 @@ class Routes {
   static const String favouriteScreen = "/favouriteScreen";
   static const String creditCheckoutScreen = "/creditCheckoutScreen";
   static const String walletScreen = "/walletScreen";
+  static const String myOrderScreen = "/myOrderScreen";
 }

@@ -32,7 +32,7 @@ class OrderModel {
             .map((e) => CartItemModel.fromJson(e))
             .toList(),
         totalPrice:json["totalPrice"],
-        date:json["addedAt"],
+        date:json["date"],
         id: id,
         status: json["status"],
     );
