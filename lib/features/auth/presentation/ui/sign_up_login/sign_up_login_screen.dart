@@ -2,21 +2,14 @@ import 'package:adweyaty_application/core/app_images/app_images.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_button.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/login/ui/login_screen.dart';
-import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/ui/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../generated/l10n.dart';
 
-class SignUpLoginScreen extends StatefulWidget {
+class SignUpLoginScreen extends StatelessWidget {
   const SignUpLoginScreen({super.key});
 
-  @override
-  State<SignUpLoginScreen> createState() => _SignUpLoginScreenState();
-}
-
-class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,28 +26,68 @@ class _SignUpLoginScreenState extends State<SignUpLoginScreen> {
               padding:  EdgeInsets.symmetric(horizontal:26.w),
               child: Column(
                 children: [
-                  Image.asset(AppImages.logo),
+                  TweenAnimationBuilder<double>(
+                      tween: Tween(begin: -50, end: 0),
+                      duration: const Duration(milliseconds: 900),
+                      curve: Curves.easeOutCubic,
+                      builder: (context, value, child) {
+                        return Transform.translate(
+                          offset: Offset(0, value),
+                          child: Opacity(
+                            opacity: value == 0 ? 1 : 0,
+                            child: child,
+                          ),
+                        );
+                      },
+                      child: Image.asset(AppImages.logo)),
                   SizedBox(height: 65.h,),
-                  Image.asset(AppImages.homePhoto),
+                  TweenAnimationBuilder<double>(
+                      tween: Tween(begin: 0.85, end: 1),
+                      duration: const Duration(milliseconds: 900),
+                      curve: Curves.easeOutCubic,
+                      builder: (context, value, child) {
+                        return Transform.scale(
+                          scale: value,
+                          child: child,
+                        );
+                      },
+                      child: Image.asset(AppImages.homePhoto)),
                   SizedBox(height: 65.h,),
                   Text(S.of(context).signUpLoginText,style: AppTextStyle.font20black.copyWith(fontSize: 30.sp),),
                   SizedBox(height: 90.h,),
                   InkWell(
                     onTap: (){
-                      setState(() {
                         Navigator.pushNamedAndRemoveUntil(context, Routes.signUpScreen, (e)=>false);
-                      });
                     },
-                      child: CustomButton(title:S.of(context).register )
+                      child: TweenAnimationBuilder<double>(
+                          tween: Tween(begin: 80, end: 0),
+                          duration: const Duration(milliseconds: 800),
+                          curve: Curves.easeOut,
+                          builder: (context, value, child) {
+                            return Transform.translate(
+                              offset: Offset(0, value),
+                              child: child,
+                            );
+                          },
+                          child: CustomButton(title:S.of(context).register ))
                   ),
                   SizedBox(height: 20.h,),
                   InkWell(
                       onTap: (){
-                        setState(() {
                           Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen, (e)=>false);
-                        });
+
                       },
-                      child: CustomButton(title: S.of(context).login)
+                      child: TweenAnimationBuilder<double>(
+                          tween: Tween(begin: 80, end: 0),
+                          duration: const Duration(milliseconds: 800),
+                          curve: Curves.easeOut,
+                          builder: (context, value, child) {
+                            return Transform.translate(
+                              offset: Offset(0, value),
+                              child: child,
+                            );
+                          },
+                          child: CustomButton(title: S.of(context).login))
                   ),
 
 

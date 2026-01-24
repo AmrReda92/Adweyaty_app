@@ -52,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
       } catch (e) {
         Navigator.pushReplacementNamed(
           context,
-          Routes.signUpLoginScreen,
+          Routes.onboardingScreen,
         );
       }
     } else {
