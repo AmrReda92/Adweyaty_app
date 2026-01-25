@@ -165,7 +165,7 @@ class CreditCheckoutScreen extends StatelessWidget {
                     },
                   ),
 
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 60.h),
                 ],
               );
             },

@@ -1,13 +1,21 @@
-class InfoOnboarding {
-
-static  String textOnboardingOne = "أدويتي ليس مجرد تطبيق، بل هو رفيقك في الرعاية الصحية، يضع الصيدلية بين يديك ، أدويتي هنا لتبسيط رحلة الرعاية الصحية الخاصة بك.";
-static  String textOnboardingTwo = "تصفح واكتشف مجموعة منتجات أدويتي الواسعة لاكتشاف سريع وفعال.";
-static  String textOnboardingThree = "دعم العملاء: تواصل مع فريق دعم أدويتي المتخصص للحصول على مساعدة سريعة وودية واطلب بكل سهولة ويسر من خلال واجهة سهلة الاستخدام.";
+import 'package:adweyaty_application/core/app_images/app_images.dart';
+import 'package:adweyaty_application/features/onboarding/data/model/onboarding_info.dart';
 
 
-static String imageOnboardingOne = "assets/images/Pharmacist.json";
-static String imageOnboardingTwo = "assets/images/Angoamericana.json";
-static String imageOnboardingThree = "assets/images/Pharmacist.json";
-static String splashImage = "assets/images/Capsule.json";
 
+class OnboardingItems {
+  final List<OnboardingInfo> items =[
+    OnboardingInfo(
+        image: AppImages.onboardingOne,
+        text: "Adweyaty is not just an app, it's your healthcare companion, putting the pharmacy at your fingertips. Adweyaty is here to simplify your healthcare journey.",
+    ),
+    OnboardingInfo(
+      image: AppImages.onboardingTwo,
+      text: "Browse and discover Adweyaty's wide range of products for quick and effective discovery",
+    ),
+    OnboardingInfo(
+      image: AppImages.onboardingThree,
+      text: "Customer Support: Connect with our dedicated Adweyaty support team for quick and friendly assistance, and order easily and conveniently through our user-friendly interface.",
+    ),
+  ];
 }

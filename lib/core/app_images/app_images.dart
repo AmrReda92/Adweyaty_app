@@ -11,6 +11,13 @@ class AppImages {
  static const String user ="assets/images/user.png";
  static const String noFavourite ="assets/images/noFav.json";
  static const String noProduct ="assets/images/EmptyBox.json";
+ static const String splashLogo ="assets/images/Capsule.json";
+
+ static const String onboardingOne ="assets/images/Pharmacist.json";
+ static const String onboardingTwo ="assets/images/Angoamericana.json";
+ static const String onboardingThree ="assets/images/Pharmacist.json";
+
+
 
  static const String bloodPressure ="assets/images/bloodPressure.jpg";
  static const String coughMedicines ="assets/images/coughingPerson.jpg";

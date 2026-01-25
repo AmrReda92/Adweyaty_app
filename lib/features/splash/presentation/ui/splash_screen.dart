@@ -81,7 +81,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Lottie.asset(InfoOnboarding.splashImage,height: 160),
+                Lottie.asset(AppImages.splashLogo,height: 160),
                 SizedBox(height: 30.h,),
                 Text( S.of(context).splashText,style: AppTextStyle.font20White.copyWith(color: Colors.black))
               ],
