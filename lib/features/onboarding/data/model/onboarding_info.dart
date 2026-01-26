@@ -1,7 +1,7 @@
 class OnboardingInfo{
   final String image;
-  final String text;
+  final String textKey;
 
-  OnboardingInfo({required this.image,required this.text });
+  OnboardingInfo({required this.image,required this.textKey });
 }
 

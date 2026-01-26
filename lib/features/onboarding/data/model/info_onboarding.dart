@@ -7,15 +7,15 @@ class OnboardingItems {
   final List<OnboardingInfo> items =[
     OnboardingInfo(
         image: AppImages.onboardingOne,
-        text: "Adweyaty is not just an app, it's your healthcare companion, putting the pharmacy at your fingertips. Adweyaty is here to simplify your healthcare journey.",
+      textKey: "textOnboardingOne"
     ),
     OnboardingInfo(
       image: AppImages.onboardingTwo,
-      text: "Browse and discover Adweyaty's wide range of products for quick and effective discovery",
+      textKey: "textOnboardingTwo"
     ),
     OnboardingInfo(
       image: AppImages.onboardingThree,
-      text: "Customer Support: Connect with our dedicated Adweyaty support team for quick and friendly assistance, and order easily and conveniently through our user-friendly interface.",
+      textKey: "textOnboardingThree"
     ),
   ];
 }

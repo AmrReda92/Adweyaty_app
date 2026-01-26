@@ -17,6 +17,12 @@ extension STranslate on S {
         return vitamin;
       case 'kids':
         return kids;
+      case 'textOnboardingOne':
+        return textOnboardingOne;
+      case 'textOnboardingTwo':
+        return textOnboardingTwo;
+      case 'textOnboardingThree':
+        return textOnboardingThree;
       default:
         return key; // يرجع المفتاح كما هو لو لم يجد ترجمة
     }

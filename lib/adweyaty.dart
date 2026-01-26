@@ -52,7 +52,8 @@ class Adweyaty extends StatelessWidget {
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,
                 ],
-                supportedLocales: S.delegate.supportedLocales,
+                supportedLocales: const <Locale>[Locale('ar',)],
+                //S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
                     scaffoldBackgroundColor: Color(0xffF0FFFF),

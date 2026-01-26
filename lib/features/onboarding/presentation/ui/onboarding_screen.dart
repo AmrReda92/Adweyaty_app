@@ -1,6 +1,7 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/onboarding/data/model/info_onboarding.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/widget/custom_dot_indicator.dart';
+import 'package:adweyaty_application/generated/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -40,21 +41,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   currentIndex=index;
                 });
               },
-                itemBuilder: (BuildContext context, int index) { 
+                itemBuilder: (BuildContext context, int index) {
                  return Padding(
-                   padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                   padding:  EdgeInsets.symmetric(horizontal: 16.w),
                    child: Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
                      children: [
                        SizedBox(height: 60.h,),
                        Lottie.asset(items.items[index].image,height: 300.h),
                        SizedBox(height: 20.h,),
-                       Text(items.items[index].text,style: AppTextStyle.font20black),
+                       Text(S.of(context).translate((items.items[index].textKey)),style: AppTextStyle.font20black),
                      ],
                    ),
                  );
                 },
-                
+
             ),
             Positioned(
               bottom: 30.h,
@@ -87,7 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   onPressed: () {
                    controller.jumpToPage(items.items.length);
                   },
-                  child:(currentIndex==0)?Text("Skip",style: AppTextStyle.hintStyle,):Text("")
+                  child:(currentIndex!=items.items.length-1)?Text("Skip",style: AppTextStyle.hintStyle,):Text("")
                   )
             )
           ],
