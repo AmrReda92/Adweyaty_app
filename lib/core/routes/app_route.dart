@@ -2,6 +2,9 @@ import 'dart:io';
 
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/features/auth/data/models/user_model.dart';
+import 'package:adweyaty_application/features/auth/data/repo/auth_repo.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/forget_password/cubit/reset_pass_cubit.dart';
+import 'package:adweyaty_application/features/auth/presentation/ui/forget_password/ui/forget_password_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/cubit/login_cubit.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/login/ui/login_screen.dart';
 import 'package:adweyaty_application/features/auth/presentation/ui/sign_up/cubit/sign_up_cubit.dart';
@@ -107,6 +110,14 @@ class AppRoute {
       case Routes.walletScreen:
         return MaterialPageRoute(
           builder: (_) => const WalletScreen(),
+        );
+
+      case Routes.forgotPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) =>  BlocProvider(
+  create: (context) => ResetPassCubit(AuthRepo()),
+  child: ForgotPasswordScreen(),
+),
         );
 
       case Routes.creditCheckoutScreen:

@@ -162,9 +162,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             SizedBox(height: 20.h),
                             Align(
                               alignment: Alignment.centerRight,
-                              child: Text(
-                                S.of(context).forgot,
-                                style: AppTextStyle.hintStyle,
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.pushNamed(context, Routes.forgotPasswordScreen);
+                                },
+                                child: Text(
+                                  S.of(context).forgot,
+                                  style: AppTextStyle.hintStyle,
+                                ),
                               ),
                             ),
                             SizedBox(height: 40.h),
