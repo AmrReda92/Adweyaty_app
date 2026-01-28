@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:adweyaty_application/core/helper/local_storage_service.dart';
 import 'package:adweyaty_application/core/routes/routes.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
@@ -6,6 +7,7 @@ import 'package:adweyaty_application/core/widgets/custom_button_profile.dart';
 import 'package:adweyaty_application/features/home/data/cubit/home_cubit.dart';
 import 'package:adweyaty_application/features/profile/data/cubit/profile_cubit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,8 +41,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: CustomAppbarCategory(
         title: S.of(context).myProfile,
         icon: InkWell(
-          onTap: () {
-            Navigator.pushNamed(context, Routes.signUpLoginScreen);
+          onTap: () async{
+            await FirebaseAuth.instance.signOut();
+            await LocalStorageService.clear();
+            Navigator.pushNamedAndRemoveUntil(context, Routes.loginScreen,(e)=>false);
           },
           child: Icon(Icons.logout, size: 30.w),
         ),
