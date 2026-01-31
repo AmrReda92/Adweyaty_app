@@ -34,7 +34,7 @@ class MyOrderScreen extends StatelessWidget {
           final orders = snapshot.data ?? [];
 
           if (orders.isEmpty) {
-            return  Center(
+            return Center(
               child: Text(
                 "No orders yet",
                 style: AppTextStyle.hintStyle,
@@ -48,85 +48,60 @@ class MyOrderScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final order = orders[index];
 
-              // أول منتج في الأوردر
-              final item = order.items.first;
               return Card(
                 elevation: 2,
                 margin: EdgeInsets.only(bottom: 12.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12.r),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(12.w),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      /// Product Image
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8.r),
-                        child: Image.network(
-                          item.image,
-                          width: 50.w,
-                          height: 50.w,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-
-                      SizedBox(width: 12.w),
-
-                      /// Info
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            /// Product Name
-                            Text(
-                              item.name,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: AppTextStyle.font18.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-
-                            SizedBox(height: 6.h),
-
-                            /// Date
-                            Text(
-                              DateFormat("dd MMM yyyy • hh:mm a")
-                                  .format(order.date.toDate()),
-                              style: AppTextStyle.hintStyle.copyWith(
-                                fontSize: 12.sp,
-                              ),
-                            ),
-
-                            SizedBox(height: 6.h),
-
-                            Row(
-                              children: [
-                                /// Status
-                                _buildStatusChip("SUCCESS"),
-
-                                const Spacer(),
-
-                                /// Items Count
-                                Text(
-                                  "${order.items.length} items",
-                                  style: AppTextStyle.font18.copyWith(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                child: ExpansionTile(
+                  tilePadding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
                   ),
+                  title: Text(
+                    "Order • ${order.items.length} items",
+                    style: AppTextStyle.font18.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  subtitle: Text(
+                    DateFormat("dd MMM yyyy • hh:mm a")
+                        .format(order.date.toDate()),
+                    style: AppTextStyle.hintStyle.copyWith(
+                      fontSize: 12.sp,
+                    ),
+                  ),
+                  trailing: _buildStatusChip(order.status),
+                  children: [
+                    const Divider(),
+                    ...order.items.map(
+                          (item) => ListTile(
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.r),
+                          child: Image.network(
+                            item.image,
+                            width: 40.w,
+                            height: 40.w,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        title: Text(
+                          item.name,
+                          style: AppTextStyle.font18,
+                        ),
+                        trailing: Text(
+                          "x${item.quantity}",
+                          style: AppTextStyle.font18.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                  ],
                 ),
               );
-
             },
           );
         },

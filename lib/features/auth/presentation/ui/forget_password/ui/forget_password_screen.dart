@@ -34,14 +34,14 @@ class ForgotPasswordScreen extends StatelessWidget {
             }
 
             if (state is ResetPassSuccess) {
-              Navigator.pop(context); // close loader
+              Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text("Reset link sent to your email"),
                   backgroundColor: Colors.green,
                 ),
               );
-              Navigator.pop(context); // رجوع للـ Login
+              Navigator.pop(context);
             }
 
             if (state is ResetPassError) {
