@@ -34,7 +34,7 @@ class ProductScreen extends StatelessWidget {
                   child: Text("No products for this category yet"),
                 );
               }else{
-                return GridView.builder(
+                return  GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisSpacing: 20.h,
@@ -44,7 +44,7 @@ class ProductScreen extends StatelessWidget {
                     itemCount: state.products.length,
                     itemBuilder: (context, index) {
                       final item = state.products[index];
-                      return MedicineDetailsCard(drugItem: item);
+                      return  MedicineDetailsCard(drugItem: item);
                     }
 
                 );

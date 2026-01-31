@@ -42,11 +42,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 });
               },
                 itemBuilder: (BuildContext context, int index) {
-                 return Padding(
+                 return  Padding(
                    padding:  EdgeInsets.symmetric(horizontal: 16.w),
                    child: Column(
                      children: [
-                       SizedBox(height: 60.h,),
+                        SizedBox(height: 60.h,),
                        Lottie.asset(items.items[index].image,height: 300.h),
                        SizedBox(height: 20.h,),
                        Text(S.of(context).translate((items.items[index].textKey)),style: AppTextStyle.font20black),
@@ -56,7 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 },
 
             ),
-            Positioned(
+             Positioned(
               bottom: 30.h,
               left: 0,
               right: 0,

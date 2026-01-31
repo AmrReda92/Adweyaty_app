@@ -42,7 +42,7 @@ class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
                   child: Container(
                     width: 26.w,
                     height: 26.h,
-                    decoration: BoxDecoration(
+                    decoration:const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
                     ),child: GestureDetector(
@@ -66,14 +66,14 @@ class _MedicineDetailsCardState extends State<MedicineDetailsCard> {
 
                          });
                        },
-                      child: isSelected? Icon(Icons.favorite,size: 20,color: Colors.red,) : Icon(Icons.favorite_border,size: 20,)
+                      child: isSelected? const Icon(Icons.favorite,size: 20,color: Colors.red,) :const Icon(Icons.favorite_border,size: 20,)
                   ),
                   ),
                 ),
-                CachedNetworkImage(imageUrl:widget.drugItem.image ,fit:BoxFit.contain, height: 100.h,),
-                Text(widget.drugItem.name,style: AppTextStyle.medicineName,maxLines:1,overflow:TextOverflow.ellipsis ),
+                 CachedNetworkImage(imageUrl:widget.drugItem.image ,fit:BoxFit.contain, height: 100.h,),
+                 Text(widget.drugItem.name,style: AppTextStyle.medicineName,maxLines:1,overflow:TextOverflow.ellipsis ),
                 Text(("${widget.drugItem.price} EGP"),style: AppTextStyle.price,),
-                SizedBox(
+                 SizedBox(
                       width: double.infinity,
                       child: CustomElvatedButtonCard(drugItem: widget.drugItem,)
                     ),

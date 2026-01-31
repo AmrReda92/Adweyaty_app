@@ -16,7 +16,7 @@ class CustomCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider.builder(
+    return  CarouselSlider.builder(
       itemCount: sliders.length,
       itemBuilder: (context, index, realIndex) {
         return Image.asset(
@@ -31,6 +31,7 @@ class CustomCarouselSlider extends StatelessWidget {
         autoPlayCurve: Curves.linear,
         aspectRatio: 1,
         autoPlay: true,
+        reverse: true,
         autoPlayInterval: Duration(seconds: 4),
         autoPlayAnimationDuration: Duration(seconds: 4),
         enlargeCenterPage: true

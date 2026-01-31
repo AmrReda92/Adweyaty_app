@@ -10,7 +10,7 @@ class ShowAllCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:   CustomAppbarCategory(
+      appBar: const  CustomAppbarCategory(
         title: "All Categories" ,
       ),
       body: Padding(
@@ -18,7 +18,7 @@ class ShowAllCategoriesScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 20.h,),
-            Expanded(child: AllCategoriesVerticalView())
+            const Expanded(child: AllCategoriesVerticalView())
           ],
         ),
       ) ,

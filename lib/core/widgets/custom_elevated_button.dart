@@ -24,7 +24,7 @@ class CustomElevatedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
       ),
 
-      child: ElevatedButton(
+      child:  ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24)
@@ -36,7 +36,7 @@ class CustomElevatedButton extends StatelessWidget {
           ),
           onPressed: onPressed
           , child:
-      Row(
+       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: AppTextStyle.font20White.copyWith(color: Colors.white)),

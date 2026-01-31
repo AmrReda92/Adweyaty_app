@@ -53,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),
         child: Column(
           children: [
-            Row(
+              Row(
               children: [
                 BlocConsumer<ProfileCubit, ProfileState>(
                   listener: (context, state) {
@@ -116,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
             SizedBox(height: 40.h),
-            CustomButtonProfile(
+             CustomButtonProfile(
               onTap: () {
                 Navigator.pushNamed(context, Routes.myOrderScreen);
               },
@@ -124,12 +124,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               iconProfileScreen: Icons.arrow_right,
             ),
             SizedBox(height: 14.h),
-            CustomButtonProfile(
+            const  CustomButtonProfile(
               title: "Edit Profile",
               iconProfileScreen: Icons.arrow_right,
             ),
             SizedBox(height: 14.h),
-            CustomButtonProfile(
+             CustomButtonProfile(
               onTap: (){
                 Navigator.pushNamed(context, Routes.walletScreen);
               },
@@ -137,12 +137,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               iconProfileScreen: Icons.arrow_right,
             ),
             SizedBox(height: 14.h),
-            CustomButtonProfile(
+            const CustomButtonProfile(
               title: "Contact us",
               iconProfileScreen: Icons.arrow_right,
             ),
             SizedBox(height: 14.h),
-            CustomButtonProfile(
+            const CustomButtonProfile(
               title: "Privacy & Terms",
               iconProfileScreen: Icons.arrow_right,
             ),

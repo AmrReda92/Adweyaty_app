@@ -34,7 +34,7 @@ class MyOrderScreen extends StatelessWidget {
           final orders = snapshot.data ?? [];
 
           if (orders.isEmpty) {
-            return Center(
+            return  Center(
               child: Text(
                 "No orders yet",
                 style: AppTextStyle.hintStyle,

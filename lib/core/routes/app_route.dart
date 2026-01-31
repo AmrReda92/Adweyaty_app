@@ -30,14 +30,12 @@ import 'package:adweyaty_application/features/profile/data/repo/profile_photo_re
 import 'package:adweyaty_application/features/profile/presentation/ui/profile_screen.dart';
 import 'package:adweyaty_application/features/show_all_category/presentation/ui/show_all_categories_screen.dart';
 import 'package:adweyaty_application/features/splash/presentation/ui/splash_screen.dart';
-import 'package:adweyaty_application/features/wallet/data/cubit/wallet_cubit.dart';
 import 'package:adweyaty_application/features/wallet/presentation/ui/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/data/model/homeCategoryModel.dart';
 import '../../features/product_screens/ui/product_screen.dart';
-import '../../features/wallet/data/models/repo/wallet_repo.dart';
 
 class AppRoute {
   static Route<dynamic>? generateRoute(RouteSettings setting) {

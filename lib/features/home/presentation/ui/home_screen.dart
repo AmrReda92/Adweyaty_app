@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 12.h,),
-                  CustomCarouselSlider(),
+                  const CustomCarouselSlider(),
                   SizedBox(height: 20.h),
                   Padding(
                     padding:  EdgeInsets.symmetric(horizontal: 12.w),
@@ -57,8 +57,8 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height: 20.h),
-                        Row(
+                         SizedBox(height: 20.h),
+                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                                 fontSize: 18,
                               ),
                             ),
-                            GestureDetector(
+                               GestureDetector(
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
@@ -85,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 10.h),
-                        GridViewHorizontalItems(),
+                        const GridViewHorizontalItems(),
                       ],
                     ),
                   ),
@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          drawer: CustomDrawer(),
+          drawer:const CustomDrawer(),
         );
       },
     );
