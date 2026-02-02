@@ -10,20 +10,5 @@ Widget rechargeDialog(BuildContext context) {
     content: const Text(
       "Your wallet balance is not enough to complete this order. Please recharge your wallet.",
     ),
-    actions: [
-      TextButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: const Text("Cancel"),
-      ),
-      ElevatedButton(
-        onPressed: () {
-          Navigator.pop(context);
-          // ممكن هنا بعدين توديه على WalletScreen
-        },
-        child: const Text("Recharge"),
-      ),
-    ],
   );
 }
