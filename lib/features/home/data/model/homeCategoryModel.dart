@@ -9,7 +9,7 @@ class HomeCategoryModel {
   const HomeCategoryModel({required this.id, required this.image ,required this.title});
 
 
-   factory HomeCategoryModel.fromJson ( Map<String,dynamic>json,String docId) {
+   factory HomeCategoryModel.fromJson( Map<String,dynamic>json,String docId) {
      return HomeCategoryModel(
          id: docId,
          image: json["image"],

@@ -21,10 +21,6 @@ import 'package:adweyaty_application/features/my_order/data/cubit/orders_cubit.d
 import 'package:adweyaty_application/features/my_order/data/repo/order_repo.dart';
 import 'package:adweyaty_application/features/my_order/presentation/ui/my_order_screen.dart';
 import 'package:adweyaty_application/features/onboarding/presentation/ui/onboarding_screen.dart';
-import 'package:adweyaty_application/features/product_screens/data/cubit/products_cubit.dart';
-import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
-import 'package:adweyaty_application/features/product_screens/data/products_repo/products_repo.dart';
-import 'package:adweyaty_application/features/product_screens/ui/product_details_screen.dart';
 import 'package:adweyaty_application/features/profile/data/cubit/profile_cubit.dart';
 import 'package:adweyaty_application/features/profile/data/repo/profile_photo_repo.dart';
 import 'package:adweyaty_application/features/profile/presentation/ui/profile_screen.dart';
@@ -35,7 +31,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/data/model/homeCategoryModel.dart';
-import '../../features/product_screens/ui/product_screen.dart';
+import '../../features/products/data/cubit/products_cubit.dart';
+import '../../features/products/data/models/drug_item_details.dart';
+import '../../features/products/data/products_repo/products_repo.dart';
+import '../../features/products/ui/product_details_screen.dart';
+import '../../features/products/ui/product_screen.dart';
 
 class AppRoute {
   static Route<dynamic>? generateRoute(RouteSettings setting) {

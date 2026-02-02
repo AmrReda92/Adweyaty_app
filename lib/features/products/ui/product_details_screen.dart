@@ -1,4 +1,3 @@
-import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,11 +8,20 @@ import '../../../core/theme/app_color.dart';
 import '../../../core/widgets/custom_snackBar.dart';
 import '../../cart/data/cart_cubit/cart_cubit.dart';
 import '../../cart/data/models/cart_item_model.dart';
+import '../../favourite/data/cubit/favourite_cubit.dart';
+import '../../favourite/data/models/favourite_item_model.dart';
+import '../data/models/drug_item_details.dart';
 
-class ProductDetailsScreen extends StatelessWidget {
+class ProductDetailsScreen extends StatefulWidget {
   final DrugItemDetails drugItem ;
   const ProductDetailsScreen({super.key, required this.drugItem});
 
+  @override
+  State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
+}
+
+class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +46,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16.r),
                     child: CachedNetworkImage(
-                      imageUrl: drugItem.image,
+                      imageUrl: widget.drugItem.image,
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -48,7 +56,7 @@ class ProductDetailsScreen extends StatelessWidget {
               SizedBox(height: 20.h),
 
               Text(
-                drugItem.name,
+                widget.drugItem.name,
                 style: AppTextStyle.medicineName.copyWith(
                   fontSize: 22.sp,
                 ),
@@ -56,7 +64,7 @@ class ProductDetailsScreen extends StatelessWidget {
               SizedBox(height: 8.h),
 
               Text(
-                "${drugItem.price} EGP",
+                "${widget.drugItem.price} EGP",
                 style: AppTextStyle.price.copyWith(
                   fontSize: 20.sp,
                 ),
@@ -75,7 +83,7 @@ class ProductDetailsScreen extends StatelessWidget {
               SizedBox(height: 8.h),
 
               Text(
-                 drugItem.description??"",
+                 widget.drugItem.description??"",
                 style: AppTextStyle.hintStyle.copyWith(
                 ),
               ),
@@ -96,10 +104,10 @@ class ProductDetailsScreen extends StatelessWidget {
                       ),
                       onPressed: () {
                         final cartItem = CartItemModel(
-                          productId: drugItem.id,
-                          name: drugItem.name,
-                          image: drugItem.image,
-                          price: drugItem.price,
+                          productId: widget.drugItem.id,
+                          name: widget.drugItem.name,
+                          image: widget.drugItem.image,
+                          price: widget.drugItem.price,
                           quantity: 1,
                         );
                         context.read<CartCubit>().addToCart(cartItem);
@@ -127,10 +135,29 @@ class ProductDetailsScreen extends StatelessWidget {
                       color: Colors.red.shade50,
                       borderRadius: BorderRadius.circular(12.r),
                     ),
-                    child: Icon(
-                      Icons.favorite_border,
-                      color: Colors.red,
-                      size: 26.sp,
+                    child: GestureDetector(
+                      onTap: (){
+                        final favCubit = context.read<FavouriteCubit>();
+                        final favItem = FavouriteItemModel(
+                          productId: widget.drugItem.id,
+                          name: widget.drugItem.name,
+                          image: widget.drugItem.image,
+                          price: widget.drugItem.price,
+                        );
+
+                        if (isSelected) {
+                          favCubit.removeFavourite(favItem);
+                        } else {
+                          favCubit.addFavourite(favItem);
+                        }
+
+                        setState(() {
+                          isSelected = !isSelected;
+
+                        });
+                      },
+                        child: isSelected? const Icon(Icons.favorite,size: 20,color: Colors.red,) :const Icon(Icons.favorite_border,size: 20,)
+
                     ),
                   ),
                 ],

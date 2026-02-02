@@ -1,5 +1,6 @@
-import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../models/drug_item_details.dart';
 
 class ProductsRepo {
   final FirebaseFirestore fireStore = FirebaseFirestore.instance ;

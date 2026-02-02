@@ -1,7 +1,8 @@
-import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
-import 'package:adweyaty_application/features/product_screens/data/products_repo/products_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../models/drug_item_details.dart';
+import '../products_repo/products_repo.dart';
 
 part 'products_state.dart';
 

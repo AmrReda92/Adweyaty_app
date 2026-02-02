@@ -1,5 +1,4 @@
 import 'package:adweyaty_application/core/routes/routes.dart';
-import 'package:adweyaty_application/features/product_screens/data/models/drug_item_details.dart';
 import 'package:adweyaty_application/core/theme/app_text_style.dart';
 import 'package:adweyaty_application/core/widgets/custom_elvated_button_card.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -9,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../features/favourite/data/cubit/favourite_cubit.dart';
 import '../../features/favourite/data/models/favourite_item_model.dart';
+import '../../features/products/data/models/drug_item_details.dart';
 
 
 class MedicineDetailsCard extends StatefulWidget {

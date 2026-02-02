@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../features/cart/data/cart_cubit/cart_cubit.dart';
 import '../../features/cart/data/models/cart_item_model.dart';
-import '../../features/product_screens/data/models/drug_item_details.dart';
+import '../../features/products/data/models/drug_item_details.dart';
 
 class CustomElvatedButtonCard extends StatelessWidget {
   final DrugItemDetails drugItem;

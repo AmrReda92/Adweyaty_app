@@ -1,10 +1,11 @@
-import 'package:adweyaty_application/features/product_screens/data/cubit/products_cubit.dart';
 import 'package:adweyaty_application/core/widgets/custom_appbar_category.dart';
 import 'package:adweyaty_application/core/widgets/medicine_details_card.dart';
 import 'package:adweyaty_application/features/home/data/model/homeCategoryModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../data/cubit/products_cubit.dart';
 
 
 class ProductScreen extends StatelessWidget {
