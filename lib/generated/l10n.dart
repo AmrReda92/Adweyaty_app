@@ -54,6 +54,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Adweyaty Application`
+  String get appName {
+    return Intl.message(
+      'Adweyaty Application',
+      name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `ADWEYATY APP`
   String get splashText {
     return Intl.message('ADWEYATY APP', name: 'splashText', desc: '', args: []);

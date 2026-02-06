@@ -18,13 +18,14 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       backgroundColor: Colors.blue.shade200,
       child: SafeArea(
+
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
               Column(
                 children: [
-                  Text("Adweyaty Application",
+                  Text(S.of(context).appName,
                     style: AppTextStyle.appBarTitle.copyWith(fontWeight: FontWeight.w700),),
                   Divider(
                     thickness: 1.h,

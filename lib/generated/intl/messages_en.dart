@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields correctly",
     ),
+    "appName": MessageLookupByLibrary.simpleMessage("Adweyaty Application"),
     "ar": MessageLookupByLibrary.simpleMessage("Arabic"),
     "availableCredit": MessageLookupByLibrary.simpleMessage("Available Credit"),
     "cartNavBar": MessageLookupByLibrary.simpleMessage("Cart"),

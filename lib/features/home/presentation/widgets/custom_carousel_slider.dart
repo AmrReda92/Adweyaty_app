@@ -16,26 +16,29 @@ class CustomCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  CarouselSlider.builder(
-      itemCount: sliders.length,
-      itemBuilder: (context, index, realIndex) {
-        return Image.asset(
-          width: double.infinity,
-          sliders[index],
-          fit: BoxFit.cover,
-        );
-      },
-      options: CarouselOptions(
-        height: 170.h,
-        viewportFraction: 0.8,
-        autoPlayCurve: Curves.linear,
-        aspectRatio: 1,
-        autoPlay: true,
-        reverse: true,
-        autoPlayInterval: Duration(seconds: 4),
-        autoPlayAnimationDuration: Duration(seconds: 4),
-        enlargeCenterPage: true
+    return  SizedBox(
+     height:  170.h,
+      child: CarouselSlider.builder(
+        itemCount: sliders.length,
+        itemBuilder: (context, index, realIndex) {
+          return Image.asset(
+            width: double.infinity,
+            sliders[index],
+            fit: BoxFit.cover,
+          );
+        },
+        options: CarouselOptions(
+          height: 170.h,
+          viewportFraction: 0.8,
+          autoPlayCurve: Curves.linear,
+          aspectRatio: 1,
+          autoPlay: true,
+          reverse: true,
+          autoPlayInterval: Duration(seconds: 4),
+          autoPlayAnimationDuration: Duration(seconds: 4),
+          enlargeCenterPage: true
 
+        ),
       ),
     );
   }

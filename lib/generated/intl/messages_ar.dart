@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "allFieldsCorrectly": MessageLookupByLibrary.simpleMessage(
       "من فضلك املأ الخانات بشكل صحيح",
     ),
+    "appName": MessageLookupByLibrary.simpleMessage("تطبيق ادويتي"),
     "ar": MessageLookupByLibrary.simpleMessage("عربي"),
     "availableCredit": MessageLookupByLibrary.simpleMessage("الرصيد المتاح"),
     "cartNavBar": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
