@@ -15,7 +15,7 @@ class AppImages {
 
  static const String onboardingOne ="assets/images/Pharmacist.json";
  static const String onboardingTwo ="assets/images/Angoamericana.json";
- static const String onboardingThree ="assets/images/Pharmacist.json";
+ static const String onboardingThree ="assets/images/onboarding3.json";
 
 
 
