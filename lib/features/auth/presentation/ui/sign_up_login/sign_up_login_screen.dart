@@ -39,7 +39,7 @@ class SignUpLoginScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Image.asset(AppImages.logo)),
+                      child: Image.asset(AppImages.logo,height: 90,width: 90,)),
                   SizedBox(height: 65.h,),
                   TweenAnimationBuilder<double>(
                       tween: Tween(begin: 0.85, end: 1),

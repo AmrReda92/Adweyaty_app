@@ -1,5 +1,5 @@
 class AppImages {
- static const String logo = "assets/images/logo.png";
+ static const String logo = "assets/images/logoNew.png";
  static const String homePhoto = "assets/images/homePhoto.png";
  static const String splashBackground = "assets/images/splashBackgroung.png";
  static const String homeIcon ="assets/icons/Home.svg";
@@ -8,7 +8,7 @@ class AppImages {
  static const String profileIcon ="assets/icons/Profile.svg";
  static const String searchIcon ="assets/icons/search-normal.svg";
  static const String panadol ="assets/images/panadol.png";
- static const String user ="assets/images/user.png";
+ static const String user ="assets/images/userNew.png";
  static const String noFavourite ="assets/images/noFav.json";
  static const String noProduct ="assets/images/EmptyBox.json";
  static const String splashLogo ="assets/images/Capsule.json";
