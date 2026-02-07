@@ -34,7 +34,7 @@ class _ValidationSuccessScreenState extends State<ValidationSuccessScreen> {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpLoginScreen()));
                       },
                           icon: Icon(Icons.arrow_back,size: 28.sp,)),
-                      Image.asset(AppImages.logo),
+                      Image.asset(AppImages.logo,height: 82,width: 90,),
                       Opacity(
                         opacity: 0,
                         child: Icon(Icons.arrow_back, size: 28.sp),
